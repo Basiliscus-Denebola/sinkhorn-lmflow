@@ -1,0 +1,13 @@
+Command: .\scripts\run_ot.cmd -m pytest -q
+Environment: D:\miniconda_envs\OT\python.exe
+Python: 3.9.24
+NumPy: 2.0.2
+SciPy: 1.13.1
+pytest: 8.4.2
+
+............................................................             [100%]
+60 passed in 1.09s
+
+0 failed. Phase 0 intentionally collected 0 tests before implementation.
+An early native NumPy SVD process crash was resolved by supplying the OT
+Conda DLL directories on PATH; the final suite ran with run_ot.cmd.

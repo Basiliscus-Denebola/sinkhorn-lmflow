@@ -1,0 +1,36 @@
+experiment:
+  name: ablation
+problem:
+  generator: random_dense
+  n: 100
+  m: 100
+  epsilon: 0.01
+  seed: 42
+solver:
+  name: lmflow
+  step_size: 1.0
+  line_search: true
+  tol: 1.0e-9
+  max_iter: 3000
+diagnostics:
+  compute_spectrum_every: 20
+sweep:
+  cases:
+    - solver.theta: 0
+      solver.discretization: scaling_coordinate
+      solver.gauss_seidel: false
+      solver.line_search: false
+    - solver.theta: 0
+      solver.discretization: scaling_coordinate
+      solver.gauss_seidel: true
+      solver.line_search: false
+    - solver.theta: 0
+      solver.discretization: additive
+    - solver.theta: 0.5
+      solver.discretization: additive
+    - solver.theta: 0.5
+      solver.discretization: scaling_coordinate
+    - solver.theta: 0.99
+      solver.discretization: additive
+    - solver.theta: 0.99
+      solver.discretization: scaling_coordinate

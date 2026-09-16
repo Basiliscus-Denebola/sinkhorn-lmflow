@@ -1,0 +1,94 @@
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from typing import Any
+import numpy as np
+
+from .problems.instance import OTProblem
+
+
+@dataclass
+class SolverConfig:
+    tol: float = 1e-9
+    max_iter: int = 1000
+    theta: float = 0.5
+    discretization: str = "scaling_coordinate"
+    gauss_seidel: bool = False
+    step_size: float = 1.0
+    line_search: bool = True
+    backtrack_factor: float = 0.5
+    armijo: float = 1e-4
+    max_backtracks: int = 60
+    numerical_mode: str = "log_stabilized"
+    gauge_normalization: bool = True
+    switch_tol: float = 1e-4
+    record_every: int = 1
+    compute_spectrum_every: int = 10
+    initial_mu: np.ndarray | None = None
+    initial_nu: np.ndarray | None = None
+
+    def __post_init__(self) -> None:
+        if not np.isfinite(self.tol) or self.tol <= 0:
+            raise ValueError("tol must be finite and positive")
+        for name in ("max_iter", "max_backtracks", "record_every", "compute_spectrum_every"):
+            value = getattr(self, name)
+            if not isinstance(value, int) or value < (1 if name == "record_every" else 0):
+                raise ValueError(f"Invalid {name}")
+        if not np.isfinite(self.theta) or not 0 <= self.theta <= 1:
+            raise ValueError("theta must be in [0, 1]")
+        if not np.isfinite(self.step_size) or self.step_size <= 0:
+            raise ValueError("step_size must be positive")
+        if not 0 < self.backtrack_factor < 1 or not 0 < self.armijo < 1:
+            raise ValueError("Invalid line-search constants")
+        if not np.isfinite(self.switch_tol) or self.switch_tol <= 0:
+            raise ValueError("switch_tol must be positive")
+        if self.discretization not in ("additive", "scaling_coordinate"):
+            raise ValueError("Unknown discretization")
+        if self.numerical_mode not in ("primal_scaling", "log_stabilized"):
+            raise ValueError("Unknown Sinkhorn numerical mode")
+
+
+@dataclass
+class IterationRecord:
+    iteration: int
+    elapsed_sec: float
+    residual_l1: float
+    residual_linf: float
+    grad_norm_l2: float
+    dual_objective: float | None
+    theta: float | None
+    step_size: float | None
+    sigma_nontrivial: float | None
+    spectral_gap: float | None
+    linear_solve_iters: int | None
+    safeguard_count: int
+    sigma1: float | None = None
+    linear_solve_sec: float = 0.0
+    linear_solve_count: int = 0
+    matrix_vector_count: int = 0
+    backtrack_count: int = 0
+    phase: str = ""
+    diagnostic_sec: float = 0.0
+
+
+@dataclass
+class SolverResult:
+    solver_name: str
+    converged: bool
+    stop_reason: str
+    n_iter: int
+    elapsed_sec: float
+    mu: np.ndarray
+    nu: np.ndarray
+    u: np.ndarray
+    v: np.ndarray
+    history: list[IterationRecord]
+    summary: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
+class SolverState:
+    iteration: int
+    residual_l1: float
+    mu: np.ndarray
+    nu: np.ndarray

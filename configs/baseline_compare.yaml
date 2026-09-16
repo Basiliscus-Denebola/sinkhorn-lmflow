@@ -1,0 +1,32 @@
+experiment:
+  name: baseline_compare
+problem:
+  generator: random_dense
+  n: 100
+  m: 100
+  epsilon: 0.01
+  seed: 42
+solver:
+  name: sinkhorn
+  theta: 0.99
+  discretization: scaling_coordinate
+  line_search: true
+  tol: 1.0e-9
+  max_iter: 3000
+diagnostics:
+  compute_spectrum_every: 20
+sweep:
+  max_runs: 28
+  axes:
+    solver.tol: [1.0e-4, 1.0e-6, 1.0e-8, 1.0e-10]
+  cases:
+    - solver.name: sinkhorn
+    - solver.name: lbfgs
+    - solver.name: newton
+    - solver.name: hard_switch
+      solver.switch_tol: 1.0e-2
+    - solver.name: hard_switch
+      solver.switch_tol: 1.0e-4
+    - solver.name: hard_switch
+      solver.switch_tol: 1.0e-6
+    - solver.name: lmflow

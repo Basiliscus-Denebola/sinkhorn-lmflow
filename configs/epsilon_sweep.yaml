@@ -1,0 +1,21 @@
+experiment:
+  name: epsilon_sweep
+problem:
+  generator: random_dense
+  n: 100
+  m: 100
+  epsilon: 0.01
+  seed: 42
+solver:
+  name: lmflow
+  discretization: scaling_coordinate
+  line_search: true
+  tol: 1.0e-9
+  max_iter: 3000
+diagnostics:
+  compute_spectrum_every: 20
+sweep:
+  max_runs: 15
+  axes:
+    problem.epsilon: [0.1, 0.05, 0.01, 0.005, 0.001]
+    solver.theta: [0.75, 0.9, 0.99]

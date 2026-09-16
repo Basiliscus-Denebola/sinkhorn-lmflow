@@ -1,0 +1,20 @@
+experiment:
+  name: smoke
+problem:
+  generator: random_dense
+  n: 20
+  m: 20
+  epsilon: 0.05
+  seed: 42
+  marginal_alpha: 1.0
+solver:
+  name: lmflow
+  theta: 0.5
+  discretization: scaling_coordinate
+  step_size: 1.0
+  line_search: true
+  tol: 1.0e-8
+  max_iter: 1000
+diagnostics:
+  record_every: 1
+  compute_spectrum_every: 10

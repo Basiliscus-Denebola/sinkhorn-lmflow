@@ -1,0 +1,23 @@
+experiment:
+  name: theta_sweep
+problem:
+  generator: random_dense
+  n: 100
+  m: 100
+  epsilon: 0.01
+  seed: 42
+solver:
+  name: lmflow
+  discretization: scaling_coordinate
+  step_size: 1.0
+  line_search: true
+  tol: 1.0e-9
+  max_iter: 3000
+diagnostics:
+  record_every: 1
+  compute_spectrum_every: 20
+sweep:
+  max_runs: 28
+  axes:
+    problem.generator: [random_dense, 1d_squared, 2d_pointcloud, spiky_marginal]
+    solver.theta: [0, 0.25, 0.5, 0.75, 0.9, 0.99, 1.0]

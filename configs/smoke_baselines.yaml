@@ -1,0 +1,31 @@
+experiment:
+  name: smoke_baselines
+problem:
+  generator: random_dense
+  n: 20
+  m: 20
+  epsilon: 0.05
+  seed: 42
+  marginal_alpha: 1.0
+solver:
+  name: sinkhorn
+  theta: 0.5
+  tol: 1.0e-8
+  max_iter: 1000
+diagnostics:
+  compute_spectrum_every: 10
+sweep:
+  cases:
+    - solver.name: sinkhorn
+      solver.numerical_mode: primal_scaling
+    - solver.name: sinkhorn
+      solver.numerical_mode: log_stabilized
+    - solver.name: lbfgs
+    - solver.name: newton
+    - solver.name: hard_switch
+      solver.switch_tol: 1.0e-2
+    - solver.name: hard_switch
+      solver.switch_tol: 1.0e-4
+    - solver.name: hard_switch
+      solver.switch_tol: 1.0e-6
+    - solver.name: lmflow
