@@ -1,0 +1,232 @@
+% !TeX program = xelatex
+\documentclass[11pt,a4paper]{ctexart}
+
+\usepackage[a4paper,margin=2.35cm]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem,microtype,booktabs,hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\allowdisplaybreaks[3]
+
+\definecolor{softyellow}{RGB}{255,249,225}
+\definecolor{softgreen}{RGB}{238,249,241}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\vone}{\bm{1}}
+\newcommand{\trans}{\mathsf{T}}
+
+\newtcolorbox{checknote}[1][]{
+  enhanced,breakable,colback=softyellow,colframe=orange!65!black,
+  boxrule=0.7pt,arc=1.5mm,left=2mm,right=2mm,top=1.2mm,bottom=1.2mm,
+  title=核对说明,#1
+}
+\newtcolorbox{resultbox}[1][]{
+  enhanced,breakable,colback=softgreen,colframe=green!45!black,
+  boxrule=0.7pt,arc=1.5mm,left=2mm,right=2mm,top=1.2mm,bottom=1.2mm,#1
+}
+
+\title{优化方法解 Newton 方程\\[0.4em]
+\large Sinkhorn 候选方向与单参数最小残差}
+\author{Basiliscus}
+\date{2026年9月24日}
+
+\begin{document}
+\maketitle
+\vspace{-2.2em}
+
+\section*{符号与记法}
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.18}
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
+\toprule
+\textbf{符号} & \textbf{含义} \\
+\midrule
+$P,\ K$ & 当前传输矩阵与 Gibbs 核矩阵，$P=\diag(u)K\diag(v)$ \\
+$a,\ b$ & 总质量相同且分量严格为正的目标边缘 \\
+$\lambda,\ \mu$ & 对偶势；$u=\e^{-\lambda/\varepsilon},\ v=\e^{-\mu/\varepsilon}>0$ \\
+$r_a=P\vone-a,\ r_b=P^{\trans}\vone-b$ & 当前两组边缘残差 \\
+$m=P\vone,\ n=P^{\trans}\vone$ & 当前两组边缘质量向量 \\
+$p,\ q$ & $u,v$ 的\emph{相对负增量}，即 $\Delta u=-u\odot p,\ \Delta v=-v\odot q$ \\
+$\theta,\ h$ & 候选方向的平衡系数与外层时间步长 \\
+$\vone,\ \odot,\ \oslash$ & 全一向量、逐元素乘法、逐元素除法 \\
+$\diag(x),\ (\cdot)^{\trans}$ & 对角矩阵与转置；$\diag$ 只表示矩阵运算 \\
+\bottomrule
+\end{tabular*}
+\par
+\endgroup
+
+\section{从 Newton 方程起步}
+
+沿用《Sinkhorn 基础理解》中的缩放变量与符号约定。对边缘方程
+$F(u,v)=(r_a,r_b)^{\trans}=0$，Newton 的\emph{实际增量}
+$(\Delta u,\Delta v)$ 满足 $J_F(u,v)(\Delta u,\Delta v)^{\trans}=-F(u,v)$，即
+\begin{equation}\label{eq:newton-uv}
+ -\begin{pmatrix}
+   \diag(Kv)&\diag(u)K\\
+   \diag(v)K^{\trans}&\diag(K^{\trans}u)
+  \end{pmatrix}
+  \binom{\Delta u}{\Delta v}
+ =\binom{r_a}{r_b}.
+\end{equation}
+这里 $\diag(v)K^{\trans}$ 是第二行的交叉块；它对 $u$ 求导，不能写成
+$\diag(u)K^{\trans}$。在同一 $(u,v)$ 处定义
+\begin{equation}\label{eq:pq}
+ p=-\Delta u\oslash u,\qquad q=-\Delta v\oslash v,
+ \qquad m=P\vone,\qquad n=P^{\trans}\vone.
+\end{equation}
+代入式~\eqref{eq:newton-uv}，得到与手稿中两行一一对应的方程
+\begin{resultbox}
+\begin{equation}\label{eq:block}
+ \boxed{\begin{aligned}
+   \diag(m)p+Pq&=r_a,\\
+   P^{\trans}p+\diag(n)q&=r_b.
+ \end{aligned}}
+\end{equation}
+\end{resultbox}
+由于 $P=\diag(u)K\diag(v)$，例如
+$\diag(Kv)\diag(u)=\diag(m)$、
+$\diag(u)K\diag(v)=P$；第二行同理。
+
+\begin{checknote}
+手稿中在绝对量上分别近似 $\diag(m)p\approx m$ 与 $Pq\approx-a$，
+相加形式上给出 $r_a=m-a$，但接近解时两项都可能是 $O(1)$，
+需要以相反符号精确抵消。为避免这种消去，下面直接在\emph{残差尺度}
+上分配 $r_a$。这里讨论的是在一个受限方向族内近似求解 Newton 方程，
+不是要求这两项分别等于 $m$、$-a$。
+\end{checknote}
+
+\section{列边缘已归一时的 $\theta$ 方向}
+
+先考虑刚完成一轮列归一化的状态：
+\begin{equation}\label{eq:column-state}
+ r_b=0,\qquad n=b,\qquad r_a=m-a.
+\end{equation}
+以冻结 $v$ 时的行 Sinkhorn 修正作为候选方向，令
+\begin{equation}\label{eq:p-theta}
+ p_S=\diag(m)^{-1}r_a=r_a\oslash m,
+ \qquad p(\theta)=\theta p_S.
+\end{equation}
+这把手稿中「第一行两项承担多少」化为一个标量选择。
+因为 $m>0$，式~\eqref{eq:p-theta} 有定义。若取 $\theta=1$ 且暂时\emph{冻结 $v$}，则
+\begin{equation}\label{eq:row-exact}
+ u^+=u- u\odot p_S
+ =u\odot\bigl(a\oslash m\bigr)
+ =a\oslash(Kv),
+\end{equation}
+这\emph{严格}是行 Sinkhorn 更新，无需近解近似。
+
+下一步要求式~\eqref{eq:block} 的\emph{第二行线性方程}严格成立。
+因为 $n=b$，直接取
+\begin{equation}\label{eq:q-theta}
+ q(\theta)=-\diag(b)^{-1}P^{\trans}p(\theta)
+ =-\theta\bigl(P^{\trans}p_S\bigr)\oslash b.
+\end{equation}
+于是 $P^{\trans}p(\theta)+\diag(b)q(\theta)=0$。
+不需要为 $q$ 另外解一个线性系统。
+
+将式~\eqref{eq:p-theta}--\eqref{eq:q-theta} 代回第一行，定义
+\begin{equation}\label{eq:s}
+ s:=\diag(m)p_S-P\bigl[(P^{\trans}p_S)\oslash b\bigr]
+ =r_a-P\bigl[(P^{\trans}(r_a\oslash m))\oslash b\bigr].
+\end{equation}
+第一行的 Newton 方程缺陷恰好是
+\begin{equation}\label{eq:defect}
+ \diag(m)p(\theta)+Pq(\theta)-r_a
+ =\theta s-r_a.
+\end{equation}
+这也是手稿末尾「使第一行尽量精确成立」的一种可计算实现。
+
+\section{把解方程化为一个小优化问题}
+
+第一版先取欧氏范数，解一维最小残差问题：
+\begin{resultbox}
+\begin{equation}\label{eq:ls}
+ \boxed{\theta_*\in\underset{\theta\in[0,\theta_{\max}]}{\operatorname{arg\,min}}
+  \;\|\theta s-r_a\|_2^2,\qquad \theta_{\max}>0.}
+\end{equation}
+当 $\langle s,s\rangle>0$ 时，未加约束的解与有界解分别为
+\begin{equation}\label{eq:theta}
+ \theta_{\rm free}=\frac{\langle s,r_a\rangle}{\langle s,s\rangle},
+ \qquad
+ \theta_*=\min\!\bigl\{\theta_{\max},
+          \max\{0,\theta_{\rm free}\}\bigr\}.
+\end{equation}
+\end{resultbox}
+参数 $\theta_{\max}$ 只是对极大系数的保护，先固定而不自适应调节。
+若 $s=0$ 且 $r_a\ne0$，则该一维方向无法减小线性方程缺陷；
+该步标记为退化，改用标准 Sinkhorn 子步。若 $r_a=0$，
+两组边缘残差都为零，直接停止。
+
+定义相对 Newton 方程缺陷
+\begin{equation}\label{eq:eta}
+ \eta(\theta_*)=
+ \frac{\bigl\|\binom{\diag(m)p(\theta_*)+Pq(\theta_*)-r_a}
+                        {P^{\trans}p(\theta_*)+\diag(b)q(\theta_*)}\bigr\|_2}
+      {\|\binom{r_a}{0}\|_2}
+ =\frac{\|\theta_*s-r_a\|_2}{\|r_a\|_2}.
+\end{equation}
+它测量的是当前候选方向对\emph{线性 Newton 方程}的拟合程度；
+仅凭 $\eta$ 较小，尚不能保证有限步迭代收敛。
+
+\section{更新、有限步误差及第一轮实验}
+
+按式~\eqref{eq:pq} 的符号，以步长 $h\in(0,1]$ 更新
+\begin{equation}\label{eq:update}
+ u^+=u\odot(\vone-hp(\theta_*)),\qquad
+ v^+=v\odot(\vone-hq(\theta_*)).
+\end{equation}
+应确保两个括号逐分量为正；若不满足，缩短 $h$。
+这与在 $\lambda,\mu$ 上作对数势增量并不等价。
+
+为了精确区分「第二行线性方程成立」与「更新后列边缘可行」，
+将 $P^+=\diag(\vone-hp)P\diag(\vone-hq)$ 代入得到
+\begin{align}\label{eq:finite}
+ r_a^+&=r_a-h\bigl[\diag(m)p+Pq\bigr]
+                  +h^2 p\odot(Pq),\\
+ r_b^+&=r_b-h\bigl[P^{\trans}p+\diag(n)q\bigr]
+                  +h^2q\odot(P^{\trans}p).
+\end{align}
+在式~\eqref{eq:column-state}--\eqref{eq:q-theta} 下，特别有
+\begin{equation}\label{eq:column-drift}
+ r_b^+=h^2q\odot(P^{\trans}p)
+ =-h^2\bigl(P^{\trans}p\bigr)\odot
+                 \bigl[(P^{\trans}p)\oslash b\bigr].
+\end{equation}
+故第二行\emph{线性化}残差为零，但一般 $r_b^+\ne0$，
+且此处的每个分量非正。为使下一轮仍从 $r_b=0$ 出发，
+可在接受式~\eqref{eq:update} 后再做一次精确的列归一化
+$v^+\leftarrow b\oslash(K^{\trans}u^+)$；这一额外操作应单独计入成本。
+
+\begin{checknote}
+$\theta=1$ 只保证\emph{冻结 $v$、仅执行 $u$ 子步}时得到式~\eqref{eq:row-exact}。
+一旦同时执行 $q(1)$，更新就不是标准 Sinkhorn 一整轮；
+$\theta=0$ 且 $r_b=0$ 时该构造不动。$\theta$ 也不必落在 $[0,1]$，
+不能把它直接解释为「Sinkhorn 与完整 Newton 的插值比例」。
+此外 $(p,q)=(c\vone,-c\vone)$ 是式~\eqref{eq:block} 的规范零方向，
+完整 Newton 速度并非唯一；本文只用方程缺陷刻画近似程度。
+\end{checknote}
+
+\noindent\textbf{最小实验。}在每次列归一化后的状态，按
+\eqref{eq:p-theta}、\eqref{eq:q-theta}、\eqref{eq:s}、\eqref{eq:theta}
+计算方向和 $\theta_*$，记录 $\eta$，再执行有正性保障的式~\eqref{eq:update}
+及下一次列归一化。第一轮仅比较标准 Sinkhorn 和此 $\theta$ 版本；
+同时画 $\|r_a\|_1+\|r_b\|_1$ 随 $K/K^{\trans}$ 矩阵向量乘次数、
+实际时间变化的曲线，并记录 $\theta_*$、$h$、$\eta$、
+触发退化回退和缩步的次数。成本按实际的 $K/K^{\trans}$ 调用计，
+包括额外列归一化。这样能先判断：小优化问题带来的方向信息，
+是否抵得上这些额外乘法和同步更新的二次误差。
+
+\section*{目前可确认的结论}
+
+手稿提出的「第一行平衡、第二行尽量精确」可以严格落实为
+式~\eqref{eq:ls}：第二行在线性层面精确，第一行在一维候选方向上
+最小残差。它保留了 Sinkhorn 行子步的候选方向与 Newton 方程的块耦合，
+但是否比相同计算预算下的 Sinkhorn 更有效，需要上述最小实验检验。
+
+\end{document}

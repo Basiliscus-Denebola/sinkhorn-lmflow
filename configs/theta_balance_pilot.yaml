@@ -1,0 +1,13 @@
+solver:
+  tol: 1.0e-8
+  max_iter: 3000
+  balance_theta_max: 10.0
+  numerical_mode: log_stabilized
+  record_every: 1
+  compute_spectrum_every: 0
+repeats: 3
+cases:
+  - {label: smoke, generator: random_dense, n: 20, m: 20, epsilon: 0.05, seed: 42}
+  - {label: random_dense, generator: random_dense, n: 100, m: 100, epsilon: 0.01, seed: 42}
+  - {label: 1d_squared, generator: 1d_squared, n: 100, m: 100, epsilon: 0.01, seed: 42}
+  - {label: spiky_marginal, generator: spiky_marginal, n: 100, m: 100, epsilon: 0.01, seed: 42}

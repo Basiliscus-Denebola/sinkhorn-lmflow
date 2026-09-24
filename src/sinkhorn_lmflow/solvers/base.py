@@ -51,6 +51,9 @@ class Monitor:
         self.last_step: float | None = None
         self.last_phase = "initial"
         self.diagnostic_errors: list[str] = []
+        self.work = dict(plan_build_count=0, reduction_count=0, logsumexp_count=0,
+                         p_matvec_count=0, column_update_count=0, trial_count=0)
+        self.balance: dict = {}
 
     def observe(self, k: int, mu: np.ndarray, nu: np.ndarray, theta: float | None = None,
                 step: float | None = None, phase: str = "", force: bool = False) -> float:
@@ -59,6 +62,10 @@ class Monitor:
         self.last_P = transport_plan_from_potentials(p.M, p.epsilon, mu, nu)
         self.last_metrics = compute_stop_metrics(self.last_P, p.a, p.b)
         self.last_objective = dual_objective(p, mu, nu, self.last_P)
+        self.work["plan_build_count"] += 1
+        self.work["reduction_count"] += 5  # metrics (2), objective (1), residual sum (2)
+        residual_sum = float(np.linalg.norm(self.last_P.sum(axis=1)-p.a, 1)
+                             + np.linalg.norm(self.last_P.sum(axis=0)-p.b, 1))
         if not np.isfinite(list(self.last_metrics.values())).all() or not np.isfinite(self.last_objective):
             raise FloatingPointError("nonfinite metrics")
         spectrum_due = cfg.compute_spectrum_every > 0 and k % cfg.compute_spectrum_every == 0
@@ -77,7 +84,10 @@ class Monitor:
                 safeguard_count=self.safeguards, linear_solve_sec=self.last_linear_sec,
                 linear_solve_count=self.linear_count, matrix_vector_count=self.matvec_count,
                 backtrack_count=self.backtracks, phase=phase,
-                diagnostic_sec=self.diagnostic_time, **spec)
+                diagnostic_sec=self.diagnostic_time, residual_sum_l1=residual_sum,
+                dense_pass_proxy=sum(self.work[key] for key in
+                    ("plan_build_count", "reduction_count", "logsumexp_count", "p_matvec_count")),
+                **self.work, **self.balance, **spec)
             if self.history and self.history[-1].iteration == k:
                 self.history[-1] = record
             else:
@@ -95,7 +105,6 @@ class Monitor:
         if self.history:
             self.history[-1].safeguard_count = self.safeguards
             self.history[-1].backtrack_count = self.backtracks
-        elapsed = perf_counter()-self.start
         u, v = finite_scalings(mu, nu, self.problem.epsilon)
         converged = bool(self.last_metrics and self.last_metrics["residual_l1"] <= self.config.tol)
         summary = dict(self.last_metrics)
@@ -109,6 +118,9 @@ class Monitor:
                                         and np.all(u > 0) and np.all(v > 0)),
             timing_includes_diagnostics=True)
         summary.update(extra or {})
+        summary.update(self.work)
+        summary.update(self.balance)
+        elapsed = perf_counter()-self.start
         return SolverResult(self.name, converged, "tolerance" if converged else reason,
                             self.iteration, elapsed, mu.copy(), nu.copy(), u, v,
                             self.history, summary)

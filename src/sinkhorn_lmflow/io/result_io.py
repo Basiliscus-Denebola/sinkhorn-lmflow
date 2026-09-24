@@ -32,11 +32,14 @@ def load_result(path: str | Path) -> SolverResult:
     path = Path(path)
     summary = json.loads((path/"summary.json").read_text(encoding="utf-8"))
     integer_fields = {"iteration", "linear_solve_iters", "safeguard_count", "linear_solve_count",
-                      "matrix_vector_count", "backtrack_count"}
+                      "matrix_vector_count", "backtrack_count", "balance_clip_count",
+                      "balance_degenerate_count", "balance_fallback_count", "plan_build_count",
+                      "reduction_count", "logsumexp_count", "p_matvec_count",
+                      "column_update_count", "trial_count", "dense_pass_proxy"}
     history = []
     with (path/"history.csv").open(encoding="utf-8", newline="") as f:
         for row in csv.DictReader(f):
-            values = {k: (v if k == "phase" else None if v == "" else int(v) if k in integer_fields else float(v))
+            values = {k: (v if k in ("phase", "balance_reason") else None if v == "" else int(v) if k in integer_fields else float(v))
                       for k, v in row.items()}
             history.append(IterationRecord(**values))
     keys = ("solver_name", "converged", "stop_reason", "n_iter", "elapsed_sec")

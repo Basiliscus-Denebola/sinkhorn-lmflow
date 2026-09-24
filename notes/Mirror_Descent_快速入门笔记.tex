@@ -1,0 +1,234 @@
+% !TeX program = xelatex
+% 编译：XeLaTeX（需要 ctex；例如完整的 TeX Live 或 Overleaf 中文环境）
+\documentclass[11pt,a4paper]{ctexart}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm,booktabs,tabularx}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\setlength{\parskip}{0.3em}
+\allowdisplaybreaks[2]
+\newcommand{\argmin}{\operatorname*{arg\,min}}
+\newcommand{\prox}{\operatorname{prox}}
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand{\KL}{\operatorname{KL}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\mathop{}\!\mathrm d}
+\title{Mirror Descent 入门}
+\author{Basiliscus}
+\date{2026年9月23日}
+\begin{document}
+\maketitle
+\vspace{-1.2em}
+
+\noindent\textbf{阅读主线：}梯度下降的最小化形式 $\to$ 用 Bregman 散度替换平方距离 $\to$ 镜像坐标更新 $\to$ 负熵例子 $\to$ 与近端梯度、连续流的联系。沿用原稿：$f$ 为目标函数，$\phi$ 为镜像函数，$\eta>0$ 为 Mirror Descent 步长；复合问题仍写为 $\psi=f+h$，近端梯度步长仍用 $t_k$。这里的 $h$ 是函数，不是时间步长。
+
+\section{从普通梯度下降出发}
+考虑 $\min_x f(x)$。普通梯度下降是
+\begin{equation}\label{eq:gd}
+x_{k+1}=x_k-\eta\nabla f(x_k).
+\end{equation}
+它等价于最小化一个局部模型：
+\begin{equation}\label{eq:gd-model}
+x_{k+1}=\argmin_x\left\{
+\langle\nabla f(x_k),x-x_k\rangle+\frac{1}{2\eta}\|x-x_k\|_2^2
+\right\}.
+\end{equation}
+第一项是目标函数的一阶变化；第二项限制这一步不要走得过远。求一阶条件：
+\[
+0=\nabla f(x_k)+\frac1\eta(x_{k+1}-x_k),
+\]
+即回到式~\eqref{eq:gd}。常数项 $f(x_k)$ 对极小点无影响，所以可以加上，也可以省略。
+
+\textbf{Mirror Descent 的出发点：}能否换一种更适合变量结构的方式衡量「离 $x_k$ 多远」？它仍然可以在 $\R^n$ 中进行；改变的是几何及更新方式，并非一定换到另一个空间。
+
+\section{Bregman 散度与 Mirror Descent 更新}
+\subsection{由镜像函数定义散度}
+选取凸函数 $\phi$，在第二个变量 $y$ 处可微，定义
+\begin{equation}\label{eq:bregman}
+\boxed{D_\phi(x,y)=\phi(x)-\phi(y)-\langle\nabla\phi(y),x-y\rangle.}
+\end{equation}
+它衡量 $\phi(x)$ 与 $\phi$ 在 $y$ 处的一阶近似之间的差。凸性给出
+\[
+\phi(x)\geq\phi(y)+\langle\nabla\phi(y),x-y\rangle,
+\qquad D_\phi(x,y)\geq0.
+\]
+严格凸性保证在适用的定义域内 $x\neq y$ 时 $D_\phi(x,y)>0$。算法中通常还需要更强的性质，以保证子问题有唯一解、镜像映射可逆等；不是任意凸函数都适合直接拿来用。
+
+\textbf{不要把它当成普通距离：}一般 $D_\phi(x,y)\neq D_\phi(y,x)$，也不满足三角不等式。下面始终在\emph{第一个变量}上最小化，使用的是 $D_\phi(x,x_k)$，不能随意交换两个位置。
+
+\subsection{把平方距离替换掉}
+对闭凸可行集 $X$，Mirror Descent 的基本形式为
+\begin{equation}\label{eq:md}
+\boxed{x_{k+1}=\argmin_{x\in X}\left\{
+\langle\nabla f(x_k),x-x_k\rangle+\frac1\eta D_\phi(x,x_k)
+\right\}.}
+\end{equation}
+其中 $x_k$ 位于 $\phi$ 可微的区域，并假设该子问题有解。展开散度后，
+\begin{align*}
+x_{k+1}=\argmin_{x\in X}\biggl\{
+&\langle\nabla f(x_k),x-x_k\rangle\\
+&+\frac1\eta\bigl[\phi(x)-\phi(x_k)-\langle\nabla\phi(x_k),x-x_k\rangle\bigr]
+\biggr\}.
+\end{align*}
+与梯度下降一样，\emph{目标函数被线性化}；不同之处是控制步长的项换成了 $D_\phi$。
+
+\subsection{欧氏情形：恢复梯度下降}
+取 $\phi(x)=\frac12\|x\|_2^2$，则 $\nabla\phi(y)=y$，且
+\begin{align*}
+D_\phi(x,y)
+&=\frac12\|x\|_2^2-\frac12\|y\|_2^2-\langle y,x-y\rangle\\
+&=\frac12\|x-y\|_2^2.
+\end{align*}
+所以式~\eqref{eq:md} 回到式~\eqref{eq:gd-model}。无约束时是普通梯度下降；若有约束 $x\in X$，则是投影梯度下降
+\[
+x_{k+1}=\Pi_X\bigl(x_k-\eta\nabla f(x_k)\bigr).
+\]
+
+\section{「Mirror」的关键：在镜像坐标里做加法}
+先看没有活跃约束、极小点位于可微区域内部的情形。因为
+\[
+\nabla_xD_\phi(x,x_k)=\nabla\phi(x)-\nabla\phi(x_k),
+\]
+式~\eqref{eq:md} 的一阶条件为
+\[
+0=\nabla f(x_k)+\frac1\eta\bigl[\nabla\phi(x_{k+1})-\nabla\phi(x_k)\bigr].
+\]
+于是
+\begin{equation}\label{eq:dual-update}
+\boxed{\nabla\phi(x_{k+1})=\nabla\phi(x_k)-\eta\nabla f(x_k).}
+\end{equation}
+若定义 $z_k=\nabla\phi(x_k)$，并且右端仍位于 $\nabla\phi$ 的可逆值域内，就得到
+\begin{equation}\label{eq:mirror-three}
+\boxed{z_k=\nabla\phi(x_k),\quad
+z_{k+1}=z_k-\eta\nabla f(x_k),\quad
+x_{k+1}=(\nabla\phi)^{-1}(z_{k+1}).}
+\end{equation}
+这就是「映射过去，做加法更新，再映射回来」。当 $\phi$ 满足适当的 Legendre 条件时，还可写 $(\nabla\phi)^{-1}=\nabla\phi^*$，其中
+\[
+\phi^*(z)=\sup_x\{\langle z,x\rangle-\phi(x)\}
+\]
+是凸共轭函数。入门时先掌握式~\eqref{eq:dual-update} 即可。
+
+\textbf{两点边界。}第一，$z_k$ 的更新一般\emph{不是}对复合函数 $f((\nabla\phi)^{-1}(z))$ 做普通梯度下降，因为它的梯度还包含链式法则的 Jacobian。第二，有约束时，一阶条件应加入法锥：
+\[
+0\in\nabla f(x_k)+\frac1\eta\bigl[\nabla\phi(x_{k+1})-\nabla\phi(x_k)\bigr]+N_X(x_{k+1}),
+\]
+这里假设相关函数在解附近可微并满足所需最优性条件。不能直接丢掉约束使用式~\eqref{eq:mirror-three}。
+
+\section{最值得记住的例子：负熵、KL 与乘法更新}
+在正正交域 $x_i>0$ 上取
+\begin{equation}\label{eq:entropy}
+\phi(x)=\sum_{i=1}^n x_i\log x_i.
+\end{equation}
+此时 $(\nabla\phi(x))_i=1+\log x_i$，代入定义得到
+\begin{equation}\label{eq:gen-kl}
+D_\phi(x,y)=\sum_i\left[x_i\log\frac{x_i}{y_i}-x_i+y_i\right].
+\end{equation}
+这是广义 KL 散度。若 $\sum_i x_i=\sum_i y_i=1$，后两项抵消，成为概率分布上的
+\[
+D_\phi(x,y)=\KL(x\|y)=\sum_i x_i\log\frac{x_i}{y_i}.
+\]
+取 $x_i=0$ 时可按 $0\log0=0$ 连续延拓，但作为展开中心的 $y$ 仍取严格正向量。
+
+\subsection{只有正性约束时：指数乘法更新}
+由式~\eqref{eq:dual-update}，逐坐标有
+\[
+1+\log x_{k+1,i}=1+\log x_{k,i}-\eta[\nabla f(x_k)]_i,
+\]
+所以
+\begin{equation}\label{eq:multiplicative}
+\boxed{x_{k+1,i}=x_{k,i}\exp\bigl(-\eta[\nabla f(x_k)]_i\bigr).}
+\end{equation}
+加法更新出现在 $\log x$ 坐标中，映回原变量便成为乘法更新。严格正的初值在精确算术下保持严格正。
+
+\subsection{概率单纯形上：加上归一化}
+若 $X=\Delta_n=\{x\geq0:\sum_i x_i=1\}$，取 $x_k>0$。将约束 $\sum_i x_i=1$ 的乘子记为 $\nu$，子问题的一阶条件为
+\[
+[\nabla f(x_k)]_i+\frac1\eta\log\frac{x_{k+1,i}}{x_{k,i}}+\nu=0.
+\]
+即 $x_{k+1,i}=x_{k,i}\exp(-\eta[\nabla f(x_k)]_i)\exp(-\eta\nu)$。用总和为一确定公共因子：
+\begin{equation}\label{eq:simplex}
+\boxed{x_{k+1,i}=\frac{x_{k,i}\exp(-\eta[\nabla f(x_k)]_i)}
+{\sum_jx_{k,j}\exp(-\eta[\nabla f(x_k)]_j)}.}
+\end{equation}
+这就是单纯形上的 exponentiated gradient 更新。例：$f(x)=x_2$，$x_k=(1/2,1/2)$，$\eta=\log2$，未归一化的新权重为 $(1/2,1/4)$，故 $x_{k+1}=(2/3,1/3)$。第二个坐标代价更高，其权重便下降。
+
+\section{整理原稿中的近端梯度，并与 Mirror Descent 对齐}
+\subsection{近端映射和完成平方}
+沿用原稿的定义，对适当的闭凸函数 $h$，
+\[
+\prox_h(x)=\argmin_{u\in\dom h}\left\{h(u)+\frac12\|u-x\|_2^2\right\}.
+\]
+考虑 $\min_x\psi(x)=f(x)+h(x)$，$f$ 光滑，$h$ 允许非光滑。近端梯度为
+\begin{align}
+x_{k+1}
+&=\prox_{t_kh}\bigl(x_k-t_k\nabla f(x_k)\bigr)\nonumber\\
+&=\argmin_u\left\{t_kh(u)+\frac12\|u-(x_k-t_k\nabla f(x_k))\|_2^2\right\}\nonumber\\
+&=\argmin_u\left\{h(u)+\frac1{2t_k}\|u-(x_k-t_k\nabla f(x_k))\|_2^2\right\}.
+\end{align}
+令 $d=u-x_k$，展开平方项：
+\[
+\frac1{2t_k}\|d+t_k\nabla f(x_k)\|^2
+=\frac1{2t_k}\|d\|^2+\langle\nabla f(x_k),d\rangle
++\frac{t_k}{2}\|\nabla f(x_k)\|^2.
+\]
+最后一项与 $u$ 无关。删除常数，再加上也与 $u$ 无关的 $f(x_k)$，得
+\begin{equation}\label{eq:pg-model}
+x_{k+1}=\argmin_u\left\{h(u)+f(x_k)+\langle\nabla f(x_k),u-x_k\rangle
++\frac1{2t_k}\|u-x_k\|^2\right\}.
+\end{equation}
+这里是\emph{极小点相同}，并非展开前后的目标函数数值完全相等。$h\equiv0$ 时退化为梯度下降；$h=\iota_X$（集合的指示函数）时退化为投影梯度下降。
+
+\subsection{两者合起来：复合 Mirror Descent}
+将式~\eqref{eq:pg-model} 中的平方距离换成 Bregman 散度：
+\begin{equation}\label{eq:composite-md}
+\boxed{x_{k+1}=\argmin_x\left\{
+\langle\nabla f(x_k),x-x_k\rangle+h(x)+\frac1{t_k}D_\phi(x,x_k)
+\right\}.}
+\end{equation}
+这就是常称的 composite mirror descent／Bregman proximal gradient 形式：线性化 $f$，保留 $h$，用 $D_\phi$ 控制一步的变化。
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXX@{}}
+\toprule
+方法 & 目标函数如何处理 & 控制步长的项\\
+\midrule
+梯度下降 & 线性化 $f$ & $\|x-x_k\|^2/(2\eta)$\\
+Mirror Descent & 线性化 $f$ & $D_\phi(x,x_k)/\eta$\\
+近端梯度 & 线性化 $f$，保留 $h$ & $\|x-x_k\|^2/(2t_k)$\\
+复合 Mirror Descent & 线性化 $f$，保留 $h$ & $D_\phi(x,x_k)/t_k$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+特别要区分 Bregman proximal point：$x_{k+1}=\argmin_x\{f(x)+D_\phi(x,x_k)/\eta\}$。它完整保留 $f(x)$；普通 Mirror Descent 则只保留 $f$ 在当前点的一阶模型。
+
+\section{与你前面学的流方法接起来：只补一条线}
+在无活跃约束、$\phi$ 二阶可微且 $\nabla^2\phi\succ0$ 的区域，式~\eqref{eq:dual-update} 可以写成
+\[
+\frac{\nabla\phi(x_{k+1})-\nabla\phi(x_k)}\eta=-\nabla f(x_k).
+\]
+当步长趋于零，其连续对应是
+\begin{equation}\label{eq:mirror-flow}
+\frac{\dd}{\dd t}\nabla\phi(x(t))=-\nabla f(x(t))
+\quad\Longleftrightarrow\quad
+\nabla^2\phi(x(t))\dot x(t)=-\nabla f(x(t)).
+\end{equation}
+所以镜像函数通过自己的 Hessian 提供一个随位置变化的度量。再对离散式局部展开，令 $s_k=x_{k+1}-x_k$，有
+\[
+\nabla\phi(x_k+s_k)-\nabla\phi(x_k)
+=\nabla^2\phi(x_k)s_k+o(\|s_k\|),
+\]
+从而在小步长下
+\[
+s_k\approx-\eta[\nabla^2\phi(x_k)]^{-1}\nabla f(x_k).
+\]
+这只是 Mirror Descent 的\emph{局部近似}，一般不等于其精确有限步更新。$\phi(x)=\|x\|^2/2$ 对应普通梯度流；形式上取 $\phi=f$ 且 Hessian 正定时，连续流成为 Newton 流，但离散更新条件是
+\[
+\nabla f(x_{k+1})=(1-\eta)\nabla f(x_k),
+\]
+仍需反求 $x_{k+1}$，不能直接当作普通 Newton 步。这正好对应之前笔记的「残差空间离散」。
+
+\paragraph{与 Sinkhorn 的一个定位。}
+熵正则 OT 可以写成带边缘约束的广义 KL 投影问题；Sinkhorn 利用行、列边缘集合上的交替 KL 投影。它与负熵 Mirror Descent 共享 Bregman 几何，但「都用 KL」并不意味着两者就是同一更新式。入门先记住这种几何联系即可。
+
+\paragraph{先掌握到哪里。}
+能从式~\eqref{eq:md} 推出镜像坐标式~\eqref{eq:dual-update}，能分别代入平方范数和负熵，并能区分 Mirror Descent、近端梯度与 Bregman proximal point，就抓住了这一轮入门的核心。步长选择、收敛速率和加速方法留待之后；它们还需要目标函数与镜像几何之间的光滑性、凸性等假设。
+\end{document}

@@ -19,12 +19,18 @@ def sinkhorn_scaling_sweep(K: np.ndarray, a: np.ndarray, b: np.ndarray,
     return unew, vnew
 
 
+def sinkhorn_log_column(problem: OTProblem, mu: np.ndarray) -> np.ndarray:
+    """Exact column normalization using the updated row potential."""
+    eps = problem.epsilon
+    return eps * (logsumexp(-(problem.M + mu[:, None])/eps, axis=0) - np.log(problem.b))
+
+
 def sinkhorn_log_sweep(problem: OTProblem, mu: np.ndarray,
                        nu: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     """Same GS Sinkhorn sweep in potentials, with logsumexp stabilization."""
     eps = problem.epsilon
     x = eps * (logsumexp(-(problem.M + nu[None, :])/eps, axis=1) - np.log(problem.a))
-    y = eps * (logsumexp(-(problem.M + x[:, None])/eps, axis=0) - np.log(problem.b))
+    y = sinkhorn_log_column(problem, x)
     return x, y
 
 
@@ -40,6 +46,8 @@ def solve_sinkhorn(problem: OTProblem, config: SolverConfig) -> SolverResult:
                 break
             if K is None:
                 x, y = sinkhorn_log_sweep(problem, mu, nu)
+                monitor.work["logsumexp_count"] += 2
+                monitor.work["column_update_count"] += 1
             else:
                 with np.errstate(over="raise", under="ignore"):
                     u, v = np.exp(-mu/problem.epsilon), np.exp(-nu/problem.epsilon)

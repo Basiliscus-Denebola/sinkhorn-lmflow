@@ -1,0 +1,402 @@
+% !TeX program = xelatex
+\documentclass[11pt,a4paper]{ctexart}
+
+\usepackage[a4paper,margin=2.35cm]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\allowdisplaybreaks[3]
+
+\definecolor{mainblue}{RGB}{32,91,155}
+\definecolor{softblue}{RGB}{239,246,253}
+\definecolor{softyellow}{RGB}{255,249,225}
+\definecolor{softgreen}{RGB}{238,249,241}
+
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\vone}{\bm{1}}
+\newcommand{\trans}{\mathsf{T}}
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+
+\newtcolorbox{checknote}[1][]{
+  enhanced,breakable,colback=softyellow,colframe=orange!65!black,
+  boxrule=0.7pt,arc=1.5mm,left=2mm,right=2mm,top=1.2mm,bottom=1.2mm,
+  title=核对说明,#1
+}
+
+\newtcolorbox{resultbox}[1][]{
+  enhanced,breakable,colback=softgreen,colframe=green!45!black,
+  boxrule=0.7pt,arc=1.5mm,left=2mm,right=2mm,top=1.2mm,bottom=1.2mm,#1
+}
+
+\title{ Sinkhorn 算法理解\\[0.4em]
+\large 对偶坐标上升及 Newton 块中的 Gauss--Seidel}
+\author{Basiliscus}
+\date{2026年9月22日}
+
+\begin{document}
+\maketitle
+\vspace{-2.2em}
+
+\section*{符号与记法}
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.18}
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
+\toprule
+\textbf{符号} & \textbf{含义} \\
+\midrule
+$P,\ M$ & 传输矩阵与代价矩阵 \\
+$a,\ b$ & 源边缘与目标边缘质量向量 \\
+$\lambda,\ \mu$ & 两组边缘约束对应的拉格朗日乘子 \\
+$\varepsilon>0$ & 熵正则化参数 \\
+$K=\exp(-M/\varepsilon)$ & Gibbs 核矩阵 \\
+$u=\e^{-\lambda/\varepsilon},\ v=\e^{-\mu/\varepsilon}$ & Sinkhorn 缩放向量 \\
+$\vone,\ I$ & 维数由上下文确定的全一向量与单位矩阵 \\
+$\odot,\ \oslash$ & 逐元素乘法与除法 \\
+$\exp(\cdot),\ \log(\cdot)$ & 对向量或矩阵逐元素作用的指数与对数 \\
+$\langle\cdot,\cdot\rangle$ & 向量的欧氏内积或矩阵的 Frobenius 内积 \\
+$\diag(x),\ (\cdot)^{\trans}$ & 以 $x$ 为对角元的对角矩阵与转置运算 \\
+\bottomrule
+\end{tabular*}
+\par
+\endgroup
+
+\section{LM 流}
+
+对一般目标函数 $f$，LM 流写作
+\begin{equation}
+  \bigl(\nabla^2 f(x(t))+h(t)I\bigr)\dot{x}(t)
+  =-\nabla f(x(t)).
+\end{equation}
+
+当 $h(t)$ 较大时，二阶项相对较弱，有
+\[
+  \dot{x}(t)\approx-\frac{1}{h(t)}\nabla f(x(t)),
+\]
+即退化为带时间缩放的梯度流；当 $h(t)$ 较小时，则更接近连续 Newton 流。
+
+\section{熵正则最优传输及其对偶}
+
+考虑问题
+\begin{equation}\label{eq:primal}
+\begin{aligned}
+  \min_{P>0}\quad
+    &\langle P,M\rangle
+      +\varepsilon\langle P,\log P-\vone\vone^{\trans}\rangle,\\
+  \text{s.t.}\quad
+    &P\vone=a,\\
+    &P^{\trans}\vone=b.
+\end{aligned}
+\end{equation}
+这里 $P>0$ 表示 $P_{ij}>0$。对应的拉格朗日函数为
+\begin{equation}
+  L(P,\lambda,\mu)
+  =\langle P,M\rangle
+  +\varepsilon\langle P,\log P-\vone\vone^{\trans}\rangle
+  +\langle\lambda,P\vone-a\rangle
+  +\langle\mu,P^{\trans}\vone-b\rangle.
+\end{equation}
+
+由 $\nabla_P L=0$，逐项得到
+\[
+  M_{ij}+\varepsilon\log P_{ij}+\lambda_i+\mu_j=0.
+\]
+令
+\begin{equation}
+  K=\exp\!\left(-\frac{M}{\varepsilon}\right),
+\end{equation}
+则
+\begin{equation}\label{eq:P-lambda-mu}
+  P
+  =\diag\!\left(\e^{-\lambda/\varepsilon}\right)
+   K
+   \diag\!\left(\e^{-\mu/\varepsilon}\right).
+\end{equation}
+
+对偶函数为
+\begin{equation}\label{eq:dual}
+  g(\lambda,\mu)
+  :=\inf_{P>0}L(P,\lambda,\mu)
+  =-\varepsilon
+  \left\langle\e^{-\lambda/\varepsilon},
+  K\e^{-\mu/\varepsilon}\right\rangle
+  -\langle a,\lambda\rangle-\langle b,\mu\rangle.
+\end{equation}
+于是
+\begin{equation}\label{eq:dual-gradient}
+  \nabla g(\lambda,\mu)
+  =
+  \begin{pmatrix}
+    P\vone-a\\[0.2em]
+    P^{\trans}\vone-b
+  \end{pmatrix},
+\end{equation}
+且
+\begin{equation}\label{eq:dual-hessian}
+  \nabla^2g(\lambda,\mu)
+  =-\frac{1}{\varepsilon}
+  \begin{pmatrix}
+    \diag(P\vone) & P\\
+    P^{\trans} & \diag(P^{\trans}\vone)
+  \end{pmatrix}.
+\end{equation}
+
+记
+\begin{equation}
+  A(P):=
+  \begin{pmatrix}
+    \diag(P\vone) & P\\
+    P^{\trans} & \diag(P^{\trans}\vone)
+  \end{pmatrix}.
+\end{equation}
+因为 $g$ 是凹函数，对 $-g$ 应用 LM 流可得
+\begin{equation}\label{eq:lm-dual}
+  \left(\frac{1}{\varepsilon}A(P)+h(t)I\right)
+  \begin{pmatrix}
+    \dot\lambda\\[0.2em]
+    \dot\mu
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    P\vone-a\\[0.2em]
+    P^{\trans}\vone-b
+  \end{pmatrix}.
+\end{equation}
+
+
+\begin{checknote}
+由于变换 $\lambda\mapsto\lambda+c\vone$、
+$\mu\mapsto\mu-c\vone$ 不改变 $P$，对偶势具有规范不唯一性，
+因此 $A(P)$ 通常是半正定且奇异的。加入 $h(t)I$（$h(t)>0$）同时起到 LM 正则化作用。
+\end{checknote}
+
+\section{Sinkhorn 的第一种理解：对偶坐标上升}
+
+Sinkhorn 迭代可以写成对偶问题的交替坐标最大化：
+\begin{equation}
+\begin{aligned}
+  \lambda^{k+1}
+  &=\arg\max_{\lambda}g(\lambda,\mu^k),\\
+  \mu^{k+1}
+  &=\arg\max_{\mu}g(\lambda^{k+1},\mu).
+\end{aligned}
+\end{equation}
+第一个一阶最优条件为
+\begin{equation}
+  \diag\!\left(\e^{-\lambda^{k+1}/\varepsilon}\right)
+  K\diag\!\left(\e^{-\mu^k/\varepsilon}\right)\vone-a=0,
+\end{equation}
+第二个一阶最优条件为
+\begin{equation}
+  \diag\!\left(\e^{-\mu^{k+1}/\varepsilon}\right)
+  K^{\trans}\diag\!\left(\e^{-\lambda^{k+1}/\varepsilon}\right)\vone-b=0.
+\end{equation}
+因此
+\begin{equation}\label{eq:dual-coordinate-update}
+\begin{aligned}
+  \e^{-\lambda^{k+1}/\varepsilon}
+  &=a\oslash
+    \left(K\diag\!\left(\e^{-\mu^k/\varepsilon}\right)\vone\right),\\
+  \e^{-\mu^{k+1}/\varepsilon}
+  &=b\oslash
+    \left(K^{\trans}\diag\!\left(\e^{-\lambda^{k+1}/\varepsilon}\right)\vone\right).
+\end{aligned}
+\end{equation}
+等价地，
+\begin{equation}\label{eq:lambda-mu-update}
+\begin{aligned}
+  \lambda^{k+1}
+  &=\varepsilon\log\!\left[
+      \left(K\diag\!\left(\e^{-\mu^k/\varepsilon}\right)\vone\right)
+      \oslash a\right],\\
+  \mu^{k+1}
+  &=\varepsilon\log\!\left[
+      \left(K^{\trans}\diag\!\left(\e^{-\lambda^{k+1}/\varepsilon}\right)\vone\right)
+      \oslash b\right].
+\end{aligned}
+\end{equation}
+
+普通的对偶梯度上升应写成
+\begin{equation}\label{eq:gradient-ascent}
+  \lambda^{k+1}
+  =\lambda^k+\tau\bigl(P^k\vone-a\bigr),
+\end{equation}
+将 Sinkhorn 关于 $\lambda^{k+1}$ 的更新显性地写为关于 $\lambda^k$ 的函数，得到
+\begin{equation}
+\begin{aligned}
+  \e^{-\lambda^{k+1}/\varepsilon}
+  &=\e^{-\lambda^k/\varepsilon}
+  \odot\left[a\oslash\left(\diag\!\left(\e^{-\lambda^k/\varepsilon}\right)
+   K
+   \diag\!\left(\e^{-\mu^k/\varepsilon}\right)\vone\right)\right]\\
+  &=\e^{-\lambda^k/\varepsilon}
+  \odot\left[a\oslash(P^k\vone)\right],\\
+  \lambda^{k+1}
+  &=\lambda^k-\varepsilon\log\!\left[a\oslash(P^k\vone)\right]\\
+  &=\lambda^k+\varepsilon\log\!\left[(P^k\vone)\oslash a\right].
+\end{aligned}
+\end{equation}
+因此，Sinkhorn 使用的是对数边缘残差，而不是式~\eqref{eq:gradient-ascent} 中的加性边缘残差。
+
+\begin{checknote}
+原笔记中“普通梯度下降”一行若针对凹对偶函数 $g$，应改为梯度上升，
+即式~\eqref{eq:gradient-ascent} 的正号；若改为最小化 $-g$，结论仍然相同。
+\end{checknote}
+
+\section{Sinkhorn 的第二种理解：Newton 型方程上的忽略副对角线的 Gauss--Seidel}
+
+由式~\eqref{eq:dual-gradient}--\eqref{eq:dual-hessian}，
+对偶最大化的 Newton 方程为
+\begin{equation}\label{eq:newton-lambda-mu}
+  \begin{pmatrix}
+    \diag(P^k\vone) & P^k\\
+    (P^k)^{\trans} & \diag((P^k)^{\trans}\vone)
+  \end{pmatrix}
+  \begin{pmatrix}
+    \Delta\lambda^k\\[0.2em]
+    \Delta\mu^k
+  \end{pmatrix}
+  =\varepsilon
+  \begin{pmatrix}
+    P^k\vone-a\\[0.2em]
+    (P^k)^{\trans}\vone-b
+  \end{pmatrix}.
+\end{equation}
+
+令
+\begin{equation}
+  u=\e^{-\lambda/\varepsilon},
+  \qquad
+  v=\e^{-\mu/\varepsilon},
+\end{equation}
+则
+\begin{equation}
+  P=\diag(u)K\diag(v),
+\end{equation}
+并且
+\begin{equation}
+\begin{aligned}
+  P\vone &=\diag(u)Kv,\\
+  P^{\trans}\vone &=\diag(v)K^{\trans}u.
+\end{aligned}
+\end{equation}
+定义（跟 $u,v$ 相关的）边缘残差：
+\begin{equation}
+  F(u,v)=
+  \begin{pmatrix}
+    \diag(u)Kv-a\\[0.2em]
+    \diag(v)K^{\trans}u-b
+  \end{pmatrix}.
+\end{equation}
+其 Jacobian 为
+\begin{equation}
+  J_F(u,v)=
+  \begin{pmatrix}
+    \diag(Kv) & \diag(u)K\\
+    \diag(v)K^{\trans} & \diag(K^{\trans}u)
+  \end{pmatrix}.
+\end{equation}
+因此 Newton 方程可以写成
+\begin{equation}\label{eq:newton-uv}
+  -
+  \begin{pmatrix}
+    \diag(Kv^k) & \diag(u^k)K\\
+    \diag(v^k)K^{\trans} & \diag(K^{\trans}u^k)
+  \end{pmatrix}
+  \begin{pmatrix}
+    \Delta u^k\\[0.2em]
+    \Delta v^k
+  \end{pmatrix}
+  =
+  \begin{pmatrix}
+    \diag(u^k)Kv^k-a\\[0.2em]
+    \diag(v^k)K^{\trans}u^k-b
+  \end{pmatrix}.
+\end{equation}
+
+在式~\eqref{eq:newton-uv} 上忽略副对角线 Gauss--Seidel：先固定 $v^k$，
+忽略第一行第二项，得到
+\begin{equation}
+  -\diag(Kv^k)\Delta u^k
+  =\diag(u^k)Kv^k-a.
+\end{equation}
+利用 $\Delta u^k=u^{k+1}-u^k$，有
+\begin{equation}
+\begin{aligned}
+  -\diag(Kv^k)(u^{k+1}-u^k)
+  &=\diag(u^k)Kv^k-a,\\
+  u^{k+1}-u^k
+  &=\left(a-\diag(u^k)Kv^k\right)\oslash(Kv^k),\\
+  u^{k+1}
+  &=a\oslash(Kv^k).
+\end{aligned}
+\end{equation}
+随后在 $(u^{k+1},v^k)$ 处重新计算第二个对角块，并固定刚更新的 $u^{k+1}$，同理得到
+\begin{equation}
+  v^{k+1}=b\oslash(K^{\trans}u^{k+1}).
+\end{equation}
+这正是 Sinkhorn 迭代：
+\begin{resultbox}
+\begin{equation}
+\boxed{
+\begin{aligned}
+  u^{k+1}&=a\oslash(Kv^k),\\
+  v^{k+1}&=b\oslash(K^{\trans}u^{k+1}).
+\end{aligned}}
+\end{equation}
+\end{resultbox}
+
+\section{在 $\lambda,\mu$ 变量中与 Sinkhorn 的关系}
+
+若直接在式~\eqref{eq:newton-lambda-mu} 中忽略耦合块，则 $\lambda$ 子步满足
+\begin{equation}
+  \diag(P^k\vone)\Delta\lambda^k
+  =\varepsilon(P^k\vone-a),
+\end{equation}
+从而
+\begin{equation}\label{eq:block-newton-lambda}
+  \Delta\lambda^k
+  =\varepsilon\left[\vone-a\oslash(P^k\vone)\right].
+\end{equation}
+而 Sinkhorn 的精确增量是
+\begin{equation}\label{eq:sinkhorn-lambda-increment}
+  \Delta\lambda^k_{\mathrm{Sinkhorn}}
+  =-\varepsilon\log\!\left[a\oslash(P^k\vone)\right]
+  =\varepsilon\log\!\left[(P^k\vone)\oslash a\right].
+\end{equation}
+当 $P^k\vone$ 接近 $a$ 时，令 $x=(P^k\vone)\oslash a$，则逐分量有
+\[
+  \log x=1-x^{-1}+\mathcal{O}\bigl((x-1)^2\bigr).
+\]
+故式~\eqref{eq:block-newton-lambda} 与式~\eqref{eq:sinkhorn-lambda-increment}
+在最优解附近一阶等价，但一般并不严格相同。
+
+\begin{checknote}
+严格地说，\emph{在 $u,v$ 缩放变量下}作上述非线性块 Gauss--Seidel
+（每个子步后重新计算下一对角块），可以精确恢复 Sinkhorn。
+若把整个 Jacobian 冻结在 $(u^k,v^k)$，只对同一个线性 Newton 方程作一次普通块 Gauss--Seidel，
+第二个子步一般不会严格等于 Sinkhorn。若\emph{直接在 $\lambda,\mu$ 对偶变量下}忽略耦合块，
+得到的只是 Sinkhorn 对数更新在最优解附近的一阶近似。
+\end{checknote}
+
+\section*{核对结论}
+
+\begin{enumerate}[leftmargin=2em,itemsep=0.45em]
+  \item 熵正则 OT 的拉格朗日函数、最优 $P$、对偶梯度与 Hessian 的主线正确。
+  \item 普通对偶迭代应为梯度上升，符号见式~\eqref{eq:gradient-ascent}。
+  \item 若 $\Delta\lambda^k,\Delta\mu^k$ 表示真实对偶增量，Newton 方程右端应含 $\varepsilon$，见式~\eqref{eq:newton-lambda-mu}；只有把增量预先除以 $\varepsilon$ 时才能省略该因子。
+  \item Sinkhorn 作为对偶坐标上升是精确解释；在 $u,v$ 变量下作逐块重算的非线性 Gauss--Seidel 也可精确恢复 Sinkhorn。
+  \item 在 $\lambda,\mu$ 变量下直接忽略 Newton 耦合块，只与 Sinkhorn 局部一阶等价。
+\end{enumerate}
+
+\end{document}

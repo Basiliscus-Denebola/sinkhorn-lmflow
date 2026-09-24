@@ -26,8 +26,11 @@ class SolverConfig:
     compute_spectrum_every: int = 10
     initial_mu: np.ndarray | None = None
     initial_nu: np.ndarray | None = None
+    balance_theta_max: float = 10.0
 
     def __post_init__(self) -> None:
+        if not np.isfinite(self.balance_theta_max) or self.balance_theta_max <= 0:
+            raise ValueError("balance_theta_max must be finite and positive")
         if not np.isfinite(self.tol) or self.tol <= 0:
             raise ValueError("tol must be finite and positive")
         for name in ("max_iter", "max_backtracks", "record_every", "compute_spectrum_every"):
@@ -69,6 +72,23 @@ class IterationRecord:
     backtrack_count: int = 0
     phase: str = ""
     diagnostic_sec: float = 0.0
+    balance_theta_free: float | None = None
+    balance_theta: float | None = None
+    balance_effective: float | None = None
+    balance_eta: float | None = None
+    direction_residual_l1: float | None = None
+    residual_sum_l1: float | None = None
+    balance_clip_count: int = 0
+    balance_degenerate_count: int = 0
+    balance_fallback_count: int = 0
+    balance_reason: str = ""
+    plan_build_count: int = 0
+    reduction_count: int = 0
+    logsumexp_count: int = 0
+    p_matvec_count: int = 0
+    column_update_count: int = 0
+    trial_count: int = 0
+    dense_pass_proxy: int = 0
 
 
 @dataclass

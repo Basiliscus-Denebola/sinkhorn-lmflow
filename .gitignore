@@ -4,7 +4,11 @@ __pycache__/
 *.egg-info/
 build/
 dist/
-results/*
+# Keep numerical results local; allow nested directories and exported figures.
+results/**
+!results/**/
 !results/.gitkeep
+!results/**/*.png
+!results/**/*.pdf
 data/*.npz
 data/*.json

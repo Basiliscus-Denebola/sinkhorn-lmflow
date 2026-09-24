@@ -1,0 +1,282 @@
+% !TeX program = xelatex
+\documentclass[11pt,a4paper]{ctexart}
+\usepackage[a4paper,margin=2.35cm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm,booktabs,enumitem}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.3em}
+\allowdisplaybreaks[2]
+\newcommand{\R}{\mathbb R}
+\newcommand{\dd}{\mathop{}\!\mathrm d}
+\newcommand{\prox}{\operatorname{prox}}
+\newcommand{\argmin}{\operatorname*{arg\,min}}
+\newcommand{\Id}{I}
+\newcommand{\trans}{\mathsf T}
+\title{梯度流与牛顿流的离散方法}
+\author{Basiliscus}
+\date{2026年9月23日}
+
+\begin{document}
+\maketitle
+
+\vspace{-2.2em}
+
+\section*{符号与记法}
+考虑优化问题 $\min_{x\in\R^n}f(x)$，在光滑情形下采用以下记号。
+
+\begingroup
+\small
+\renewcommand{\arraystretch}{1.18}
+\noindent
+\begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}l@{}}
+\toprule
+\textbf{符号} & \textbf{含义} \\
+\midrule
+$g(x)=\nabla f(x)$ & 目标函数的梯度 \\
+$H(x)=\nabla^2 f(x)$ & 目标函数的 Hessian 矩阵 \\
+$x_k$ & 第 $k$ 步迭代点 \\
+$g_k=g(x_k),\ H_k=H(x_k)$ & 在迭代点 $x_k$ 处的梯度与 Hessian \\
+$s_k=x_{k+1}-x_k$ & 第 $k$ 步的迭代增量 \\
+$h>0$ & 离散时间步长 \\
+$\lambda>0$ & 正则化参数，与时间步长 $h$ 区分 \\
+\bottomrule
+\end{tabular*}
+\par
+\endgroup
+
+\noindent\textbf{基本约定}
+\begin{itemize}[leftmargin=2em,itemsep=0.2em,topsep=0.2em]
+  \item 讨论原始 Newton 流时，假设 $H(x)$ 可逆；涉及正定度量和凸优化时另作说明。
+  \item 若 $f$ 有规范自由度（如 EOT 对偶势），须先固定规范、限制在商空间，或者给 Hessian 加正则化。
+\end{itemize}
+
+\section{梯度流：显式、隐式、混合与 IMEX}
+
+\subsection{连续流及两个 Euler 格式}
+梯度流写为
+\begin{equation}\label{eq:gf}
+\dot x(t)=-g(x(t))=-\nabla f(x(t)).
+\end{equation}
+沿光滑解有 $\frac{\dd}{\dd t}f(x(t))=\langle g(x(t)),\dot x(t)\rangle=-\|g(x(t))\|^2\leq0$。这是\emph{连续时间}的耗散结论；离散格式的下降性质仍需各自检查。
+
+在 $x_k$ 处取右端，得到显式（forward）Euler：
+\begin{equation}\label{eq:gd}
+\frac{x_{k+1}-x_k}{h}=-g_k,
+\qquad x_{k+1}=x_k-h\nabla f(x_k).
+\end{equation}
+这就是梯度下降。若 $\nabla f$ 为 $L$-Lipschitz，由下降引理可得
+\[
+f(x_{k+1})\leq f(x_k)-h\left(1-\frac{Lh}{2}\right)\|g_k\|^2;
+\]
+所以 $0<h<2/L$ 给出相应的下降保证。
+
+在 $x_{k+1}$ 处取右端，得到隐式（backward）Euler：
+\begin{equation}\label{eq:ppa}
+\frac{x_{k+1}-x_k}{h}=-g(x_{k+1})
+\quad\Longleftrightarrow\quad
+0=\nabla f(x_{k+1})+\frac{x_{k+1}-x_k}{h}.
+\end{equation}
+右边恰好是 $f(x)+(2h)^{-1}\|x-x_k\|^2$ 的一阶条件。因此在 $f$ 凸、子问题有解时，
+\begin{equation}\label{eq:prox-f}
+x_{k+1}=\argmin_x\left\{f(x)+\frac{1}{2h}\|x-x_k\|^2\right\}
+=\prox_{hf}(x_k).
+\end{equation}
+这就是 proximal point method。即使 $f$ 可微，计算 $x_{k+1}$ 通常也要解一个隐式子问题。
+
+\subsection{混合 Euler：在同一个梯度上选取时间层}
+以两端点的梯度作加权组合，可以写成 $\theta$-格式
+\begin{equation}\label{eq:theta-g}
+\frac{x_{k+1}-x_k}{h}
+=-(1-\theta)g(x_k)-\theta g(x_{k+1}),\qquad 0\leq\theta\leq1.
+\end{equation}
+$\theta=0$ 是梯度下降；$\theta=1$ 是隐式 Euler；$\theta=\tfrac12$ 是\emph{梯形格式／Crank--Nicolson 格式}：
+\[
+\frac{x_{k+1}-x_k}{h}=-\frac{g(x_k)+g(x_{k+1})}{2}.
+\]
+注意它一般不等于中点格式 $(x_{k+1}-x_k)/h=-g((x_k+x_{k+1})/2)$：非线性 $g$ 不满足「两端点函数值的平均等于中点函数值」。对足够光滑的流，$\theta=\tfrac12$ 的局部截断误差为 $O(h^3)$，其他一般 $\theta$ 的局部截断误差为 $O(h^2)$；截断精度不自动保证每步函数值下降。
+
+\subsection{混合 Euler 的另一层意思：按算子做 IMEX}
+当目标具有结构 $F(x)=\phi(x)+\psi(x)$，其中 $\phi$ 光滑，$\psi$ 为有易处理 proximal 映射的凸函数（也允许不可微），相应的梯度流／微分包含式为
+\begin{equation}\label{eq:composite-flow}
+\dot x(t)+\nabla\phi(x(t))+\partial\psi(x(t))\ni0.
+\end{equation}
+对光滑项作 explicit，对 $\psi$ 作 implicit，可得
+\begin{equation}\label{eq:imex}
+\frac{x_{k+1}-x_k}{h}+\nabla\phi(x_k)+\partial\psi(x_{k+1})\ni0.
+\end{equation}
+移项并记 $z_k=x_k-h\nabla\phi(x_k)$，有
+\[
+0\in\partial\psi(x_{k+1})+\frac{x_{k+1}-z_k}{h}.
+\]
+这是 $\psi(x)+(2h)^{-1}\|x-z_k\|^2$ 的最优性条件，因此
+\begin{equation}\label{eq:pg}
+x_{k+1}=\prox_{h\psi}\bigl(x_k-h\nabla\phi(x_k)\bigr).
+\end{equation}
+这就是 forward--backward splitting（proximal gradient）。它与式~\eqref{eq:theta-g} 的区别是：这里的 explicit/implicit \emph{分配给不同算子}，而 $\theta$-格式给\emph{同一梯度}选择时间层。IMEX 有计算价值的前提是 $\psi$ 的 prox 或 resolvent 比原问题容易求。
+
+\paragraph{小范围的延伸。}手写框架最后记下的 discrete gradient、linearly implicit／Rosenbrock 和显式稳定化 Runge--Kutta--Chebyshev，都可看作对时间离散、稳定性或每步求解成本的进一步探索；此处先只保留名称，不将它们与式~\eqref{eq:imex} 混为同一个「混合 Euler」公式。
+
+\section{牛顿流：五条相互交叉的离散路线}
+
+\noindent\textbf{起点。}当 $H(x)$ 可逆时，原始 Newton 流为
+\begin{equation}\label{eq:nf}
+H(x(t))\dot x(t)=-g(x(t)),
+\qquad \dot x(t)=-H(x(t))^{-1}g(x(t)).
+\end{equation}
+由链式法则，沿流的梯度残差满足一个尤其简单的方程：
+\begin{equation}\label{eq:res-ode}
+\frac{\dd}{\dd t}g(x(t))=H(x(t))\dot x(t)=-g(x(t)),
+\qquad g(x(t))=e^{-t}g(x(0)).
+\end{equation}
+注意 $H$ 可逆是推导 $\dot x=-H^{-1}g$ 的条件；某些奇异问题虽可写 $H\dot x=-g$，也未必定义唯一的速度场。下面的五条路线分别处理时间层、残差、曲率、线性隐式化和算子结构；它们可以交叉，但产生的算法不一定仍是\emph{原始} Newton 流的精确离散。
+
+\subsection{路线一：同时选择 $H$ 和 $g$ 的时间层}
+最直接的显式 Euler 为
+\begin{equation}\label{eq:n-forward}
+H_k\frac{s_k}{h}=-g_k,
+\qquad s_k=-hH_k^{-1}g_k.
+\end{equation}
+$h=1$ 是完整 Newton 步，$0<h<1$ 是阻尼 Newton 步。式~\eqref{eq:res-ode} 中的指数衰减并不精确地由有限步的式~\eqref{eq:n-forward} 保留：Taylor 展开给出 $g(x_k+s_k)=g_k+H_ks_k+O(\|s_k\|^2)=(1-h)g_k+O(\|s_k\|^2)$。特别是 $h=1$ 时，局部残差是一阶项抵消后的 $O(\|s_k\|^2)$。
+
+把两个量都放在终点，形式上的 backward Euler 为
+\begin{equation}\label{eq:n-backward}
+H(x_{k+1})\frac{s_k}{h}=-g(x_{k+1}).
+\end{equation}
+这是关于 $x_{k+1}$ 的非线性方程，不等于一个通常的 LM 线性系统。若仅在 $x_k$ 附近作一阶近似，$H(x_{k+1})\approx H_k$ 且 $g(x_{k+1})\approx g_k+H_ks_k$，便有
+\begin{equation}\label{eq:back-lin}
+(1+h)H_ks_k\approx-hg_k,
+\qquad s_k\approx-\frac{h}{1+h}H_k^{-1}g_k.
+\end{equation}
+此处的有效步长是 $h/(1+h)$；\emph{不会}由这一步线性化直接得到 $(H_k+hI)s_k=-hg_k$。后者需要另外引入正则化或别的动力系统。
+
+一个探索性的双参数格式为
+\begin{equation}\label{eq:double-theta}
+H(x_k+\theta_Hs_k)\frac{s_k}{h}
+=-g(x_k+\theta_gs_k),\qquad 0\leq\theta_H,\theta_g\leq1.
+\end{equation}
+$(\theta_H,\theta_g)=(0,0)$ 是式~\eqref{eq:n-forward}，$(1,1)$ 是式~\eqref{eq:n-backward}。如果将 Hessian 固定在 $x_k$，但在终点取梯度，即 $(\theta_H,\theta_g)=(0,1)$，则
+\[
+H_k\frac{s_k}{h}=-g(x_{k+1});
+\]
+其一阶线性化同样给出式~\eqref{eq:back-lin}。这里的 $g(x_k+\tfrac12s_k)$ 也不同于 $(g_k+g_{k+1})/2$。双参数格式是一个\emph{设计空间}，其收敛性、下降性与计算代价不能仅凭两个参数的位置判断。
+
+\subsection{路线二：先离散残差，再反求变量}
+式~\eqref{eq:res-ode} 提示直接在 $r(t)=g(x(t))$ 上离散 $\dot r=-r$。三种选择分别是
+\begin{align}
+\text{显式 Euler: }&g(x_{k+1})=(1-h)g_k,\label{eq:res-exp}\\
+\text{隐式 Euler: }&g(x_{k+1})=\frac{1}{1+h}g_k,\label{eq:res-imp}\\
+\text{精确残差流: }&g(x_{k+1})=e^{-h}g_k.\label{eq:res-exact}
+\end{align}
+这里是先指定\emph{新的梯度值}，再解 $g(x_{k+1})=r_{k+1}$；通常仍需非线性求解。若 $H(x_\star)$ 可逆，逆函数定理仅在 $x_\star$ 的邻域内保证该反求的局部可行性。
+
+将显式残差条件中的 $g(x_k+s_k)$ 一阶近似为 $g_k+H_ks_k$，得到 $H_ks_k=-hg_k$，即式~\eqref{eq:n-forward}。对隐式残差条件作同样近似，得到 $s_k\approx-\frac{h}{1+h}H_k^{-1}g_k$。所以「先离散 $g$」和「直接离散 $x$」在局部线性化后能够相连，但\emph{非线性方程并不相同}：式~\eqref{eq:res-imp} 是残差隐式 Euler，式~\eqref{eq:n-backward} 则是变量 $x$ 的隐式 Euler。
+
+\subsection{路线三：平均 Hessian、割线与拟牛顿曲率}
+沿直线段 $x_k+\tau s_k$ 使用微积分基本定理，得到\emph{精确}恒等式
+\begin{equation}\label{eq:avg-h}
+y_k:=g(x_{k+1})-g_k
+=\left(\int_0^1H(x_k+\tau s_k)\,\dd\tau\right)s_k
+=:\overline H_k s_k.
+\end{equation}
+因此 $\overline H_k$ 是这一段上 Hessian 的平均；割线关系 $B_{k+1}s_k=y_k$ 只约束新矩阵在方向 $s_k$ 上的作用，\emph{不足以唯一确定}整个 $B_{k+1}$。
+
+BFGS 再加入对称性、低秩修正等选择原则，得到常用更新式
+\begin{equation}\label{eq:bfgs}
+B_{k+1}=B_k-\frac{B_ks_ks_k^{\trans}B_k}{s_k^{\trans}B_ks_k}
++\frac{y_ky_k^{\trans}}{s_k^{\trans}y_k}.
+\end{equation}
+若 $B_k\succ0$ 且 $s_k^{\trans}y_k>0$，则 $B_{k+1}\succ0$；随后可用 $B_k^{-1}g_k$ 构造拟牛顿方向。关系~\eqref{eq:avg-h} 说明割线信息为何代表区间平均曲率，但\emph{不能}据此说 BFGS 就是在逐点计算 $\overline H_k$，也不能把它当作某个 Euler 格式的代数等价改写。在 EOT 对偶的规范奇异方向上，正定条件需要在固定规范或正则化之后讨论。
+
+\subsection{路线四：线性隐式／Rosenbrock 思路（暂作入口）}
+将原始流写成 $\dot x=V(x)$，其中 $V(x)=-H(x)^{-1}g(x)$。若在一个时间步内对向量场作线性化
+\[
+V(x_k+s)\approx V_k+DV_k[s],
+\]
+再对右端使用隐式 Euler，可得到线性隐式格式
+\begin{equation}\label{eq:rosen}
+(I-hJ_k)s_k=hV_k,\qquad J_k=DV(x_k).
+\end{equation}
+在 $f$ 足够光滑且 $H_k$ 可逆时，令 $p_k=H_k^{-1}g_k$，对 $H^{-1}g$ 求导可算出
+\begin{equation}\label{eq:jv}
+J_k[s]=-s+H_k^{-1}\bigl(DH(x_k)[s]\bigr)p_k.
+\end{equation}
+推导用到了 $D(H^{-1})[s]=-H^{-1}(DH[s])H^{-1}$ 和 $Dg[s]=Hs$。$DH[s]$ 涉及三阶导数，说明\emph{直接}对 Newton 向量场用 Rosenbrock 方法未必便宜；实践中的近似 Jacobian／冻结曲率须另行说明。作为自检，若 $f$ 是正定二次函数，则 $H$ 为常数、$J_k=-I$，式~\eqref{eq:rosen} 变成 $s_k=-\frac{h}{1+h}H^{-1}g_k$。目前只保留这条路线的基本形状，不在此展开高阶 Rosenbrock 阶条件。
+
+\subsection{路线五：算子分裂；先区分三个层次}
+\paragraph{5A. 分裂最优性算子，形成 Newton-like 流。}
+令 $F=\phi+\psi$，$A=\partial\phi$ 为方便取 resolvent 的单调算子，$B=\nabla\psi$ 为方便显式求值的算子，问题写为 $0\in A(x)+B(x)$。考虑常数 $\lambda>0$ 的正则化 Newton-like 系统
+\begin{equation}\label{eq:nlike}
+v(t)\in A(x(t)),\qquad
+\lambda\dot x(t)+\dot v(t)+v(t)+B(x(t))=0.
+\end{equation}
+在 $\phi$ 光滑的特例，$v=\nabla\phi(x)$、$\dot v=\nabla^2\phi(x)\dot x$，于是
+\begin{equation}\label{eq:nlike-smooth}
+\bigl(\lambda I+\nabla^2\phi(x)\bigr)\dot x
+=-\bigl(\nabla\phi(x)+\nabla\psi(x)\bigr).
+\end{equation}
+其中\emph{只有 $\phi$ 的曲率进入度量}；一般不能把它称为 $F$ 的完整 Newton 流。
+
+取 $\mu=1/\lambda$、$y=x+\mu v$。由 $v\in A(x)$ 得
+\[
+x=J_{\mu A}(y),\qquad J_{\mu A}:=(I+\mu A)^{-1}.
+\]
+将式~\eqref{eq:nlike} 乘以 $\mu$ 后，因 $\mu v=y-x$，可得
+\begin{equation}\label{eq:yflow}
+\dot y+y-J_{\mu A}(y)+\mu B(J_{\mu A}(y))=0.
+\end{equation}
+在 $y$ 上以时间步长 $\delta$ 作显式 Euler，并令 $x_k=J_{\mu A}(y_k)$，得到
+\begin{equation}\label{eq:y-euler}
+y_{k+1}=(1-\delta)y_k+\delta\bigl(x_k-\mu B(x_k)\bigr).
+\end{equation}
+取 $\delta=1$ 后，$x_{k+1}=J_{\mu A}(x_k-\mu B(x_k))$；当 $A=\partial\phi$ 时，$J_{\mu A}=\prox_{\mu\phi}$，恰为 forward--backward：
+\begin{equation}\label{eq:fb}
+x_{k+1}=\prox_{\mu\phi}\bigl(x_k-\mu\nabla\psi(x_k)\bigr).
+\end{equation}
+这里 $\delta$ 是 $y$ 流的离散时间步长，$\mu$ 是 resolvent 的尺度，二者不能当成同一个参数。
+
+\paragraph{5B. 给 IMEX 加上 Newton／拟牛顿度量。}
+另外考虑预条件的\emph{梯度型}包含式
+\begin{equation}\label{eq:metric-flow}
+M(x)\dot x+\nabla\psi(x)+\partial\phi(x)\ni0,
+\qquad M(x)\succ0.
+\end{equation}
+冻结 $M_k$，显式处理光滑的 $\psi$，隐式处理 $\phi$，得到
+\begin{equation}\label{eq:metric-imex}
+M_k\frac{x_{k+1}-x_k}{h}+\nabla\psi(x_k)+\partial\phi(x_{k+1})\ni0.
+\end{equation}
+定义 $\prox^{M}_{h\phi}(z)=\argmin_x\{\phi(x)+(2h)^{-1}(x-z)^{\trans}M(x-z)\}$，则
+\begin{equation}\label{eq:metric-prox}
+x_{k+1}=\prox^{M_k}_{h\phi}
+\bigl(x_k-hM_k^{-1}\nabla\psi(x_k)\bigr).
+\end{equation}
+取 $h=1$、$M_k=\nabla^2\psi(x_k)\succ0$，令 $s=x_{k+1}-x_k$，由完成平方可知这等价于
+\begin{equation}\label{eq:prox-newton}
+s_k=\argmin_s\left\{\nabla\psi(x_k)^{\trans}s
++\frac12s^{\trans}\nabla^2\psi(x_k)s+\phi(x_k+s)\right\}.
+\end{equation}
+这正是 proximal Newton 的局部模型；换成正定的 BFGS 近似则得到拟牛顿的 variable-metric forward--backward。须分清式~\eqref{eq:metric-flow} 是\emph{另一个}带度量的流：除非 $M(x)=\nabla^2F(x)$ 且 $\phi$ 也光滑并相应进入 Hessian，否则不能称其为原始 Newton 流。
+
+\paragraph{5C. 只分裂 Newton 步中的线性系统。}
+外层方向若已定义为 $H_ks_k=-g_k$，则可利用 Hessian 的块结构构造内层迭代或预条件器，而不改变外层方程。例如令 $P$ 为 EOT 传输矩阵，负对偶目标的 Hessian（在对偶势的某一种符号约定下）形如
+\begin{equation}\label{eq:eot-block}
+H_k=\frac1\varepsilon
+\begin{pmatrix}
+\operatorname{diag}(P\bm1)&P\\
+P^{\trans}&\operatorname{diag}(P^{\trans}\bm1)
+\end{pmatrix}
+=D_k+K_k,
+\end{equation}
+其中 $D_k$ 取两个对角块，$K_k$ 取两个非对角块。可以据此设计块消元、Schur 补或预条件线性求解。这里分裂的是\emph{内层线性算子}；5A 和 5B 分裂的是\emph{外层最优性算子／演化系统}。对偶势的规范不唯一使式~\eqref{eq:eot-block} 有零方向，求解前还需固定规范或加正则化。
+
+\subsection*{回看这份框架}
+\begin{enumerate}[label=\arabic*. ,leftmargin=2.8em,itemsep=0.15em]
+\item \textbf{时间层：}在 $H$ 和 $g$ 上选取显式、隐式或中间点，得到式~\eqref{eq:double-theta}。
+\item \textbf{残差：}利用 $\dot g=-g$ 离散梯度值，再局部反求 $x$。
+\item \textbf{曲率：}精确平均 Hessian 给出割线关系，再由拟牛顿更新选择近似矩阵。
+\item \textbf{线性隐式：}对 Newton 向量场线性化，得到 Rosenbrock 型线性方程。
+\item \textbf{算子分裂：}按可求解的算子结构构造 Newton-like 流或 proximal Newton；若只分裂 $H$，则属于内层线性求解。
+\end{enumerate}
+路线之间允许组合，但每次要明确正在离散哪一个流、近似了什么、每步要求解什么子问题。以上仅梳理数学联系，尚不作为特定 EOT 算法的收敛证明。
+
+\end{document}

@@ -68,7 +68,8 @@ scaling-coordinate endpoint. Other GS combinations are rejected explicitly.
 Run from the repository root. Substitute the actual printed directory. Each run
 contains resolved YAML, problem reference, summary JSON, history CSV, final-state
 NPZ and runtime metadata. Sweep problems are saved once and hashed. All failed
-runs remain in summaries and figures. Results are gitignored except `.gitkeep`.
+runs remain in summaries and figures. Numerical result files stay local via
+`.gitignore`; PNG/PDF figures under `results/` and `.gitkeep` can be committed.
 
 ## Status and limits
 
