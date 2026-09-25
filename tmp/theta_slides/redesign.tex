@@ -1,0 +1,299 @@
+% !TeX program = xelatex
+% Self-contained: figures use the embedded original experiment coordinates.
+% Notation: notes/Sinkhorn基础理解.tex and notes/优化方法解newton方程.tex.
+% Results: results/20260924_143313_825935_theta_balance_pilot_ad26af
+% Code mu,nu correspond to lambda,mu in this presentation.
+\documentclass[aspectratio=169,11pt]{ctexbeamer}
+\usepackage{amsmath,amssymb,mathtools,bm,booktabs,lmodern}
+\usepackage{algpseudocode,tikz,pgfplots}
+\usetikzlibrary{arrows.meta,positioning}
+\usefonttheme{professionalfonts}
+\IfFontExistsTF{Microsoft YaHei}{\setCJKsansfont{Microsoft YaHei}}{}
+\IfFontExistsTF{Arial}{\setsansfont{Arial}}{}
+\pgfplotsset{compat=1.18}
+\definecolor{navy}{HTML}{17324D}
+\definecolor{mainblue}{HTML}{24688C}
+\definecolor{accent}{HTML}{C46535}
+\definecolor{muted}{HTML}{65717C}
+\definecolor{pale}{HTML}{EDF3F6}
+\setbeamercolor{normal text}{fg=navy,bg=white}
+\setbeamercolor{structure}{fg=mainblue}
+\setbeamercolor{alerted text}{fg=accent}
+\setbeamertemplate{navigation symbols}{}
+\setbeamersize{text margin left=10mm,text margin right=10mm}
+\setbeamerfont{frametitle}{size=\fontsize{18}{22}\selectfont,series=\bfseries}
+\setbeamertemplate{frametitle}{\vspace{3mm}\insertframetitle\par\vspace{2mm}{\color{mainblue!35}\hrule height .4pt}\vspace{1mm}}
+\setbeamertemplate{footline}{\hspace{10mm}{\color{muted}\fontsize{6.5}{8}\selectfont 一维最小残差与 Sinkhorn 列更新}\hfill{\color{muted}\fontsize{7}{8}\selectfont\insertframenumber\,/\,\inserttotalframenumber}\hspace{10mm}\vspace{2.5mm}}
+\setbeamertemplate{itemize item}{\raisebox{.2ex}{\tiny\color{accent}$\bullet$}}
+\setlength{\abovedisplayskip}{5pt}
+\setlength{\belowdisplayskip}{5pt}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\vone}{\bm{1}}
+\newcommand{\trans}{\mathsf{T}}
+\newcommand{\clip}{\operatorname{clip}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\tagline}[1]{{\color{muted}\small #1}}
+\newcommand{\source}[1]{\par\vfill{\color{muted}\fontsize{6.8}{9}\selectfont\raggedright #1\par}}
+\newcommand{\keyeq}[1]{\par\begingroup\setlength{\fboxsep}{7pt}\centering\colorbox{pale}{$\displaystyle #1$}\par\endgroup}
+\newcommand{\algoheading}[1]{{\color{mainblue}\bfseries #1}\par\vspace{3pt}{\color{mainblue!35}\hrule height .4pt}\vspace{4pt}}
+\algrenewcommand\algorithmicrequire{\textbf{输入}}
+\algrenewcommand\alglinenumber[1]{\color{muted}\scriptsize #1}
+\algrenewcommand\textproc[1]{\textsf{#1}}
+\pgfplotsset{meeting/.style={width=6.95cm,height=5.2cm,
+  tick label style={font=\fontsize{8}{9}\selectfont,text=muted},
+  label style={font=\small},title style={font=\small},
+  grid=major,grid style={black!8},axis line style={black!25},
+  tick style={black!25},legend style={font=\fontsize{8}{9}\selectfont,draw=none,fill=white,cells={anchor=west}},
+  line width=1.15pt,no markers}}
+% PLOT_DATA_BEGIN
+% PLOT_DATA_END
+\begin{document}
+
+\begin{frame}[plain]
+\vspace{6mm}
+{\color{mainblue}\small 最优传输\quad /\quad 组会报告\par}
+\vspace{7mm}
+{\fontsize{27}{35}\selectfont\bfseries 一维最小残差\par 与 Sinkhorn 列更新\par}
+\vspace{5mm}
+{\color{muted}\large Newton 方程的受限方向近似与最小实验\par}
+\vspace{8mm}
+{\color{mainblue}\rule{16mm}{1pt}}\par\vspace{3mm}
+{\small Basiliscus\hspace{8mm}\color{muted}2026.09.25}
+\end{frame}
+
+\begin{frame}{问题与符号}
+\vspace{1mm}
+\keyeq{\begin{aligned}
+\min_{P>0}\quad&\langle P,M\rangle+\varepsilon\sum_{i,j}P_{ij}(\log P_{ij}-1)\\
+\text{s.t.}\quad&P\vone=a,\qquad P^{\trans}\vone=b
+\end{aligned}}
+\vspace{4mm}
+\begin{columns}[T,onlytextwidth]
+\column{.47\textwidth}
+\small
+\begin{tabular}{@{}ll@{}}
+$P,M\in\R^{N\times L}$ & 传输矩阵、代价矩阵\\[2mm]
+$a,b>0$ & 目标边缘，质量均为 1\\[2mm]
+$\lambda,\mu$ & 两组对偶势
+\end{tabular}
+\column{.50\textwidth}
+\small
+\(u=\e^{-\lambda/\varepsilon},\quad v=\e^{-\mu/\varepsilon}\)\par\vspace{2mm}
+\(K=\exp(-M/\varepsilon)\)\par\vspace{2mm}
+\(\textcolor{mainblue}{P=\diag(u)K\diag(v)}\)
+\end{columns}
+\source{$\odot,\oslash$ 为逐元素乘除，$\diag(\cdot)$ 为对角矩阵，$\varepsilon>0$。维数用 $N,L$，当前边缘质量用 $m,n$。}
+\end{frame}
+
+\begin{frame}{Newton 方程}
+\begin{columns}[c,onlytextwidth]
+\column{.21\textwidth}\tagline{当前边缘与残差}
+\column{.77\textwidth}
+\[m=P\vone,\quad n=P^{\trans}\vone,\qquad r_a=m-a,\quad r_b=n-b.\]
+\end{columns}
+\begin{columns}[c,onlytextwidth]
+\column{.21\textwidth}\tagline{绝对增量}
+\column{.77\textwidth}
+\[F=\binom{r_a}{r_b},\qquad J_F(u,v)\binom{\Delta u}{\Delta v}=-F.\]
+\end{columns}
+\begin{columns}[c,onlytextwidth]
+\column{.21\textwidth}\tagline{相对负增量}
+\column{.77\textwidth}
+\[p=-\Delta u\oslash u,\qquad q=-\Delta v\oslash v.\]
+\end{columns}
+\vspace{2mm}
+\keyeq{\begin{pmatrix}\diag(m)&P\\P^{\trans}&\diag(n)\end{pmatrix}\binom pq=\binom{r_a}{r_b}}
+\source{目标：在低成本候选方向族中，减小 Newton 线性方程的缺陷。}
+\end{frame}
+
+\begin{frame}{候选方向与第二行约束}
+\tagline{每轮从列已归一的状态出发}\hfill\(\textcolor{accent}{n=b,\quad r_b=0}\)
+\vspace{3mm}
+\begin{columns}[T,onlytextwidth]
+\column{.48\textwidth}
+{\small\color{mainblue}\bfseries 行候选方向}
+\[p_S=r_a\oslash m,\qquad p(\theta)=\theta p_S.\]
+\column{.49\textwidth}
+{\small\color{mainblue}\bfseries 辅助列响应}
+\[q_S=-(P^{\trans}p_S)\oslash b,\quad q_{\mathrm{aux}}=\theta q_S.\]
+\end{columns}
+\vspace{1mm}
+\[P^{\trans}p(\theta)+\diag(b)q_{\mathrm{aux}}(\theta)=0.\]
+\vspace{3mm}
+\keyeq{\begin{aligned}
+s&:=r_a+Pq_S,\\
+\diag(m)p(\theta)+Pq_{\mathrm{aux}}(\theta)-r_a&=\textcolor{accent}{\theta s-r_a}.
+\end{aligned}}
+\source{$q_{\mathrm{aux}}$ 仅用于选方向。实际列变量由后续 Sinkhorn 子步更新。}
+\end{frame}
+
+\begin{frame}{一维最小残差}
+\keyeq{\theta_*\in\arg\min_{0\leq\theta\leq\theta_{\max}}\|\theta s-r_a\|_2^2}
+\vspace{3mm}
+\[\theta_{\mathrm{free}}=\frac{\langle s,r_a\rangle}{\langle s,s\rangle},\qquad
+\theta_*=\min\{\theta_{\max},\max\{0,\theta_{\mathrm{free}}\}\}.\]
+\vspace{2mm}
+\begin{columns}[T,onlytextwidth]
+\column{.40\textwidth}
+\tagline{相对线性缺陷}
+\[\eta=\frac{\|\theta_*s-r_a\|_2}{\|r_a\|_2}.\]
+\column{.58\textwidth}
+\tagline{本次固定 $\theta_{\max}=10$}
+\[\|\theta_*s-r_a\|_2^2\leq\min\{\|r_a\|_2^2,\|s-r_a\|_2^2\}.\]
+\end{columns}
+\vspace{2mm}
+{\small\color{accent}退化处理}\quad{\small $s$ 过小、非有限或方向无效时，显式回退一轮 Sinkhorn。}
+\source{右侧不等式要求 $\theta_{\max}\geq1$。$\eta$ 衡量线性拟合，有限步接受由外层回溯决定。}
+\end{frame}
+
+\begin{frame}{实际更新：行候选步与精确列子步}
+\tagline{$p=\theta_*p_S$，$0<h\leq1$，要求 $\vone-hp>0$}
+\vspace{3mm}
+\keyeq{\begin{aligned}
+u^+&=u\odot(\vone-hp),\\[2pt]
+v^+&=b\oslash(K^{\trans}u^+)
+\end{aligned}\qquad\Longrightarrow\qquad (P^+)^{\trans}\vone=b}
+\vspace{3mm}
+\[\lambda^+=\lambda-\varepsilon\log(\vone-hp),\qquad
+\mu^+=\varepsilon\log\bigl[(K^{\trans}u^+)\oslash b\bigr].\]
+\vspace{3mm}
+\[\textcolor{accent}{h\theta_*=1}\quad\Longrightarrow\quad
+u^+=a\oslash(Kv),\qquad v^+=b\oslash(K^{\trans}u^+).\]
+\source{此时整步等于标准 GS Sinkhorn。实现使用 log1p 与 logsumexp，每次试步完成列更新后再评估。}
+\end{frame}
+
+\begin{frame}{算法流程：自然语言}
+\centering
+\begin{tikzpicture}[>=Stealth,font=\small,
+ main/.style={anchor=west,align=left,text width=7.0cm,minimum height=.60cm},
+ side/.style={anchor=west,align=left,text width=3.5cm,font=\fontsize{8.5}{12}\selectfont,text=muted},
+ arr/.style={->,line width=.6pt,draw=mainblue!55}]
+\foreach \y/\n in {0/1,-1.02/2,-2.04/3,-3.06/4,-4.08/5}{
+  \node[circle,fill=pale,text=mainblue,inner sep=3.5pt,font=\small\bfseries] at (0,\y) {\n};}
+\node[main] (a) at (.5,0) {共同初始化，精确归一化列};
+\node[main] (b) at (.5,-1.02) {计算两组边缘残差，判断是否达标};
+\node[main] (c) at (.5,-2.04) {构造行候选方向，以最小残差选平衡系数};
+\node[main] (d) at (.5,-3.06) {试更新行变量，再做精确列归一化};
+\node[main] (e) at (.5,-4.08) {检查正性与接受条件，接受后进入下一轮};
+\foreach \y in {0,-1.02,-2.04,-3.06}{\draw[arr] (0,\y-.28)--(0,\y-.74);}
+\draw[arr] (7.25,-1.02)--(8,-1.02);
+\node[side] at (8.1,-1.02) {\textcolor{mainblue}{达标}\quad 输出结果};
+\draw[arr] (7.25,-2.04)--(8,-2.04);
+\node[side] at (8.1,-2.04) {\textcolor{accent}{退化}\quad 回退一轮 Sinkhorn\\返回残差检查};
+\draw[arr] (7.25,-4.08)--(8,-4.08);
+\node[side] at (8.1,-4.08) {\textcolor{accent}{拒绝}\quad 缩步，返回试更新\\次数超限则报告失败};
+\end{tikzpicture}
+\source{每轮保留列归一化状态。列更新、回溯试算与回退均计入实际成本。}
+\end{frame}
+
+\begin{frame}{算法流程：主迭代}
+\fontsize{9.3}{10.8}\selectfont
+\algoheading{算法 1\quad 一维最小残差行步 + Sinkhorn 列更新}
+\begin{algorithmic}[1]
+\Require $K,a,b,\theta_{\max},\mathrm{tol},k_{\max}$，列已归一的 $(u^0,v^0)$
+\For{$k=0,\ldots,k_{\max}-1$}
+\State $P\gets\diag(u^k)K\diag(v^k)$，$m\gets P\vone$，$n\gets P^{\trans}\vone$
+\State $r_a\gets m-a$，$r_b\gets n-b$，$R\gets\max\{\|r_a\|_1,\|r_b\|_1\}$
+\State \textbf{if} $R\leq\mathrm{tol}$ \textbf{then return} $(u^k,v^k)$
+\State $p_S\gets r_a\oslash m$，$q_S\gets-(P^{\trans}p_S)\oslash b$，$s\gets r_a+Pq_S$
+\State 若 $s$ 有效，$\theta_{\mathrm{free}}\gets\langle s,r_a\rangle/\langle s,s\rangle$，$\theta_*\gets\clip(\theta_{\mathrm{free}},0,\theta_{\max})$
+\If{$s$ 过小、计算非有限或 $\theta_*p_S$ 无效}
+\State $u^{k+1}\gets a\oslash(Kv^k)$，$v^{k+1}\gets b\oslash(K^{\trans}u^{k+1})$，记录回退
+\Else
+\State $p\gets\theta_*p_S$，$\eta\gets\|\theta_*s-r_a\|_2/\|r_a\|_2$
+\State $(u^{k+1},v^{k+1},h)\gets\Call{Trial}{u^k,v^k,p}$\Comment{算法 2}
+\State 记录 $\theta_{\mathrm{free}},\theta_*,h,h\theta_*,\eta$；失败则终止并报告
+\EndIf
+\EndFor
+\State 检查最终 $R$，返回收敛结果或迭代上限状态
+\end{algorithmic}
+\end{frame}
+
+\begin{frame}{算法流程：试步与接受}
+\fontsize{9.3}{10.8}\selectfont
+\[g(\lambda,\mu)=-\varepsilon\vone^{\trans}P\vone-a^{\trans}\lambda-b^{\trans}\mu,\qquad d=\varepsilon\langle r_a,p\rangle.\]
+\algoheading{算法 2\quad $\Call{Trial}{u,v,p}$}
+\begin{algorithmic}[1]
+\State $h\gets1$，$c\gets10^{-4}$，$\beta\gets\tfrac12$，$g_0\gets g(\lambda,\mu)$
+\For{$j=0,\ldots,60$}
+\If{$\vone-hp>0$}
+\State $u^+\gets u\odot(\vone-hp)$，$v^+\gets b\oslash(K^{\trans}u^+)$
+\State $\lambda^+\gets-\varepsilon\log u^+$，$\mu^+\gets-\varepsilon\log v^+$，计算 $g^+,R^+$
+\State \textbf{if} 试步有限且 $g^+\geq g_0+chd$ \textbf{then return} $(u^+,v^+,h)$
+\State \textbf{if} 试步有限且 $|g^+-g_0|\leq\delta_{\mathrm{fp}}$ 且 $R^+<R$
+\State \hspace{1em}\textbf{then return} $(u^+,v^+,h)$\Comment{舍入误差保护}
+\EndIf
+\State $h\gets\beta h$
+\EndFor
+\State \Return 失败状态
+\end{algorithmic}
+\source{$d$ 为整步曲线在 $h=0$ 的对偶导数。$\delta_{\mathrm{fp}}=16\epsilon_{\mathrm{mach}}\max\{1,|g_0|\}$。实际在势变量中稳定计算。}
+\end{frame}
+
+\begin{frame}{实验设置与时间结果}
+\tagline{$N=L=100$，$\varepsilon=.01$，seed=42，$R\leq10^{-8}$，最多 3000 步}
+\vspace{4mm}
+\centering\small\renewcommand{\arraystretch}{1.45}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrr@{}}
+\toprule
+&\multicolumn{2}{c}{迭代次数}&\multicolumn{2}{c}{时间中位数 / ms}&加速比\\
+样本&Sinkhorn&本方法&Sinkhorn&本方法&S / 本方法\\
+\midrule
+random\_dense&133&44&32.01&12.90&\textcolor{accent}{\bfseries 2.48}\\
+1d\_squared&373&88&93.04&25.70&\textcolor{accent}{\bfseries 3.62}\\
+spiky\_marginal&914&249&220.36&74.31&\textcolor{accent}{\bfseries 2.97}\\
+\bottomrule
+\end{tabular*}
+\par\vspace{4mm}\raggedright
+全部收敛\hspace{8mm}列边缘最终最大 $L^1$ 误差：$1.64\times10^{-15}$
+\source{相同公共初始化，双方均不计其成本。warm-up 后重复 3 次，时间包含试步、回退与监控。\\
+范围 S / 本方法（ms）：random 31.35--41.80 / 12.84--13.18；1d 86.40--97.37 / 25.11--28.25；spiky 216.65--225.06 / 71.15--79.86。}
+\end{frame}
+
+\begin{frame}{收敛曲线与工作量}
+\tagline{1d\_squared\quad 第一条原始轨迹}
+\vspace{1mm}
+\centering
+\begin{tikzpicture}
+\begin{semilogyaxis}[meeting,xlabel={时间 / ms},ylabel={$R$},legend pos=north east,ytick={1,1e-4,1e-8}]
+\addplot[mainblue] coordinates {\timeSink};\addlegendentry{Sinkhorn}
+\addplot[accent] coordinates {\timeTheta};\addlegendentry{本方法}
+\end{semilogyaxis}
+\end{tikzpicture}\hfill
+\begin{tikzpicture}
+\begin{semilogyaxis}[meeting,xlabel={累计 dense-pass proxy},ylabel={$R$},ytick={1,1e-4,1e-8}]
+\addplot[mainblue] coordinates {\workSink};
+\addplot[accent] coordinates {\workTheta};
+\end{semilogyaxis}
+\end{tikzpicture}
+\par\vspace{-1mm}
+{\small $R\leq10^{-8}$：工作量 $2990\to\textcolor{accent}{1153}$\qquad LSE 次数 $746\to\textcolor{accent}{88}$}
+\source{Proxy 将 P 构造、全矩阵归约、LSE、P 向量乘各记 1，包含回溯和监控，不计向量操作与最终目标导出。未加权代理，不等于 FLOPs 或等价 matvec。}
+\end{frame}
+
+\begin{frame}{平衡系数的轨迹}
+\begin{columns}[c,onlytextwidth]
+\column{.54\textwidth}
+\begin{tikzpicture}
+\begin{axis}[meeting,width=7.4cm,height=5.4cm,title={1d\_squared},xlabel={迭代 $k$},ylabel={$\theta$},legend pos=north east,ymin=0,ymax=25]
+\addplot[mainblue!65,line width=.8pt] coordinates {\thetaFree};\addlegendentry{$\theta_{\mathrm{free}}$}
+\addplot[accent] coordinates {\thetaClipped};\addlegendentry{$\theta_*$}
+\addplot[muted,dashed,domain=1:88,line width=.6pt] {10};
+\end{axis}
+\end{tikzpicture}
+\column{.42\textwidth}
+\small\renewcommand{\arraystretch}{1.4}
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}lrr@{}}
+\toprule 样本&上界命中&回退\\\midrule
+random&0\%&0\\1d&13.64\%&0\\spiky&18.07\%&6\\\bottomrule
+\end{tabular*}
+\par\vspace{4mm}
+$\theta_*$ 随残差下降仍会振荡。\par\vspace{2mm}
+spiky 存在负 $\theta_{\mathrm{free}}$、\\显式回退与局部停滞。
+\end{columns}
+\vspace{1mm}
+{\small 本次固定种子上有时间收益，普遍加速与系数规律仍待验证。}
+\source{系数来自第一条轨迹。分别记录 $h$ 与 $h\theta_*$，区分回溯缩步和平衡系数的变化。数据：20260924\_143313 最终实验。}
+\end{frame}
+\end{document}

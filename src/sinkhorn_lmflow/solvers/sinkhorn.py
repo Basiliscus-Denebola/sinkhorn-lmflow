@@ -44,6 +44,9 @@ def solve_sinkhorn(problem: OTProblem, config: SolverConfig) -> SolverResult:
         for k in range(1, config.max_iter+1):
             if residual <= config.tol:
                 break
+            if monitor.timed_out():
+                reason = "timeout"
+                break
             if K is None:
                 x, y = sinkhorn_log_sweep(problem, mu, nu)
                 monitor.work["logsumexp_count"] += 2

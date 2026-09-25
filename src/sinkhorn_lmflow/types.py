@@ -27,8 +27,14 @@ class SolverConfig:
     initial_mu: np.ndarray | None = None
     initial_nu: np.ndarray | None = None
     balance_theta_max: float = 10.0
+    balance_theta_fixed: float | None = None
+    wall_time_limit_sec: float | None = None
 
     def __post_init__(self) -> None:
+        for name in ("balance_theta_fixed", "wall_time_limit_sec"):
+            value = getattr(self, name)
+            if value is not None and (not np.isfinite(value) or value <= 0):
+                raise ValueError(f"{name} must be finite and positive or None")
         if not np.isfinite(self.balance_theta_max) or self.balance_theta_max <= 0:
             raise ValueError("balance_theta_max must be finite and positive")
         if not np.isfinite(self.tol) or self.tol <= 0:
@@ -78,6 +84,10 @@ class IterationRecord:
     balance_eta: float | None = None
     direction_residual_l1: float | None = None
     residual_sum_l1: float | None = None
+    pre_residual_l1: float | None = None
+    row_residual_l2: float | None = None
+    balance_predicted_ratio_l2: float | None = None
+    balance_actual_ratio_l2: float | None = None
     balance_clip_count: int = 0
     balance_degenerate_count: int = 0
     balance_fallback_count: int = 0

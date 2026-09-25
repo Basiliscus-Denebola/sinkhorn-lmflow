@@ -45,4 +45,5 @@ def generate_problem(generator: str = "random_dense", n: int = 20, m: int = 20,
                      metadata={"generator": generator, "seed": seed, "n": n, "m": m,
                                "epsilon": epsilon, "alpha_a": aa, "alpha_b": ab,
                                "marginal_floor": marginal_floor, "cost_scale": "max",
-                               "clustered": clustered, "p": p})
+                               "clustered": clustered, "p": p,
+                               "raw_cost_max": float(np.max(M))})

@@ -9,14 +9,20 @@ from .base import Monitor, initial_state
 from .sinkhorn import sinkhorn_log_column, sinkhorn_log_sweep
 
 
-def balance_direction(P, a, b, theta_max):
+def balance_direction(P, a, b, theta_max, *, fixed=None, direction_data=None):
     m = P.sum(axis=1)
     if np.any(m <= 0):
         raise FloatingPointError("nonpositive row mass")
     ra = m-a
     ps = ra/m
+    if fixed is not None:
+        return ps, None, dict(balance_theta_free=None, balance_theta=float(fixed),
+            balance_eta=None, balance_reason="",
+            direction_residual_l1=float(np.linalg.norm(ra, 1)))
     qs = -(P.T @ ps)/b
     s = ra + P @ qs
+    if direction_data is not None:
+        direction_data.update(r=ra, s=s)
     nr, ns = np.linalg.norm(ra), np.linalg.norm(s)
     reason = ""
     free = theta = eta = None
@@ -68,10 +74,15 @@ def solve_theta_balance(problem: OTProblem, config: SolverConfig) -> SolverResul
         for k in range(1, config.max_iter+1):
             if residual <= config.tol:
                 break
+            if monitor.timed_out():
+                reason = "timeout"
+                break
+            direction_data = {}
             ps, qs, info = balance_direction(monitor.last_P, problem.a, problem.b,
-                                              config.balance_theta_max)
+                config.balance_theta_max, fixed=config.balance_theta_fixed,
+                direction_data=direction_data)
             monitor.work["reduction_count"] += 1
-            monitor.work["p_matvec_count"] += 2
+            monitor.work["p_matvec_count"] += 2 if config.balance_theta_fixed is None else 0
             free, theta = info["balance_theta_free"], info["balance_theta"]
             clips += int(free is not None and (free < 0 or free > config.balance_theta_max))
             if info["balance_reason"]:
@@ -101,6 +112,12 @@ def solve_theta_balance(problem: OTProblem, config: SolverConfig) -> SolverResul
                 monitor.backtracks += backs
                 info["balance_effective"] = h*theta
                 phase = "theta_balance"
+            info["balance_predicted_ratio_l2"] = None
+            if phase != "sinkhorn_fallback" and direction_data:
+                r, s = direction_data["r"], direction_data["s"]
+                nr = np.linalg.norm(r)
+                if nr:
+                    info["balance_predicted_ratio_l2"] = float(np.linalg.norm(r-h*theta*s)/nr)
             monitor.balance = dict(info, balance_clip_count=clips,
                 balance_degenerate_count=degenerates, balance_fallback_count=fallbacks)
             mu, nu = normalize_gauge(x, y) if config.gauge_normalization else (x, y)
@@ -109,7 +126,9 @@ def solve_theta_balance(problem: OTProblem, config: SolverConfig) -> SolverResul
         monitor.safeguards += exc.safeguards
         monitor.backtracks += exc.backtracks
         reason = str(exc)
+        events.append(dict(iteration=k, reason=reason, failed_trial=True))
     except (FloatingPointError, np.linalg.LinAlgError) as exc:
         reason = f"numerical_failure: {exc}"
     return monitor.finish(mu, nu, reason, dict(balance_theta_max=config.balance_theta_max,
+                                              balance_theta_fixed=config.balance_theta_fixed,
                                               degeneration_events=events))

@@ -52,7 +52,7 @@ $a,\ b$ & 总质量相同且分量严格为正的目标边缘 \\
 $\lambda,\ \mu$ & 对偶势；$u=\e^{-\lambda/\varepsilon},\ v=\e^{-\mu/\varepsilon}>0$ \\
 $r_a=P\vone-a,\ r_b=P^{\trans}\vone-b$ & 当前两组边缘残差 \\
 $m=P\vone,\ n=P^{\trans}\vone$ & 当前两组边缘质量向量 \\
-$p,\ q$ & $u,v$ 的\emph{相对负增量}，即 $\Delta u=-u\odot p,\ \Delta v=-v\odot q$ \\
+$p,\ q$ & Newton 线性方程中的相对负增量；实际算法仅以 $p$ 更新 $u$ \\
 $\theta,\ h$ & 候选方向的平衡系数与外层时间步长 \\
 $\vone,\ \odot,\ \oslash$ & 全一向量、逐元素乘法、逐元素除法 \\
 $\diag(x),\ (\cdot)^{\trans}$ & 对角矩阵与转置；$\diag$ 只表示矩阵运算 \\
@@ -121,14 +121,14 @@ $\diag(u)K\diag(v)=P$；第二行同理。
 \end{equation}
 这\emph{严格}是行 Sinkhorn 更新，无需近解近似。
 
-下一步要求式~\eqref{eq:block} 的\emph{第二行线性方程}严格成立。
-因为 $n=b$，直接取
+下一步仅在\emph{线性方程的候选方向}中要求第二行严格成立。
+因为 $n=b$，定义用于评估 $p$ 的\emph{辅助响应}
 \begin{equation}\label{eq:q-theta}
- q(\theta)=-\diag(b)^{-1}P^{\trans}p(\theta)
+ q_{\mathrm{aux}}(\theta)=-\diag(b)^{-1}P^{\trans}p(\theta)
  =-\theta\bigl(P^{\trans}p_S\bigr)\oslash b.
 \end{equation}
-于是 $P^{\trans}p(\theta)+\diag(b)q(\theta)=0$。
-不需要为 $q$ 另外解一个线性系统。
+于是 $P^{\trans}p(\theta)+\diag(b)q_{\mathrm{aux}}(\theta)=0$。
+$q_{\mathrm{aux}}$ 负责提供另一边缘对行候选方向的线性响应，\emph{不是实际更新 $v$ 的公式}。
 
 将式~\eqref{eq:p-theta}--\eqref{eq:q-theta} 代回第一行，定义
 \begin{equation}\label{eq:s}
@@ -137,7 +137,7 @@ $\diag(u)K\diag(v)=P$；第二行同理。
 \end{equation}
 第一行的 Newton 方程缺陷恰好是
 \begin{equation}\label{eq:defect}
- \diag(m)p(\theta)+Pq(\theta)-r_a
+ \diag(m)p(\theta)+Pq_{\mathrm{aux}}(\theta)-r_a
  =\theta s-r_a.
 \end{equation}
 这也是手稿末尾「使第一行尽量精确成立」的一种可计算实现。
@@ -166,47 +166,48 @@ $\diag(u)K\diag(v)=P$；第二行同理。
 定义相对 Newton 方程缺陷
 \begin{equation}\label{eq:eta}
  \eta(\theta_*)=
- \frac{\bigl\|\binom{\diag(m)p(\theta_*)+Pq(\theta_*)-r_a}
-                        {P^{\trans}p(\theta_*)+\diag(b)q(\theta_*)}\bigr\|_2}
+ \frac{\bigl\|\binom{\diag(m)p(\theta_*)+Pq_{\mathrm{aux}}(\theta_*)-r_a}
+                        {P^{\trans}p(\theta_*)+\diag(b)q_{\mathrm{aux}}(\theta_*)}\bigr\|_2}
       {\|\binom{r_a}{0}\|_2}
  =\frac{\|\theta_*s-r_a\|_2}{\|r_a\|_2}.
 \end{equation}
 它测量的是当前候选方向对\emph{线性 Newton 方程}的拟合程度；
 仅凭 $\eta$ 较小，尚不能保证有限步迭代收敛。
 
-\section{更新、有限步误差及第一轮实验}
+\section{实际更新：行候选步与精确 Sinkhorn 列子步}
 
-按式~\eqref{eq:pq} 的符号，以步长 $h\in(0,1]$ 更新
+在线性方程中选出 $\theta_*$ 之后，只用 $p(\theta_*)$ 更新行缩放；
+随后让 Sinkhorn 对新 $u$ 做精确的列归一化：
 \begin{equation}\label{eq:update}
- u^+=u\odot(\vone-hp(\theta_*)),\qquad
- v^+=v\odot(\vone-hq(\theta_*)).
+ \boxed{\begin{aligned}
+ u^+&=u\odot(\vone-hp(\theta_*)),\\
+ v^+&=b\oslash(K^{\trans}u^+),\qquad 0<h\leq1.
+ \end{aligned}}
 \end{equation}
-应确保两个括号逐分量为正；若不满足，缩短 $h$。
-这与在 $\lambda,\mu$ 上作对数势增量并不等价。
+只需保证 $\vone-hp(\theta_*)>0$，再缩短 $h$ 或拒绝该步；
+Sinkhorn 列更新可在对数域用 logsumexp 稳定计算。
+实际接受的状态在浮点误差内满足 $(P^+)^{\trans}\vone=b$。
 
-为了精确区分「第二行线性方程成立」与「更新后列边缘可行」，
-将 $P^+=\diag(\vone-hp)P\diag(\vone-hq)$ 代入得到
-\begin{align}\label{eq:finite}
- r_a^+&=r_a-h\bigl[\diag(m)p+Pq\bigr]
-                  +h^2 p\odot(Pq),\\
- r_b^+&=r_b-h\bigl[P^{\trans}p+\diag(n)q\bigr]
-                  +h^2q\odot(P^{\trans}p).
-\end{align}
-在式~\eqref{eq:column-state}--\eqref{eq:q-theta} 下，特别有
-\begin{equation}\label{eq:column-drift}
- r_b^+=h^2q\odot(P^{\trans}p)
- =-h^2\bigl(P^{\trans}p\bigr)\odot
-                 \bigl[(P^{\trans}p)\oslash b\bigr].
+这里可以精确看出辅助响应和真实列更新的关系。令
+$z=P^{\trans}p(\theta_*)$，在当前 $P^{\trans}\vone=b$ 时，有
+$K^{\trans}u^+=(b-hz)\oslash v$。若仍将真实列变化写成
+$v^+=v\odot(\vone-q_{\mathrm{actual}})$，则
+\begin{equation}\label{eq:q-actual}
+ q_{\mathrm{actual}}=-hz\oslash(b-hz)
+ =h q_{\mathrm{aux}}(\theta_*)
+   +\mathcal O\!\left((hz\oslash b)^{\odot2}\right).
 \end{equation}
-故第二行\emph{线性化}残差为零，但一般 $r_b^+\ne0$，
-且此处的每个分量非正。为使下一轮仍从 $r_b=0$ 出发，
-可在接受式~\eqref{eq:update} 后再做一次精确的列归一化
-$v^+\leftarrow b\oslash(K^{\trans}u^+)$；这一额外操作应单独计入成本。
+最后一式逐分量理解，且需要 $|hz_j/b_j|<1$ 才能作相应展开。
+因此 $q_{\mathrm{aux}}$ 是列 Sinkhorn 响应的\emph{一阶近似}，
+不应用它替代实际列归一化。
 
 \begin{checknote}
-$\theta=1$ 只保证\emph{冻结 $v$、仅执行 $u$ 子步}时得到式~\eqref{eq:row-exact}。
-一旦同时执行 $q(1)$，更新就不是标准 Sinkhorn 一整轮；
-$\theta=0$ 且 $r_b=0$ 时该构造不动。$\theta$ 也不必落在 $[0,1]$，
+$h\theta_*=1$ 时，式~\eqref{eq:update} 的第一行是精确行 Sinkhorn，
+第二行是精确列 Sinkhorn，故整步\emph{严格等于一轮标准 Gauss--Seidel Sinkhorn}。
+实际行更新只依赖乘积 $h\theta_*$；应分别记录优化产生的 $\theta_*$、
+被回溯选择的 $h$ 和实际松弛系数 $h\theta_*$，不能把缩步误判为
+$\theta_*$ 的内在规律。$\theta=0$ 且 $r_b=0$ 时该构造不动，需显式回退。
+$\theta$ 也不必落在 $[0,1]$，
 不能把它直接解释为「Sinkhorn 与完整 Newton 的插值比例」。
 此外 $(p,q)=(c\vone,-c\vone)$ 是式~\eqref{eq:block} 的规范零方向，
 完整 Newton 速度并非唯一；本文只用方程缺陷刻画近似程度。
@@ -214,19 +215,21 @@ $\theta=0$ 且 $r_b=0$ 时该构造不动。$\theta$ 也不必落在 $[0,1]$，
 
 \noindent\textbf{最小实验。}在每次列归一化后的状态，按
 \eqref{eq:p-theta}、\eqref{eq:q-theta}、\eqref{eq:s}、\eqref{eq:theta}
-计算方向和 $\theta_*$，记录 $\eta$，再执行有正性保障的式~\eqref{eq:update}
-及下一次列归一化。第一轮仅比较标准 Sinkhorn 和此 $\theta$ 版本；
+计算候选方向和 $\theta_*$，记录 $\eta$，实际执行式~\eqref{eq:update}；
+第二行的列归一化是\emph{本步的一部分}，必须计入成本，并在整个本步
+之后判断接受与否。第一轮仅比较标准 Sinkhorn 和此 $\theta$ 版本；
 同时画 $\|r_a\|_1+\|r_b\|_1$ 随 $K/K^{\trans}$ 矩阵向量乘次数、
-实际时间变化的曲线，并记录 $\theta_*$、$h$、$\eta$、
+实际时间变化的曲线，并记录 $\theta_*$、$h$、$h\theta_*$、$\eta$、
 触发退化回退和缩步的次数。成本按实际的 $K/K^{\trans}$ 调用计，
-包括额外列归一化。这样能先判断：小优化问题带来的方向信息，
-是否抵得上这些额外乘法和同步更新的二次误差。
+包括列归一化。这样能先判断：小优化问题选择的行松弛系数
+是否足以抵消计算它所需的额外乘法成本。
 
 \section*{目前可确认的结论}
 
 手稿提出的「第一行平衡、第二行尽量精确」可以严格落实为
-式~\eqref{eq:ls}：第二行在线性层面精确，第一行在一维候选方向上
-最小残差。它保留了 Sinkhorn 行子步的候选方向与 Newton 方程的块耦合，
+式~\eqref{eq:ls}：第二行用于计算线性化的辅助响应，第一行在一维候选方向上
+最小残差；实际列更新始终由 Sinkhorn 精确完成。它保留了
+Sinkhorn 行子步的候选方向与 Newton 方程的块耦合，
 但是否比相同计算预算下的 Sinkhorn 更有效，需要上述最小实验检验。
 
 \end{document}
