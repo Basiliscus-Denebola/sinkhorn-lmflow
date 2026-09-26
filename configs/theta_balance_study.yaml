@@ -1,6 +1,6 @@
 mode: systematic
 repeats: 3
-budget_sec: 3600
+budget_sec: 7200
 warmup_max_iter: 20
 warmup_wall_sec: 2
 seeds: [42, 123, 2026]
