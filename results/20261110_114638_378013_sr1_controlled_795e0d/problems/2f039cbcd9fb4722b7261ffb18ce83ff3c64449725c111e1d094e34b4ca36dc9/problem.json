@@ -1,0 +1,11 @@
+{
+  "name": "weak_coupling",
+  "metadata": {
+    "n": 256,
+    "blocks": 2,
+    "delta": 0.1,
+    "cost_scale": "none",
+    "known_reduced_optimum": 0.0
+  },
+  "sha256": "2f039cbcd9fb4722b7261ffb18ce83ff3c64449725c111e1d094e34b4ca36dc9"
+}

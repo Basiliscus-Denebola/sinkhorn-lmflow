@@ -1,0 +1,16 @@
+stage: transfer
+epsilons: [0.05, 0.01]
+repeats: 1
+track_budget_sec: 120
+total_budget_sec: 3600
+solver:
+  tol: 1.0e-8
+  max_iter: 20000
+  sr1_warmup_iters: 20
+  sr1_secant_tol: 1.0e-8
+  step_size: 1.0
+  backtrack_factor: 0.5
+  armijo: 0.0001
+  max_backtracks: 5
+  record_every: 1
+  compute_spectrum_every: 0

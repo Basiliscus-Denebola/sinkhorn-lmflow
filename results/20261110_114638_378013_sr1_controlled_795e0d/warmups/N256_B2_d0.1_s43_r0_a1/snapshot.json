@@ -1,0 +1,20 @@
+{
+  "fingerprint": "eb489081a7fea46428fb01af414c9074d71458e8f9d12b788b720d848b4463e9",
+  "protocol": "row_normalized_sk:20:tol=1e-08",
+  "initial_sha256": "4af4c111dacab370f17776976a4858291797ad3029d9db1d7c43c8004f109a48",
+  "problem_sha256": "2f039cbcd9fb4722b7261ffb18ce83ff3c64449725c111e1d094e34b4ca36dc9",
+  "work": {
+    "state_eval_count": 22,
+    "objective_diff_count": 20,
+    "bregman_count": 22,
+    "plan_build_count": 22,
+    "logsumexp_count": 45,
+    "reduction_count": 154,
+    "dense_pass_proxy": 376,
+    "probability_normalization_count": 22,
+    "probability_mass_error_max": 6.661338147750939e-16,
+    "probability_mean_error_max": 6.938893903907228e-17
+  },
+  "elapsed_sec": 0.0696298999999998,
+  "iteration": 20
+}

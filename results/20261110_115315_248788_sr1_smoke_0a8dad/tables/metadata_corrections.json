@@ -1,0 +1,11 @@
+{
+  "reason": "Correct serialized warmup configuration to the actual dataclasses.replace max_iter cap used by prepare_warmup. No trajectory or timing changed.",
+  "corrections": [
+    {
+      "path": "warmups\\N32_B2_d0.01_s42_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    }
+  ]
+}

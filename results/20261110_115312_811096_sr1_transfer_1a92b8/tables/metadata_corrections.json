@@ -1,0 +1,17 @@
+{
+  "reason": "Correct serialized warmup configuration to the actual dataclasses.replace max_iter cap used by prepare_warmup. No trajectory or timing changed.",
+  "corrections": [
+    {
+      "path": "warmups\\pointcloud_eps0.05_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\pointcloud_eps0.01_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    }
+  ]
+}

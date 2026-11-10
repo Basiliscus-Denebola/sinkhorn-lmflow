@@ -1,0 +1,4 @@
+case_id,repeat,attempt,threshold,eligible,speedup,post_speedup,eval_speedup,reason,latest_attempt
+N32_B2_d0.01_s42,0,1,0.0001,True,6.218332819019856,19.35863664259061,9.56,matched_success,True
+N32_B2_d0.01_s42,0,1,1e-06,True,12.105134638348279,40.07142519945206,18.72,matched_success,True
+N32_B2_d0.01_s42,0,1,1e-08,True,17.083761562178783,52.16211687780766,26.807692307692307,matched_success,True

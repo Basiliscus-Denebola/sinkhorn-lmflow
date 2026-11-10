@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "config_sha256": "49dfaa1afda276df7ddd6ddfe81c808d4caa9102f11d9f35a93a2a95b212d4b7",
+  "stage": "transfer",
+  "pairs": [
+    {
+      "case_id": "pointcloud_eps0.05",
+      "kind": "transfer",
+      "n": 128,
+      "epsilon": 0.05,
+      "initial_seed": null,
+      "data_seed": 42,
+      "repeat": 0,
+      "pair_id": "pointcloud_eps0.05_r0",
+      "status": "completed",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "runs": {
+            "sinkhorn_reduced": "runs\\pointcloud_eps0.05_r0_a1\\sinkhorn_reduced",
+            "mirror_sr1": "runs\\pointcloud_eps0.05_r0_a1\\mirror_sr1"
+          },
+          "order": [
+            "sinkhorn_reduced",
+            "mirror_sr1"
+          ],
+          "warmup": "warmups\\pointcloud_eps0.05_r0_a1",
+          "warmup_sha256": "3ce91ed06401efeb69421637f2953ee88efc6a3510a829a02f21df5c79238bb7"
+        }
+      ],
+      "problem_sha256": "fb6c17c95f079ff49fdb3680b5c5c6030391ada250fcea7afe36632c3498959f",
+      "initial_sha256": "fda2f0daba3d61b0256a9b1df446d288609fc511ab19b0154dc726d176d0eef1"
+    },
+    {
+      "case_id": "pointcloud_eps0.01",
+      "kind": "transfer",
+      "n": 128,
+      "epsilon": 0.01,
+      "initial_seed": null,
+      "data_seed": 42,
+      "repeat": 0,
+      "pair_id": "pointcloud_eps0.01_r0",
+      "status": "completed",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "runs": {
+            "mirror_sr1": "runs\\pointcloud_eps0.01_r0_a1\\mirror_sr1",
+            "sinkhorn_reduced": "runs\\pointcloud_eps0.01_r0_a1\\sinkhorn_reduced"
+          },
+          "order": [
+            "mirror_sr1",
+            "sinkhorn_reduced"
+          ],
+          "warmup": "warmups\\pointcloud_eps0.01_r0_a1",
+          "warmup_sha256": "48f60aa27b0ffd864bbf30fe04cd47c6708339fb274147b15614de447a419eea"
+        }
+      ],
+      "problem_sha256": "ec514a98d216d2bf4fb4cd950913b4cc26a5551ea8c815d3f8fc4d6dd02b8332",
+      "initial_sha256": "fda2f0daba3d61b0256a9b1df446d288609fc511ab19b0154dc726d176d0eef1"
+    }
+  ],
+  "invocations": [
+    {
+      "start_metadata": {
+        "python": "3.9.24 (main, Oct 14 2025, 16:10:39) [MSC v.1929 64 bit (AMD64)]",
+        "python_executable": "D:\\miniconda_envs\\OT\\python.exe",
+        "numpy": "2.0.2",
+        "scipy": "1.13.1",
+        "os": "Windows-10-10.0.26200-SP0",
+        "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "git_commit": "886445543600bef327b6a54ea1ed30ccef57d403",
+        "git_dirty": true,
+        "seed": null,
+        "timestamp_utc": "2026-11-10T11:53:13.410927+00:00",
+        "blas_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: D:/miniconda_envs/OT/Library/include\n    lib directory: D:/miniconda_envs/OT/Library/lib\n    name: blas\n    openblas configuration: unknown\n    pc file directory: D:\\bld\\numpy_1732314314278\\_h_env\\Library\\lib\\pkgconfig\n    version: 3.9.0\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: D:/miniconda_envs/OT/Library/include\n    lib directory: D:/miniconda_envs/OT/Library/lib\n    name: lapack\n    openblas configuration: unknown\n    pc file directory: D:\\bld\\numpy_1732314314278\\_h_env\\Library\\lib\\pkgconfig\n    version: 3.9.0\nCompilers:\n  c:\n    commands: cl.exe\n    linker: link\n    name: msvc\n    version: 19.29.30157\n  c++:\n    commands: cl.exe\n    linker: link\n    name: msvc\n    version: 19.29.30157\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.0.11\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: windows\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: windows\nPython Information:\n  path: D:\\bld\\numpy_1732314314278\\_h_env\\python.exe\n  version: '3.9'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  not found:\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n\n",
+        "thread_environment": {
+          "OMP_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "status": "completed",
+      "budget_sec": 3600.0,
+      "elapsed_sec": 1.5662755999999998
+    }
+  ],
+  "resume_command": ".\\scripts\\run_ot.cmd scripts/run_sr1_study.py --config \"results\\20261110_115312_811096_sr1_transfer_1a92b8/study_config.yaml\" --resume \"results\\20261110_115312_811096_sr1_transfer_1a92b8\""
+}

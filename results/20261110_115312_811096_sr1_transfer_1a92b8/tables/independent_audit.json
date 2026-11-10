@@ -1,0 +1,17 @@
+{
+  "tracks": 4,
+  "passed": true,
+  "max_reconstructed_residual": 9.73350941812129e-09,
+  "all_pairs_completed": true,
+  "checks": [
+    "reconstructed_final_residual",
+    "objective_scaling",
+    "exact_work_accounting",
+    "identical_warmup_records",
+    "matching_initial_fingerprints",
+    "strict_armijo",
+    "positive_secant_gate",
+    "row_normalization",
+    "energy_sign_and_transfer_missing"
+  ]
+}

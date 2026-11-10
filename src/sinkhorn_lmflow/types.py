@@ -29,8 +29,14 @@ class SolverConfig:
     balance_theta_max: float = 10.0
     balance_theta_fixed: float | None = None
     wall_time_limit_sec: float | None = None
+    sr1_warmup_iters: int = 20
+    sr1_secant_tol: float = 1e-8
 
     def __post_init__(self) -> None:
+        if not isinstance(self.sr1_warmup_iters, int) or self.sr1_warmup_iters < 0:
+            raise ValueError("Invalid sr1_warmup_iters")
+        if not np.isfinite(self.sr1_secant_tol) or self.sr1_secant_tol <= 0:
+            raise ValueError("Invalid sr1_secant_tol")
         for name in ("balance_theta_fixed", "wall_time_limit_sec"):
             value = getattr(self, name)
             if value is not None and (not np.isfinite(value) or value <= 0):
@@ -99,6 +105,33 @@ class IterationRecord:
     column_update_count: int = 0
     trial_count: int = 0
     dense_pass_proxy: int = 0
+    reduced_f: float | None = None
+    energy_gap: float | None = None
+    row_residual_l1: float | None = None
+    col_residual_l1: float | None = None
+    state_eval_count: int = 0
+    objective_diff_count: int = 0
+    bregman_count: int = 0
+    sr1_attempt_count: int = 0
+    sr1_valid_count: int = 0
+    sr1_accept_count: int = 0
+    sr1_fallback_count: int = 0
+    sr1_exhausted_count: int = 0
+    sr1_reject_count: int = 0
+    sr1_skip_count: int = 0
+    sr1_d: float | None = None
+    sr1_relative_d: float | None = None
+    sr1_J: float | None = None
+    sr1_e_dot_V: float | None = None
+    sr1_G: float | None = None
+    sr1_Q: float | None = None
+    sr1_cos: float | None = None
+    sr1_actual_decrease: float | None = None
+    sr1_reason: str = ""
+    sr1_ratio_reason: str = ""
+    accept_reason: str = ""
+    from_iteration: int | None = None
+    post_elapsed_sec: float = 0.0
 
 
 @dataclass

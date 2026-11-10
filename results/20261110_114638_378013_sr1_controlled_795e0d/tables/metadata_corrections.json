@@ -1,0 +1,329 @@
+{
+  "reason": "Correct serialized warmup configuration to the actual dataclasses.replace max_iter cap used by prepare_warmup. No trajectory or timing changed.",
+  "corrections": [
+    {
+      "path": "warmups\\N256_B2_d0.1_s42_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.1_s42_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.1_s42_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.1_s43_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.1_s43_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.1_s43_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.1_s44_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.1_s44_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.1_s44_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.01_s42_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.01_s42_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.01_s42_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.01_s43_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.01_s43_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.01_s43_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.01_s44_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.01_s44_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.01_s44_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.001_s42_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.001_s42_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.001_s42_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.001_s43_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.001_s43_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.001_s43_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.001_s44_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.001_s44_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B2_d0.001_s44_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.1_s42_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.1_s42_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.1_s42_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.1_s43_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.1_s43_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.1_s43_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.1_s44_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.1_s44_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.1_s44_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.01_s42_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.01_s42_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.01_s42_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.01_s43_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.01_s43_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.01_s43_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.01_s44_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.01_s44_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.01_s44_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.001_s42_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.001_s42_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.001_s42_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.001_s43_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.001_s43_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.001_s43_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.001_s44_r0_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.001_s44_r1_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    },
+    {
+      "path": "warmups\\N256_B4_d0.001_s44_r2_a1\\config_resolved.yaml",
+      "field": "max_iter",
+      "old": 20000,
+      "actual": 20
+    }
+  ]
+}

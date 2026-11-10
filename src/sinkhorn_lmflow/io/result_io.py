@@ -35,11 +35,15 @@ def load_result(path: str | Path) -> SolverResult:
                       "matrix_vector_count", "backtrack_count", "balance_clip_count",
                       "balance_degenerate_count", "balance_fallback_count", "plan_build_count",
                       "reduction_count", "logsumexp_count", "p_matvec_count",
-                      "column_update_count", "trial_count", "dense_pass_proxy"}
+                      "column_update_count", "trial_count", "dense_pass_proxy",
+                      "state_eval_count", "objective_diff_count", "bregman_count",
+                      "sr1_attempt_count", "sr1_valid_count", "sr1_accept_count",
+                      "sr1_fallback_count", "sr1_exhausted_count", "sr1_reject_count",
+                      "sr1_skip_count", "from_iteration"}
     history = []
     with (path/"history.csv").open(encoding="utf-8", newline="") as f:
         for row in csv.DictReader(f):
-            values = {k: (v if k in ("phase", "balance_reason") else None if v == "" else int(v) if k in integer_fields else float(v))
+            values = {k: (v if k in ("phase", "balance_reason", "sr1_reason", "sr1_ratio_reason", "accept_reason") else None if v == "" else int(v) if k in integer_fields else float(v))
                       for k, v in row.items()}
             history.append(IterationRecord(**values))
     keys = ("solver_name", "converged", "stop_reason", "n_iter", "elapsed_sec")

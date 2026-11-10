@@ -63,23 +63,32 @@ class Monitor:
         return limit is not None and perf_counter()-self.start >= limit
 
     def observe(self, k: int, mu: np.ndarray, nu: np.ndarray, theta: float | None = None,
-                step: float | None = None, phase: str = "", force: bool = False) -> float:
+                step: float | None = None, phase: str = "", force: bool = False,
+                cached_state=None) -> float:
         p, cfg = self.problem, self.config
         if k != self.iteration:
             self.pre_residual_l1 = self.last_metrics.get("residual_l1")
             self.pre_row_residual_l2 = self.last_row_residual_l2
         self.iteration, self.last_theta, self.last_step, self.last_phase = k, theta, step, phase
-        self.last_P = transport_plan_from_potentials(p.M, p.epsilon, mu, nu)
-        self.last_metrics = compute_stop_metrics(self.last_P, p.a, p.b)
-        self.last_objective = dual_objective(p, mu, nu, self.last_P)
-        self.work["plan_build_count"] += 1
-        self.work["reduction_count"] += 5  # metrics (2), objective (1), residual sum (2)
-        row_residual = self.last_P.sum(axis=1)-p.a
+        if cached_state is None:
+            self.last_P = transport_plan_from_potentials(p.M, p.epsilon, mu, nu)
+            self.last_metrics = compute_stop_metrics(self.last_P, p.a, p.b)
+            self.last_objective = dual_objective(p, mu, nu, self.last_P)
+            self.work["plan_build_count"] += 1
+            self.work["reduction_count"] += 5
+            row_residual = self.last_P.sum(axis=1)-p.a
+            col_residual = self.last_P.sum(axis=0)-p.b
+        else:
+            self.last_P = cached_state.P
+            self.last_metrics = dict(cached_state.metrics)
+            self.last_objective = cached_state.full_objective
+            row_residual = cached_state.r-p.a
+            col_residual = cached_state.c-p.b
         row_l2 = float(np.linalg.norm(row_residual))
         actual_ratio = (row_l2/self.pre_row_residual_l2
                         if k > 0 and self.pre_row_residual_l2 else None)
         residual_sum = float(np.linalg.norm(row_residual, 1)
-                             + np.linalg.norm(self.last_P.sum(axis=0)-p.b, 1))
+                             + np.linalg.norm(col_residual, 1))
         self.last_row_residual_l2 = row_l2
         if not np.isfinite(list(self.last_metrics.values())).all() or not np.isfinite(self.last_objective):
             raise FloatingPointError("nonfinite metrics")

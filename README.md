@@ -71,7 +71,28 @@ NPZ and runtime metadata. Sweep problems are saved once and hashed. All failed
 runs remain in summaries and figures. Numerical result files stay local via
 `.gitignore`; PNG/PDF figures under `results/` and `.gitkeep` can be committed.
 
-## Status and limits
+## Mirror-driven positive SR1 v0
+
+The paired study compares `mirror_sr1` with `sinkhorn_reduced` (standard
+Sinkhorn observed after row normalization). It uses one most-recent secant pair,
+20 shared warmup updates, up to six Armijo trials and unit Sinkhorn fallback.
+The existing `sinkhorn` observation convention is unchanged.
+
+```powershell
+.\scripts\run_ot.cmd scripts/run_sr1_study.py --config configs/sr1_smoke.yaml
+.\scripts\run_ot.cmd scripts/run_sr1_study.py --config configs/sr1_controlled.yaml
+.\scripts\run_ot.cmd scripts/run_sr1_study.py --config configs/sr1_transfer.yaml
+.\scripts\run_ot.cmd scripts/report_sr1.py --run-dir results/<actual-study-directory>
+```
+
+Resume with the same config and `--resume results/<actual-study-directory>`.
+Completed matching pairs are skipped; partial pairs get a new attempt. All
+failures remain on disk. New solver entry points require `record_every=1` and
+`compute_spectrum_every=0`; v0 fixes its line-search constants and six trials.
+See the [task specification](docs/sr1_v0_task.md) and
+[Chinese implementation and experiment report](docs/sr1_v0_report.md).
+
+## Original MVP status and limits
 
 First MVP implemented and exercised; see [MVP report](docs/mvp_report.md) for
 the actual tree, file responsibilities, tests, tables, failure reasons and paths.

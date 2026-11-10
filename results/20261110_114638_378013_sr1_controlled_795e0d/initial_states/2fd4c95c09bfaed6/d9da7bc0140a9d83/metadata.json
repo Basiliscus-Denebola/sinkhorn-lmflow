@@ -1,0 +1,6 @@
+{
+  "initial_sha256": "2fd4c95c09bfaed69ed257fca3abb9209147b6ca589c58112143d6ed596441f5",
+  "problem_sha256": "d9da7bc0140a9d834eb53845106f407a4c718b3ea2cb072434b287c413c28bfd",
+  "initial_seed": 42,
+  "distribution": "group normal + .1 independent normal"
+}

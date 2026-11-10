@@ -1,0 +1,7 @@
+case_id,repeat,attempt,threshold,eligible,speedup,post_speedup,eval_speedup,reason,latest_attempt
+pointcloud_eps0.05,0,1,0.0001,True,1.8248014990361296,4.807697094919204,2.2857142857142856,matched_success,True
+pointcloud_eps0.05,0,1,1e-06,True,2.448587939271779,5.130507642999537,3.111111111111111,matched_success,True
+pointcloud_eps0.05,0,1,1e-08,True,2.884387537312574,5.250886019051548,3.6363636363636362,matched_success,True
+pointcloud_eps0.01,0,1,0.0001,True,2.6281551186103713,3.0605850971642337,2.608695652173913,matched_success,True
+pointcloud_eps0.01,0,1,1e-06,True,2.7069225094592566,2.995954950709948,2.8059701492537314,matched_success,True
+pointcloud_eps0.01,0,1,1e-08,True,2.6283977449739826,2.819545652410142,2.797814207650273,matched_success,True

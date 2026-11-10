@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "config_sha256": "8c98f86be3fe0a6f3293926a45ed4cab364fea4d770cdb412a893581b32c2581",
+  "stage": "smoke",
+  "pairs": [
+    {
+      "case_id": "N32_B2_d0.01_s42",
+      "kind": "controlled",
+      "n": 32,
+      "blocks": 2,
+      "delta": 0.01,
+      "initial_seed": 42,
+      "data_seed": null,
+      "repeat": 0,
+      "pair_id": "N32_B2_d0.01_s42_r0",
+      "status": "completed",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "completed",
+          "runs": {
+            "sinkhorn_reduced": "runs\\N32_B2_d0.01_s42_r0_a1\\sinkhorn_reduced",
+            "mirror_sr1": "runs\\N32_B2_d0.01_s42_r0_a1\\mirror_sr1"
+          },
+          "order": [
+            "sinkhorn_reduced",
+            "mirror_sr1"
+          ],
+          "warmup": "warmups\\N32_B2_d0.01_s42_r0_a1",
+          "warmup_sha256": "87d004558febee8c6323e6cebffc0d5723746e33f4963b2c71f0c0473e3cbb72"
+        }
+      ],
+      "problem_sha256": "ab2c72e3694444e182e20de3f8bf78c0aebee1bb2847fc121a89f251054db44d",
+      "initial_sha256": "183e922f39c8bd04ac674f3bf4955e2b95f74ac661e135f27d908efd52421d2c"
+    }
+  ],
+  "invocations": [
+    {
+      "start_metadata": {
+        "python": "3.9.24 (main, Oct 14 2025, 16:10:39) [MSC v.1929 64 bit (AMD64)]",
+        "python_executable": "D:\\miniconda_envs\\OT\\python.exe",
+        "numpy": "2.0.2",
+        "scipy": "1.13.1",
+        "os": "Windows-10-10.0.26200-SP0",
+        "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "git_commit": "886445543600bef327b6a54ea1ed30ccef57d403",
+        "git_dirty": true,
+        "seed": null,
+        "timestamp_utc": "2026-11-10T11:53:15.871201+00:00",
+        "blas_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: D:/miniconda_envs/OT/Library/include\n    lib directory: D:/miniconda_envs/OT/Library/lib\n    name: blas\n    openblas configuration: unknown\n    pc file directory: D:\\bld\\numpy_1732314314278\\_h_env\\Library\\lib\\pkgconfig\n    version: 3.9.0\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: D:/miniconda_envs/OT/Library/include\n    lib directory: D:/miniconda_envs/OT/Library/lib\n    name: lapack\n    openblas configuration: unknown\n    pc file directory: D:\\bld\\numpy_1732314314278\\_h_env\\Library\\lib\\pkgconfig\n    version: 3.9.0\nCompilers:\n  c:\n    commands: cl.exe\n    linker: link\n    name: msvc\n    version: 19.29.30157\n  c++:\n    commands: cl.exe\n    linker: link\n    name: msvc\n    version: 19.29.30157\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.0.11\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: windows\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: windows\nPython Information:\n  path: D:\\bld\\numpy_1732314314278\\_h_env\\python.exe\n  version: '3.9'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  not found:\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n\n",
+        "thread_environment": {
+          "OMP_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        }
+      },
+      "status": "completed",
+      "budget_sec": 3600.0,
+      "elapsed_sec": 0.8825904000000001
+    }
+  ],
+  "resume_command": ".\\scripts\\run_ot.cmd scripts/run_sr1_study.py --config \"results\\20261110_115315_248788_sr1_smoke_0a8dad/study_config.yaml\" --resume \"results\\20261110_115315_248788_sr1_smoke_0a8dad\""
+}
