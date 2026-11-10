@@ -1,0 +1,72 @@
+{
+  "case": {
+    "case_id": "smoke_nonuniform",
+    "family": "M4",
+    "n": 32,
+    "m": 32,
+    "data_seed": 42,
+    "epsilon": 0.03,
+    "alpha": 0.1,
+    "problem_sha256": "7ccd82e632041ad93ae129319fbc6a3440dfc59ddd73fd99ecddc6db4b82ce6d",
+    "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+    "actual_n": 32,
+    "actual_m": 32,
+    "input_arrays_sha256": "870dd0e81f1daeec28afdd84b78af5add1342e75b8c54180b9189419daa563f1",
+    "data_status": "ready"
+  },
+  "metadata": {
+    "case_id": "smoke_nonuniform",
+    "family": "M4",
+    "n": 32,
+    "m": 32,
+    "epsilon": 0.03,
+    "data_seed": 42,
+    "weight_seed_a": [
+      42,
+      20
+    ],
+    "weight_seed_b": [
+      42,
+      21
+    ],
+    "marginal_type": "dirichlet",
+    "alpha": 0.1,
+    "raw_cost_max": 0.6623660041186821,
+    "normalization_policy": "maximum element",
+    "geometry": "mixture",
+    "rng_rule": "SeedSequence([data_seed, stream]); streams 1=cost,10/11=geometry,20/21=weights",
+    "point_pool_id": "5c632567404a74cf6605fda2f81c002f16add468be294f239c24b333c4e11d1d",
+    "point_pool_size": 5000,
+    "prefix_n": 32,
+    "prefix_m": 32,
+    "weight_stats_a": {
+      "min": 1.7310025667562787e-18,
+      "max": 0.4583528650296301,
+      "quantiles": [
+        1.7310025667562787e-18,
+        1.584149045792082e-15,
+        2.681921771472721e-08,
+        1.2136303646314663e-05,
+        0.0018389818038598222,
+        0.3943128050151584,
+        0.4583528650296301
+      ]
+    },
+    "weight_stats_b": {
+      "min": 3.4968590971172817e-28,
+      "max": 0.22679255033469475,
+      "quantiles": [
+        3.4968590971172817e-28,
+        8.375252203254966e-17,
+        3.1413521519228955e-08,
+        0.000171042579597806,
+        0.025704892109493255,
+        0.2229683031897778,
+        0.22679255033469475
+      ]
+    },
+    "marginal_floor": null
+  },
+  "problem_sha256": "7ccd82e632041ad93ae129319fbc6a3440dfc59ddd73fd99ecddc6db4b82ce6d",
+  "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a"
+}

@@ -1,0 +1,72 @@
+{
+  "case": {
+    "case_id": "M2_N1024_s44_e0.01",
+    "family": "M2",
+    "n": 1024,
+    "m": 1024,
+    "data_seed": 44,
+    "epsilon": 0.01,
+    "alpha": null,
+    "problem_sha256": "da5f4d9a49941b69b113f1a341b3aee1eeb3eac074060127a6c9eddb2f1631cd",
+    "initial_sha256": "3ecfd3912e2a1a6be2c0b6724f50fbcdac2226a72cc53d427e218d15e90961d1",
+    "actual_n": 1024,
+    "actual_m": 1024,
+    "input_arrays_sha256": "28731b54a6ca85821b29c31ad1a87aed855bb1e8e0947420bd8edb481125c7dc",
+    "data_status": "ready"
+  },
+  "metadata": {
+    "case_id": "M2_N1024_s44_e0.01",
+    "family": "M2",
+    "n": 1024,
+    "m": 1024,
+    "epsilon": 0.01,
+    "data_seed": 44,
+    "weight_seed_a": [
+      44,
+      20
+    ],
+    "weight_seed_b": [
+      44,
+      21
+    ],
+    "marginal_type": "uniform",
+    "alpha": null,
+    "raw_cost_max": 1.8761457884538388,
+    "normalization_policy": "maximum element",
+    "geometry": "uniform",
+    "rng_rule": "SeedSequence([data_seed, stream]); streams 1=cost,10/11=geometry,20/21=weights",
+    "point_pool_id": "8f0d0de63b50ffff91a1f5ea9e623a3236a4410b084565a99b11d1c420463de0",
+    "point_pool_size": 5000,
+    "prefix_n": 1024,
+    "prefix_m": 1024,
+    "weight_stats_a": {
+      "min": 0.0009765625,
+      "max": 0.0009765625,
+      "quantiles": [
+        0.0009765625,
+        0.0009765625,
+        0.0009765625,
+        0.0009765625,
+        0.0009765625,
+        0.0009765625,
+        0.0009765625
+      ]
+    },
+    "weight_stats_b": {
+      "min": 0.0009765625,
+      "max": 0.0009765625,
+      "quantiles": [
+        0.0009765625,
+        0.0009765625,
+        0.0009765625,
+        0.0009765625,
+        0.0009765625,
+        0.0009765625,
+        0.0009765625
+      ]
+    },
+    "marginal_floor": null
+  },
+  "problem_sha256": "da5f4d9a49941b69b113f1a341b3aee1eeb3eac074060127a6c9eddb2f1631cd",
+  "initial_sha256": "3ecfd3912e2a1a6be2c0b6724f50fbcdac2226a72cc53d427e218d15e90961d1"
+}

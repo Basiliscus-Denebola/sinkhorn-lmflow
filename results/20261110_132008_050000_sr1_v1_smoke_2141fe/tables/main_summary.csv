@@ -1,0 +1,11 @@
+﻿group,mode,family,epsilon,marginal_type,alpha,method,warmup_iters,planned,attempted,succeeded,timeout,skipped_resource,not_applicable,pending,blocked_data,library_stop,failures,paired_success_count,speedup_median,speedup_min,speedup_max,success_time_median,success_iteration_median,statuses
+main,performance,M1,0.03,uniform,,sk_log_fast,20,1,1,1,0,0,0,0,0,0,0,0,,,,0.00608709999999979,44.0,"{""success"": 1}"
+main,performance,M1,0.03,uniform,,mirror_sr1,20,1,1,1,0,0,0,0,0,0,0,1,1.013621301183958,1.013621301183958,1.013621301183958,0.006005299999999769,27.0,"{""success"": 1}"
+main,performance,M2,0.03,uniform,,mirror_sr1,20,1,1,1,0,0,0,0,0,0,0,1,0.7518328502565205,0.7518328502565205,0.7518328502565205,0.01290340000000012,52.0,"{""success"": 1}"
+main,performance,M2,0.03,uniform,,sk_log_fast,20,1,1,1,0,0,0,0,0,0,0,0,,,,0.009701200000000076,90.0,"{""success"": 1}"
+main,performance,M4,0.03,dirichlet,0.1,sk_log_fast,20,1,1,1,0,0,0,0,0,0,0,0,,,,0.006702299999999939,51.0,"{""success"": 1}"
+main,performance,M4,0.03,dirichlet,0.1,mirror_sr1,20,1,1,1,0,0,0,0,0,0,0,1,1.262940699843614,1.262940699843614,1.262940699843614,0.005306899999999892,24.0,"{""success"": 1}"
+main,performance,M7,0.03,uniform,,mirror_sr1,20,1,1,1,0,0,0,0,0,0,0,1,1.022361120650846,1.022361120650846,1.022361120650846,0.013103099999999923,55.0,"{""success"": 1}"
+main,performance,M7,0.03,uniform,,sk_log_fast,20,1,1,1,0,0,0,0,0,0,0,0,,,,0.013396100000000022,139.0,"{""success"": 1}"
+main,performance,M5,0.01,image,,sk_log_fast,20,1,1,1,0,0,0,0,0,0,0,0,,,,0.07312379999999985,97.0,"{""success"": 1}"
+main,performance,M5,0.01,image,,mirror_sr1,20,1,1,1,0,0,0,0,0,0,0,1,1.1769445454867435,1.1769445454867435,1.1769445454867435,0.06213019999999947,36.0,"{""success"": 1}"

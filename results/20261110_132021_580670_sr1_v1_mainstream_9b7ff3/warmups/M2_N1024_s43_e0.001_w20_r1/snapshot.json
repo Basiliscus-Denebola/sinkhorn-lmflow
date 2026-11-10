@@ -1,0 +1,30 @@
+{
+  "work": {
+    "state_eval_count": 21,
+    "objective_diff_count": 0,
+    "bregman_count": 0,
+    "plan_build_count": 0,
+    "logsumexp_count": 42,
+    "reduction_count": 0,
+    "dense_pass_proxy": 0,
+    "probability_normalization_count": 0,
+    "probability_mass_error_max": 0.0,
+    "probability_mean_error_max": 0.0,
+    "log_kernel_build_count": 1,
+    "kernel_build_count": 0,
+    "matrix_vector_count": 0,
+    "objective_gradient_count": 0
+  },
+  "elapsed_sec": 0.41205229999999915,
+  "setup_sec": 0.02358639999999923,
+  "iteration": 20,
+  "problem_sha256": "98a56e6fd106a77723a6e1273591e9a4a713a22a178fcc9544f979f8543922b9",
+  "initial_sha256": "3ecfd3912e2a1a6be2c0b6724f50fbcdac2226a72cc53d427e218d15e90961d1",
+  "protocol": "row_normalized_sk:20:tol=1e-08",
+  "fingerprint": "1da43e8b7679654228bd2b0835648f5dc906a08a78c4633dd38f011f665585e4",
+  "metrics": {
+    "residual_l1": 0.03833902888568175,
+    "residual_linf": 0.00012009470363938206,
+    "grad_norm_l2": 0.0014918645377410124
+  }
+}

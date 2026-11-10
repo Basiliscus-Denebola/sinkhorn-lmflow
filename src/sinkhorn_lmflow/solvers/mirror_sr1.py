@@ -16,7 +16,7 @@ from ..core.semi_dual import (ReducedState, ReducedWork, center, evaluate_reduce
 from ..io.problem_io import problem_fingerprint
 from ..problems.weak_coupling import initial_fingerprint
 from ..types import SolverConfig
-from .base import Monitor
+from .base import Monitor, deadline_reached
 
 
 def base_diagonal(c, b, log_c):
@@ -152,10 +152,11 @@ def warmup_protocol(config):
 
 
 def _solve(problem, config, use_sr1, warmup=None, deadline=None, diagnostic_reference_z=None,
-           return_snapshot=False):
+           return_snapshot=False, performance=False, diagnostics=False, amplification=False):
     _validate(config)
+    diagnostic_mode = diagnostics
     started = perf_counter()
-    monitor = Monitor(problem, config, "mirror_sr1" if use_sr1 else "sinkhorn_reduced")
+    monitor = Monitor(problem, config, "mirror_amp_ablation" if amplification else "mirror_sr1" if use_sr1 else "sinkhorn_reduced")
     supplied_z = np.zeros_like(problem.b) if config.initial_nu is None else -np.asarray(config.initial_nu)/problem.epsilon
     initial_z = center(supplied_z)
     counters = dict(sr1_attempt_count=0, sr1_valid_count=0, sr1_accept_count=0,
@@ -165,13 +166,35 @@ def _solve(problem, config, use_sr1, warmup=None, deadline=None, diagnostic_refe
     work = ReducedWork()
     previous, reference = None, None
     warm_seconds, fork_iteration = 0., 0
+    light_warmup = bool(warmup is not None and getattr(warmup, 'lightweight', False))
+    log_kernel = warmup.log_kernel if light_warmup else None
+    if performance and log_kernel is None and not light_warmup:
+        log_kernel = -problem.M/problem.epsilon
+        work.log_kernel_build_count += 1
+    setup_sec = perf_counter()-started
+
+    def evaluate(z):
+        if performance:
+            return evaluate_reduced(problem,z,work,log_kernel=log_kernel)
+        return evaluate_reduced(problem,z,work)
+
     if warmup is not None:
-        if (warmup.problem_sha256 != problem_fingerprint(problem) or
+        if light_warmup:
+            if not performance:
+                raise ValueError('lightweight warmup requires performance mode')
+            warmup.validate(problem,config)
+        elif (warmup.problem_sha256 != problem_fingerprint(problem) or
                 warmup.initial_sha256 != initial_fingerprint(supplied_z) or
                 warmup.protocol != warmup_protocol(config) or warmup.fingerprint != warmup.digest()):
             raise ValueError("warmup fingerprint/protocol mismatch")
         snap = warmup.clone()
         state, previous, work, reference = snap.state, snap.previous, snap.work, snap.diagnostic_reference
+        if light_warmup:
+            # Construct P only when SR1 actually needs it, charged to this method.
+            if log_kernel is None:
+                log_kernel=-problem.M/problem.epsilon
+                work.log_kernel_build_count+=1
+            state = evaluate(snap.state.z_col)
         monitor.history = snap.history
         warm_seconds, fork_iteration = snap.elapsed_sec, snap.iteration
         monitor.iteration = snap.iteration
@@ -180,14 +203,16 @@ def _solve(problem, config, use_sr1, warmup=None, deadline=None, diagnostic_refe
         monitor.last_objective = state.full_objective
         monitor.last_row_residual_l2 = float(np.linalg.norm(state.r-problem.a))
     else:
-        state = evaluate_reduced(problem, initial_z, work)
+        state = evaluate(initial_z)
         if diagnostic_reference_z is not None:
             reference = evaluate_reduced(problem, diagnostic_reference_z, work)
+    if performance:
+        setup_sec=perf_counter()-started
 
     def expired():
         now = perf_counter()
-        return ((deadline is not None and now >= deadline) or
-                (config.wall_time_limit_sec is not None and now-started >= config.wall_time_limit_sec))
+        return (deadline_reached(deadline, now) or
+                (config.wall_time_limit_sec is not None and now-started+(warm_seconds if performance else 0.) >= config.wall_time_limit_sec))
 
     def record(k, current, step=None, phase="initial", diagnostics=None):
         old_residual = monitor.last_metrics.get("residual_l1", np.inf)
@@ -206,6 +231,9 @@ def _solve(problem, config, use_sr1, warmup=None, deadline=None, diagnostic_refe
             setattr(row, key, value)
         for key in ("state_eval_count", "objective_diff_count", "bregman_count", "dense_pass_proxy"):
             setattr(row, key, getattr(work, key))
+        row.log_kernel_build_count = work.log_kernel_build_count
+        if performance:
+            row.state_fingerprint = hashlib.sha256(current.z_col.tobytes()+current.c.tobytes()).hexdigest()
         row.reduced_f, row.energy_gap = current.f, energy
         row.row_residual_l1 = float(np.linalg.norm(current.r-problem.a, 1))
         row.col_residual_l1 = float(np.linalg.norm(current.c-problem.b, 1))
@@ -230,6 +258,13 @@ def _solve(problem, config, use_sr1, warmup=None, deadline=None, diagnostic_refe
         if use_sr1 and k > config.sr1_warmup_iters:
             counters["sr1_attempt_count"] += 1
             direction = sr1_direction(state.z_col, state.c, problem.b, state.log_c, previous, config.sr1_secant_tol)
+            if amplification and direction.valid:
+                if direction.G is None or not np.isfinite(direction.G) or direction.G <= 0:
+                    direction.reason = 'unreliable_amplification_ratio'
+                else:
+                    direction.V = direction.G*direction.psi
+                    direction.e_dot_V = float((state.c-problem.b)@direction.V)
+                    direction.cosine = 1.
             diagnostics.update(sr1_reason=direction.reason, sr1_d=direction.d,
                                sr1_relative_d=direction.relative_d, sr1_ratio_reason=direction.ratio_reason)
             if direction.valid:
@@ -242,7 +277,7 @@ def _solve(problem, config, use_sr1, warmup=None, deadline=None, diagnostic_refe
                     u = -step*center(direction.V)
                     counters["trial_count"] += 1
                     try:
-                        candidate = evaluate_reduced(problem, state.z_col+u, work)
+                        candidate = evaluate(state.z_col+u)
                         delta = stable_objective_difference(problem, state, u, work)
                         if delta <= -config.armijo*step*direction.e_dot_V:
                             trial = candidate
@@ -275,13 +310,13 @@ def _solve(problem, config, use_sr1, warmup=None, deadline=None, diagnostic_refe
             u = -center(psi)
             step = 1.
             try:
-                trial = evaluate_reduced(problem, state.z_col+u, work)
-                delta = stable_objective_difference(problem, state, u, work)
+                trial = evaluate(state.z_col+u)
+                delta = stable_objective_difference(problem, state, u, work) if not performance or diagnostic_mode else None
             except (FloatingPointError, OverflowError) as exc:
                 reason = f"fallback_failure: {exc}"
                 break
             diagnostics["accept_reason"] = "sinkhorn"
-        diagnostics["sr1_actual_decrease"] = -delta
+        diagnostics["sr1_actual_decrease"] = -delta if delta is not None else None
         previous = (state.z_col.copy(), state.c.copy())
         state = trial
         record(k, state, step, phase, diagnostics)
@@ -294,9 +329,12 @@ def _solve(problem, config, use_sr1, warmup=None, deadline=None, diagnostic_refe
                  warmup_elapsed_sec=warm_seconds, fork_iteration=fork_iteration,
                  post_elapsed_sec=perf_counter()-started,
                  sr1_trial_limit=6, diagnostic_reference_evaluations=int(reference is not None),
+                 performance_mode=performance, diagnostic_mode=bool(diagnostic_mode),
+                 setup_sec=setup_sec, bridge_state_evaluations=int(light_warmup),
+                 warmup_sha256=warmup.fingerprint if warmup is not None else None,
                  energy_checkpoint_policy="initial,warmup,threshold crossings,max_iter",
                  probability_renormalization="Bregman evaluation only; P and marginals unchanged")
-    result = monitor.finish(state.mu, state.nu, reason, extra)
+    result = monitor.finish(state.mu, state.nu, reason, extra,include_transport_objective=not performance)
     if warmup is not None and state.metrics["residual_l1"] <= config.tol and monitor.iteration == fork_iteration:
         result.stop_reason = "warmup_converged"
     snapshot = None
@@ -318,8 +356,11 @@ def prepare_warmup(problem, config, deadline=None, diagnostic_reference_z=None):
                   return_snapshot=True)
 
 
-def solve_mirror_sr1(problem, config, warmup=None, deadline=None):
-    return _solve(problem, config, True, warmup=warmup, deadline=deadline)[0]
+def solve_mirror_sr1(problem, config, warmup=None, deadline=None, *, performance=False, diagnostics=False, amplification=False):
+    if warmup is not None and getattr(warmup,'lightweight',False) and warmup.state.metrics['residual_l1']<=config.tol:
+        return warmup.finished_result(problem,config,'mirror_amp_ablation' if amplification else 'mirror_sr1')
+    return _solve(problem, config, True, warmup=warmup, deadline=deadline,performance=performance,
+                  diagnostics=diagnostics,amplification=amplification)[0]
 
 
 def solve_sinkhorn_reduced(problem, config, warmup=None, deadline=None):

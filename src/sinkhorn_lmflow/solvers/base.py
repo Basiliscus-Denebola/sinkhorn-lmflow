@@ -19,6 +19,11 @@ class OTSolver(Protocol):
         ...
 
 
+def deadline_reached(deadline, now):
+    """Accept an absolute deadline or a dispatcher cancellation predicate."""
+    return deadline is not None and (bool(deadline()) if callable(deadline) else now >= deadline)
+
+
 def initial_state(problem: OTProblem, config: SolverConfig) -> tuple[np.ndarray, np.ndarray]:
     mu = np.zeros_like(problem.a) if config.initial_mu is None else np.array(config.initial_mu, dtype=float, copy=True)
     nu = np.zeros_like(problem.b) if config.initial_nu is None else np.array(config.initial_nu, dtype=float, copy=True)
@@ -121,7 +126,7 @@ class Monitor:
         return self.last_metrics["residual_l1"]
 
     def finish(self, mu: np.ndarray, nu: np.ndarray, reason: str,
-               extra: dict | None = None) -> SolverResult:
+               extra: dict | None = None, *, include_transport_objective: bool = True) -> SolverResult:
         # Preserve the final accepted iterate, including failures and thinned logs.
         if not self.history or self.history[-1].iteration != self.iteration:
             try:
@@ -135,7 +140,7 @@ class Monitor:
         converged = bool(self.last_metrics and self.last_metrics["residual_l1"] <= self.config.tol)
         summary = dict(self.last_metrics)
         summary.update(dual_objective=self.last_objective,
-            transport_objective=None if self.last_P is None else transport_objective(self.problem, self.last_P),
+            transport_objective=None if self.last_P is None or not include_transport_objective else transport_objective(self.problem, self.last_P),
             safeguard_count=self.safeguards, backtrack_count=self.backtracks,
             linear_solve_count=self.linear_count, linear_solve_sec=self.linear_time,
             matrix_vector_count=self.matvec_count, diagnostic_sec=self.diagnostic_time,

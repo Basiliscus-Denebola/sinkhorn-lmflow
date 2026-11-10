@@ -132,6 +132,10 @@ class IterationRecord:
     accept_reason: str = ""
     from_iteration: int | None = None
     post_elapsed_sec: float = 0.0
+    objective_gradient_count: int = 0
+    log_kernel_build_count: int = 0
+    kernel_build_count: int = 0
+    state_fingerprint: str = ""
 
 
 @dataclass

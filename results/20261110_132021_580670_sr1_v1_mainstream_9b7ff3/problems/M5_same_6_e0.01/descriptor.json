@@ -1,0 +1,97 @@
+{
+  "case": {
+    "case_id": "M5_same_6_e0.01",
+    "family": "M5",
+    "pair_name": "same_6",
+    "n": 784,
+    "m": 784,
+    "data_seed": 20261110,
+    "epsilon": 0.01,
+    "alpha": null,
+    "problem_sha256": "e20a296cb616ad2d5f45975355436a14c33c465c506af2d53b84c9ee7b25da6f",
+    "initial_sha256": "09c522902f8040534a116c92178c613d57f024673f3d17ba492d1842d2ccd560",
+    "actual_n": 156,
+    "actual_m": 206,
+    "input_arrays_sha256": "5c38ffe537a11b35d929d886d6b3d7051857403b80cd468fbd552a88220662b0",
+    "data_status": "ready"
+  },
+  "metadata": {
+    "case_id": "M5_same_6_e0.01",
+    "family": "M5",
+    "n": 156,
+    "m": 206,
+    "epsilon": 0.01,
+    "data_seed": 20261110,
+    "weight_seed_a": null,
+    "weight_seed_b": null,
+    "marginal_type": "image_gray",
+    "alpha": null,
+    "raw_cost_max": 2.0,
+    "normalization_policy": "full 28x28 grid diameter squared = 2",
+    "split": "test",
+    "indices": [
+      729,
+      5411
+    ],
+    "labels": [
+      6,
+      6
+    ],
+    "pair_type": "same",
+    "pair_name": "same_6",
+    "original_pixels": 784,
+    "support_n": 156,
+    "support_m": 206,
+    "retained_mass_a": 1.0,
+    "retained_mass_b": 1.0000000000000002,
+    "raw_gray_mass_a": 28166.0,
+    "raw_gray_mass_b": 36474.0,
+    "data_files": {
+      "t10k-images-idx3-ubyte.gz": {
+        "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-images-idx3-ubyte.gz",
+        "sha256": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+        "shape": [
+          10000,
+          28,
+          28
+        ]
+      },
+      "t10k-labels-idx1-ubyte.gz": {
+        "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-labels-idx1-ubyte.gz",
+        "sha256": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6",
+        "shape": [
+          10000
+        ]
+      }
+    },
+    "weight_stats_a": {
+      "min": 0.0003550379890648299,
+      "max": 0.009053468721153164,
+      "quantiles": [
+        0.0003550379890648299,
+        0.00039054178797131293,
+        0.004366967265497408,
+        0.007580061066534119,
+        0.008982461123340198,
+        0.009033941631754597,
+        0.009053468721153164
+      ]
+    },
+    "weight_stats_b": {
+      "min": 2.7416790042221856e-05,
+      "max": 0.0069912814607665736,
+      "quantiles": [
+        2.7416790042221856e-05,
+        0.0001370839502111093,
+        0.0027211164116905193,
+        0.006237319734605472,
+        0.00693644788068213,
+        0.006963864670724351,
+        0.0069912814607665736
+      ]
+    },
+    "marginal_floor": null
+  },
+  "problem_sha256": "e20a296cb616ad2d5f45975355436a14c33c465c506af2d53b84c9ee7b25da6f",
+  "initial_sha256": "09c522902f8040534a116c92178c613d57f024673f3d17ba492d1842d2ccd560"
+}

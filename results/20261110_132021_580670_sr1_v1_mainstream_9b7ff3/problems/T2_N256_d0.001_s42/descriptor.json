@@ -1,0 +1,40 @@
+{
+  "case": {
+    "case_id": "T2_N256_d0.001_s42",
+    "family": "toy",
+    "n": 256,
+    "m": 256,
+    "blocks": 2,
+    "delta": 0.001,
+    "initial_seed": 42,
+    "data_seed": null,
+    "epsilon": 1.0,
+    "alpha": null,
+    "problem_sha256": "3908a6f8a8e984ce1a964a61fd469c9619cbc2ed4cdcf16abac84ee16cc60593",
+    "initial_sha256": "6fc3300d6433a5be0fd2aefe9eb2e1e41fb50a8c1ab70b599b5838b72c09b606",
+    "actual_n": 256,
+    "actual_m": 256,
+    "input_arrays_sha256": "6b9646e0c2552dc72e0e1aeeb059b5187230fbdce84d7633504f843026707c3d",
+    "data_status": "ready"
+  },
+  "metadata": {
+    "n": 256,
+    "blocks": 2,
+    "delta": 0.001,
+    "cost_scale": "none",
+    "known_reduced_optimum": 0.0,
+    "case_id": "T2_N256_d0.001_s42",
+    "family": "toy",
+    "m": 256,
+    "epsilon": 1.0,
+    "data_seed": null,
+    "weight_seed_a": null,
+    "weight_seed_b": null,
+    "marginal_type": "uniform",
+    "alpha": null,
+    "raw_cost_max": 12.4529327234617,
+    "normalization_policy": "none"
+  },
+  "problem_sha256": "3908a6f8a8e984ce1a964a61fd469c9619cbc2ed4cdcf16abac84ee16cc60593",
+  "initial_sha256": "6fc3300d6433a5be0fd2aefe9eb2e1e41fb50a8c1ab70b599b5838b72c09b606"
+}

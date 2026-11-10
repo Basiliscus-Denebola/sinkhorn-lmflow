@@ -1,0 +1,72 @@
+{
+  "case": {
+    "case_id": "M4_N1024_s44_a1_e0.003",
+    "family": "M4",
+    "n": 1024,
+    "m": 1024,
+    "data_seed": 44,
+    "epsilon": 0.003,
+    "alpha": 1.0,
+    "problem_sha256": "2deba15877091fda375994c460abfc343b0f1aa0f667a385384be2323057b4b4",
+    "initial_sha256": "3ecfd3912e2a1a6be2c0b6724f50fbcdac2226a72cc53d427e218d15e90961d1",
+    "actual_n": 1024,
+    "actual_m": 1024,
+    "input_arrays_sha256": "302b1c5f9a8da021d48ae792ed4368c079e93a88e594af548ab4e313746839d2",
+    "data_status": "ready"
+  },
+  "metadata": {
+    "case_id": "M4_N1024_s44_a1_e0.003",
+    "family": "M4",
+    "n": 1024,
+    "m": 1024,
+    "epsilon": 0.003,
+    "data_seed": 44,
+    "weight_seed_a": [
+      44,
+      20
+    ],
+    "weight_seed_b": [
+      44,
+      21
+    ],
+    "marginal_type": "dirichlet",
+    "alpha": 1.0,
+    "raw_cost_max": 1.071988478409734,
+    "normalization_policy": "maximum element",
+    "geometry": "mixture",
+    "rng_rule": "SeedSequence([data_seed, stream]); streams 1=cost,10/11=geometry,20/21=weights",
+    "point_pool_id": "7b53688e6cedfbe702871dd084495d6556cf29bd8c94f06078b633791dcce6e6",
+    "point_pool_size": 5000,
+    "prefix_n": 1024,
+    "prefix_m": 1024,
+    "weight_stats_a": {
+      "min": 9.761419625165893e-07,
+      "max": 0.007951894985106286,
+      "quantiles": [
+        9.761419625165893e-07,
+        6.470168526919594e-06,
+        0.000283036880635912,
+        0.0006588598172833988,
+        0.0013647399815516833,
+        0.00464250496092348,
+        0.007951894985106286
+      ]
+    },
+    "weight_stats_b": {
+      "min": 2.098129557399566e-07,
+      "max": 0.005706660944658944,
+      "quantiles": [
+        2.098129557399566e-07,
+        1.154818037505264e-05,
+        0.00028591439004939877,
+        0.0006743216753769911,
+        0.0013458480664829712,
+        0.004559660778546335,
+        0.005706660944658944
+      ]
+    },
+    "marginal_floor": null
+  },
+  "problem_sha256": "2deba15877091fda375994c460abfc343b0f1aa0f667a385384be2323057b4b4",
+  "initial_sha256": "3ecfd3912e2a1a6be2c0b6724f50fbcdac2226a72cc53d427e218d15e90961d1"
+}

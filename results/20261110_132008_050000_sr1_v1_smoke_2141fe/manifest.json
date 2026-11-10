@@ -1,0 +1,854 @@
+{
+  "schema": 1,
+  "config_sha256": "8b348ee06909d6ac1a3058c4c326442551061480a7771b6c68b763bd6076c4e9",
+  "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+  "source_hashes": {
+    "core/semi_dual.py": "ae4a20ed41ba2c1fa71593698c0ec03e1cf3fff4b38cf5881884f58236c0b303",
+    "core/residuals.py": "e5ffbac317c21984793677b8ed99028508be2eea19d1811874df2e228344de6e",
+    "core/gauge.py": "387ec0d6fbba956d35732035b2e4ce484cfae23e1ef843a8668114f164c22137",
+    "core/stability.py": "30168d753ac56d4158aad40ed4d918e894b37e0b4604cbec0944e377a46c6c1d",
+    "solvers/mirror_sr1.py": "46f7259a52352fa72f97f5ad3fa44d535773c424c435cf7ad26052fbe30c0a77",
+    "solvers/sinkhorn_fast.py": "51066578451041bf3df5eaf3ab5010a7afc8dde48d4fde185612b59cb2d3d6d4",
+    "solvers/lbfgs_reduced.py": "a2a04f3ba8dc74bb267d0dca99a4c3d5e92c3d3fd7d933c3173c70746979ed47",
+    "solvers/base.py": "a3e3275386d43149261c286f2ca0b74f874578210f563e405dae4f20ef0ee679",
+    "problems/mainstream.py": "d07de4720d7c6b34ee42284605e8ea15e7385d6f06e923dd9cf87e77aeefbdf9",
+    "problems/mnist.py": "bcc9263029a49218ab5e746620ba72aa36fe574a14002cc1dd28ebd71695a557",
+    "problems/weak_coupling.py": "8af8b365b2c3def75733e8cdeed3497b8bb0ec13dd4622c0b02e86b9208498f9",
+    "problems/instance.py": "81c25ccd5017ed51b5197c36f743f55fb2b28dc665d1bda3a33a6bf4164cdd4d",
+    "types.py": "19273411314b8ad53d95381c78ac132f1f0392122c01673598f32be5dd537855"
+  },
+  "cases": [
+    {
+      "case_id": "smoke_random",
+      "family": "M1",
+      "n": 32,
+      "m": 32,
+      "data_seed": 42,
+      "epsilon": 0.03,
+      "alpha": null,
+      "problem_sha256": "240062d3dd6c49b64a96c0b71d972178fc5b620381ec88415d6ce17b52db4777",
+      "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+      "actual_n": 32,
+      "actual_m": 32,
+      "input_arrays_sha256": "1330fa6e8552fcfa116621ba0ece4a44b33970bfb6f2b98e691ed95fe1ff101b",
+      "data_status": "ready"
+    },
+    {
+      "case_id": "smoke_uniform",
+      "family": "M2",
+      "n": 32,
+      "m": 32,
+      "data_seed": 42,
+      "epsilon": 0.03,
+      "alpha": null,
+      "problem_sha256": "7824e27f00d11d4f77ccde69387ea1faa2b941e2f63bc9f91b2b0544c87a11bc",
+      "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+      "actual_n": 32,
+      "actual_m": 32,
+      "input_arrays_sha256": "6eea49c4ca9a98d1740a7fafb6582b8c19d7d417ade0aa5a6a11692f0286a40d",
+      "data_status": "ready"
+    },
+    {
+      "case_id": "smoke_nonuniform",
+      "family": "M4",
+      "n": 32,
+      "m": 32,
+      "data_seed": 42,
+      "epsilon": 0.03,
+      "alpha": 0.1,
+      "problem_sha256": "7ccd82e632041ad93ae129319fbc6a3440dfc59ddd73fd99ecddc6db4b82ce6d",
+      "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+      "actual_n": 32,
+      "actual_m": 32,
+      "input_arrays_sha256": "870dd0e81f1daeec28afdd84b78af5add1342e75b8c54180b9189419daa563f1",
+      "data_status": "ready"
+    },
+    {
+      "case_id": "smoke_rectangular",
+      "family": "M7",
+      "n": 24,
+      "m": 40,
+      "data_seed": 42,
+      "epsilon": 0.03,
+      "alpha": null,
+      "problem_sha256": "96c2e2f941fac4c352c3d744d52e41c241712c83249cdf416662d9869d934e3f",
+      "initial_sha256": "7f3caa2e28edaf750b769e2e53e046dddb4d61d1a8dc74b06d4848585ef8a82d",
+      "actual_n": 24,
+      "actual_m": 40,
+      "input_arrays_sha256": "fa0595ce1d9d0d6dcdebc37385bade4cfe6770d7e566712647f41d4ce5196fd3",
+      "data_status": "ready"
+    },
+    {
+      "case_id": "smoke_mnist",
+      "family": "M5",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null,
+      "pair_name": "same_0",
+      "problem_sha256": "413c23f381b6644dc4a51935c8f43b9fb32a43993fcf9bf2e472ac47deed94ba",
+      "initial_sha256": "f2b3518a9cc20b9c13ec1f94b71e4e934e52df2b37cacfb73b4dd204710b51d9",
+      "actual_n": 267,
+      "actual_m": 173,
+      "input_arrays_sha256": "0d3474673642355968e8b7db9cfafb19db330458f168d8ec611332e3e530db0b",
+      "data_status": "ready"
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "smoke_random__sk_log_fast__w20__r0",
+      "case_id": "smoke_random",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "main",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "240062d3dd6c49b64a96c0b71d972178fc5b620381ec88415d6ce17b52db4777",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 74547200,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "b29ad2053521b758f6ef87138f223198b5eeefbb53f150f0bae2f0b512a6ff0f",
+          "warmup_path": "warmups\\smoke_random_w20_r0",
+          "peak_sampled_rss_bytes": 74641408,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0000_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 8.433261398238523e-09,
+            "row_residual_l1": 2.8449465006019636e-16,
+            "claimed_residual_l1": 8.433261488444144e-09,
+            "elapsed_sec": 8.520000000000749e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_random__mirror_sr1__w20__r0",
+      "case_id": "smoke_random",
+      "method": "mirror_sr1",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "main",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "240062d3dd6c49b64a96c0b71d972178fc5b620381ec88415d6ce17b52db4777",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 73785344,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "b29ad2053521b758f6ef87138f223198b5eeefbb53f150f0bae2f0b512a6ff0f",
+          "warmup_path": "warmups\\smoke_random_w20_r0",
+          "peak_sampled_rss_bytes": 73711616,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0001_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 3.6275294122700696e-09,
+            "row_residual_l1": 2.7755575615628914e-16,
+            "claimed_residual_l1": 3.627529387983941e-09,
+            "elapsed_sec": 9.079999999994648e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_uniform__mirror_sr1__w20__r0",
+      "case_id": "smoke_uniform",
+      "method": "mirror_sr1",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "main",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "7824e27f00d11d4f77ccde69387ea1faa2b941e2f63bc9f91b2b0544c87a11bc",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 74211328,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "44810c1a33747692f8cf9b4247855287c3efd07bab2c685226e24c27ed4cd519",
+          "warmup_path": "warmups\\smoke_uniform_w20_r0",
+          "peak_sampled_rss_bytes": 74194944,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0002_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 6.530874521737395e-09,
+            "row_residual_l1": 3.920475055707584e-16,
+            "claimed_residual_l1": 6.530874632759698e-09,
+            "elapsed_sec": 0.000148000000000037,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_uniform__sk_log_fast__w20__r0",
+      "case_id": "smoke_uniform",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "main",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "7824e27f00d11d4f77ccde69387ea1faa2b941e2f63bc9f91b2b0544c87a11bc",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 74235904,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "44810c1a33747692f8cf9b4247855287c3efd07bab2c685226e24c27ed4cd519",
+          "warmup_path": "warmups\\smoke_uniform_w20_r0",
+          "peak_sampled_rss_bytes": 74215424,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0003_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.294015067967676e-09,
+            "row_residual_l1": 2.949029909160572e-16,
+            "claimed_residual_l1": 9.294014988170396e-09,
+            "elapsed_sec": 9.680000000011901e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_nonuniform__sk_log_fast__w20__r0",
+      "case_id": "smoke_nonuniform",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "main",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "7ccd82e632041ad93ae129319fbc6a3440dfc59ddd73fd99ecddc6db4b82ce6d",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 74264576,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "12a40ed14faa95939ff78a2c995ea92a616be9587452f84d95f3755fd1ed7021",
+          "warmup_path": "warmups\\smoke_nonuniform_w20_r0",
+          "peak_sampled_rss_bytes": 74293248,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0004_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.445295471521657e-09,
+            "row_residual_l1": 1.4568168786279173e-15,
+            "claimed_residual_l1": 9.445296274959898e-09,
+            "elapsed_sec": 5.999999999994898e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_nonuniform__mirror_sr1__w20__r0",
+      "case_id": "smoke_nonuniform",
+      "method": "mirror_sr1",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "main",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "7ccd82e632041ad93ae129319fbc6a3440dfc59ddd73fd99ecddc6db4b82ce6d",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 74412032,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "12a40ed14faa95939ff78a2c995ea92a616be9587452f84d95f3755fd1ed7021",
+          "warmup_path": "warmups\\smoke_nonuniform_w20_r0",
+          "peak_sampled_rss_bytes": 74317824,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0005_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.736524553435607e-09,
+            "row_residual_l1": 1.0336305866341412e-15,
+            "claimed_residual_l1": 9.736523721537987e-09,
+            "elapsed_sec": 7.909999999999862e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_rectangular__mirror_sr1__w20__r0",
+      "case_id": "smoke_rectangular",
+      "method": "mirror_sr1",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "main",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "96c2e2f941fac4c352c3d744d52e41c241712c83249cdf416662d9869d934e3f",
+          "initial_sha256": "7f3caa2e28edaf750b769e2e53e046dddb4d61d1a8dc74b06d4848585ef8a82d",
+          "estimated_peak_rss_bytes": 74404864,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "53dd4f904315fe01d5263f021b4642ddfbc0d4ecc604ea0473356be47607c62a",
+          "warmup_path": "warmups\\smoke_rectangular_w20_r0",
+          "peak_sampled_rss_bytes": 74317824,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0006_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.1652543610099e-09,
+            "row_residual_l1": 5.273559366969494e-16,
+            "claimed_residual_l1": 9.165253934267925e-09,
+            "elapsed_sec": 9.159999999996948e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_rectangular__sk_log_fast__w20__r0",
+      "case_id": "smoke_rectangular",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "main",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "96c2e2f941fac4c352c3d744d52e41c241712c83249cdf416662d9869d934e3f",
+          "initial_sha256": "7f3caa2e28edaf750b769e2e53e046dddb4d61d1a8dc74b06d4848585ef8a82d",
+          "estimated_peak_rss_bytes": 74335744,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "53dd4f904315fe01d5263f021b4642ddfbc0d4ecc604ea0473356be47607c62a",
+          "warmup_path": "warmups\\smoke_rectangular_w20_r0",
+          "peak_sampled_rss_bytes": 74321920,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0007_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.558082658678302e-09,
+            "row_residual_l1": 7.563394355258879e-16,
+            "claimed_residual_l1": 9.558082828681203e-09,
+            "elapsed_sec": 9.220000000009776e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_mnist__sk_log_fast__w20__r0",
+      "case_id": "smoke_mnist",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "main",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "413c23f381b6644dc4a51935c8f43b9fb32a43993fcf9bf2e472ac47deed94ba",
+          "initial_sha256": "f2b3518a9cc20b9c13ec1f94b71e4e934e52df2b37cacfb73b4dd204710b51d9",
+          "estimated_peak_rss_bytes": 76407128,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "248d275873c4f9b873deb5762ee1384856734efb3738c66b23ce796b92af76d7",
+          "warmup_path": "warmups\\smoke_mnist_w20_r0",
+          "peak_sampled_rss_bytes": 75440128,
+          "rss_sample_count": 2,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0008_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.570964908395404e-09,
+            "row_residual_l1": 6.508601166702044e-16,
+            "claimed_residual_l1": 9.570964968609282e-09,
+            "elapsed_sec": 0.0004702000000000872,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_mnist__mirror_sr1__w20__r0",
+      "case_id": "smoke_mnist",
+      "method": "mirror_sr1",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "main",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "413c23f381b6644dc4a51935c8f43b9fb32a43993fcf9bf2e472ac47deed94ba",
+          "initial_sha256": "f2b3518a9cc20b9c13ec1f94b71e4e934e52df2b37cacfb73b4dd204710b51d9",
+          "estimated_peak_rss_bytes": 80720016,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "248d275873c4f9b873deb5762ee1384856734efb3738c66b23ce796b92af76d7",
+          "warmup_path": "warmups\\smoke_mnist_w20_r0",
+          "peak_sampled_rss_bytes": 75718656,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0009_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.987680317008116e-09,
+            "row_residual_l1": 6.48230926401927e-16,
+            "claimed_residual_l1": 9.987680294571907e-09,
+            "elapsed_sec": 0.0005101000000000688,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_mnist__sk_scaling_fast__w20__r0",
+      "case_id": "smoke_mnist",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "scaling",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "413c23f381b6644dc4a51935c8f43b9fb32a43993fcf9bf2e472ac47deed94ba",
+          "initial_sha256": "f2b3518a9cc20b9c13ec1f94b71e4e934e52df2b37cacfb73b4dd204710b51d9",
+          "estimated_peak_rss_bytes": 77125360,
+          "memory_limit_bytes": 1834836787,
+          "peak_sampled_rss_bytes": 76406784,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0010_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.570964950570868e-09,
+            "row_residual_l1": 6.211936347255698e-16,
+            "claimed_residual_l1": 9.570964940182856e-09,
+            "elapsed_sec": 0.00044800000000000395,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_rectangular__sk_scaling_fast__w20__r0",
+      "case_id": "smoke_rectangular",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "scaling",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "96c2e2f941fac4c352c3d744d52e41c241712c83249cdf416662d9869d934e3f",
+          "initial_sha256": "7f3caa2e28edaf750b769e2e53e046dddb4d61d1a8dc74b06d4848585ef8a82d",
+          "estimated_peak_rss_bytes": 75791360,
+          "memory_limit_bytes": 1834836787,
+          "peak_sampled_rss_bytes": 75804672,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0011_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.558082568472681e-09,
+            "row_residual_l1": 6.106226635438361e-16,
+            "claimed_residual_l1": 9.558083012561891e-09,
+            "elapsed_sec": 0.0012142000000001651,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_random__sk_scaling_fast__w20__r0",
+      "case_id": "smoke_random",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "scaling",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "240062d3dd6c49b64a96c0b71d972178fc5b620381ec88415d6ce17b52db4777",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 75845632,
+          "memory_limit_bytes": 1834836787,
+          "peak_sampled_rss_bytes": 75853824,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0012_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 8.433261519669166e-09,
+            "row_residual_l1": 3.365363543395006e-16,
+            "claimed_residual_l1": 8.433261557833083e-09,
+            "elapsed_sec": 6.079999999997199e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_uniform__sk_scaling_fast__w20__r0",
+      "case_id": "smoke_uniform",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "scaling",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "7824e27f00d11d4f77ccde69387ea1faa2b941e2f63bc9f91b2b0544c87a11bc",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 75849728,
+          "memory_limit_bytes": 1834836787,
+          "peak_sampled_rss_bytes": 75853824,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0013_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.294015026334312e-09,
+            "row_residual_l1": 2.42861286636753e-16,
+            "claimed_residual_l1": 9.294014932659245e-09,
+            "elapsed_sec": 7.800000000024454e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_nonuniform__sk_scaling_fast__w20__r0",
+      "case_id": "smoke_nonuniform",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "scaling",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "7ccd82e632041ad93ae129319fbc6a3440dfc59ddd73fd99ecddc6db4b82ce6d",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 75853824,
+          "memory_limit_bytes": 1834836787,
+          "peak_sampled_rss_bytes": 75857920,
+          "rss_sample_count": 1,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0014_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 9.445295821064877e-09,
+            "row_residual_l1": 1.8415221637747795e-15,
+            "claimed_residual_l1": 9.445296260279667e-09,
+            "elapsed_sec": 7.319999999966242e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_random__lbfgs_reduced__w20__r0",
+      "case_id": "smoke_random",
+      "method": "lbfgs_reduced",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "lbfgs",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "240062d3dd6c49b64a96c0b71d972178fc5b620381ec88415d6ce17b52db4777",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 75919360,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "b29ad2053521b758f6ef87138f223198b5eeefbb53f150f0bae2f0b512a6ff0f",
+          "warmup_path": "warmups\\smoke_random_w20_r0",
+          "peak_sampled_rss_bytes": 75919360,
+          "rss_sample_count": 2,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0015_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 3.1633630055705186e-09,
+            "row_residual_l1": 2.5673907444456745e-16,
+            "claimed_residual_l1": 3.1633629535288144e-09,
+            "elapsed_sec": 5.8499999999739316e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_uniform__lbfgs_reduced__w20__r0",
+      "case_id": "smoke_uniform",
+      "method": "lbfgs_reduced",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "lbfgs",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "7824e27f00d11d4f77ccde69387ea1faa2b941e2f63bc9f91b2b0544c87a11bc",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 76054528,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "44810c1a33747692f8cf9b4247855287c3efd07bab2c685226e24c27ed4cd519",
+          "warmup_path": "warmups\\smoke_uniform_w20_r0",
+          "peak_sampled_rss_bytes": 76001280,
+          "rss_sample_count": 2,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0016_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 1.472446848477249e-09,
+            "row_residual_l1": 2.8449465006019636e-16,
+            "claimed_residual_l1": 1.4724468033744387e-09,
+            "elapsed_sec": 6.930000000027192e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_nonuniform__lbfgs_reduced__w20__r0",
+      "case_id": "smoke_nonuniform",
+      "method": "lbfgs_reduced",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "lbfgs",
+      "mode": "performance",
+      "status": "library_stop",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "library_stop",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "7ccd82e632041ad93ae129319fbc6a3440dfc59ddd73fd99ecddc6db4b82ce6d",
+          "initial_sha256": "53dae17a32ace76ac20d55413d47635d57c1d13e3e2ff4df3ba4a5122ddb9e6a",
+          "estimated_peak_rss_bytes": 75767808,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "12a40ed14faa95939ff78a2c995ea92a616be9587452f84d95f3755fd1ed7021",
+          "warmup_path": "warmups\\smoke_nonuniform_w20_r0",
+          "peak_sampled_rss_bytes": 75735040,
+          "rss_sample_count": 2,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0017_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 1.9417222280372686e-08,
+            "row_residual_l1": 1.4950728885681854e-15,
+            "claimed_residual_l1": 1.941722200107992e-08,
+            "elapsed_sec": 6.539999999999324e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_rectangular__lbfgs_reduced__w20__r0",
+      "case_id": "smoke_rectangular",
+      "method": "lbfgs_reduced",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "lbfgs",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "96c2e2f941fac4c352c3d744d52e41c241712c83249cdf416662d9869d934e3f",
+          "initial_sha256": "7f3caa2e28edaf750b769e2e53e046dddb4d61d1a8dc74b06d4848585ef8a82d",
+          "estimated_peak_rss_bytes": 76131840,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "53dd4f904315fe01d5263f021b4642ddfbc0d4ecc604ea0473356be47607c62a",
+          "warmup_path": "warmups\\smoke_rectangular_w20_r0",
+          "peak_sampled_rss_bytes": 76095488,
+          "rss_sample_count": 2,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0018_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 1.6980274235300907e-09,
+            "row_residual_l1": 7.077671781985373e-16,
+            "claimed_residual_l1": 1.6980270557687138e-09,
+            "elapsed_sec": 8.289999999977482e-05,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    },
+    {
+      "job_id": "smoke_mnist__lbfgs_reduced__w20__r0",
+      "case_id": "smoke_mnist",
+      "method": "lbfgs_reduced",
+      "repeat": 0,
+      "warmup_iters": 20,
+      "group": "lbfgs",
+      "mode": "performance",
+      "status": "success",
+      "attempts": [
+        {
+          "attempt": 1,
+          "status": "success",
+          "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b",
+          "problem_sha256": "413c23f381b6644dc4a51935c8f43b9fb32a43993fcf9bf2e472ac47deed94ba",
+          "initial_sha256": "f2b3518a9cc20b9c13ec1f94b71e4e934e52df2b37cacfb73b4dd204710b51d9",
+          "estimated_peak_rss_bytes": 79957816,
+          "memory_limit_bytes": 1834836787,
+          "warmup_sha256": "248d275873c4f9b873deb5762ee1384856734efb3738c66b23ce796b92af76d7",
+          "warmup_path": "warmups\\smoke_mnist_w20_r0",
+          "peak_sampled_rss_bytes": 79265792,
+          "rss_sample_count": 3,
+          "rss_measurement": "process RSS sampled every 50ms; lower bound on instantaneous peak",
+          "run_path": "runs\\j0019_a1",
+          "audit": {
+            "passed": true,
+            "residual_l1": 6.460044498670498e-09,
+            "row_residual_l1": 6.808518592665846e-16,
+            "claimed_residual_l1": 6.460044543813966e-09,
+            "elapsed_sec": 0.00042280000000038953,
+            "method": "independent full-potential row blocks",
+            "block_rows": 128
+          }
+        }
+      ]
+    }
+  ],
+  "invocations": [
+    {
+      "status": "finished_dispatch",
+      "selection": "all",
+      "environment": {
+        "python": "3.9.24 (main, Oct 14 2025, 16:10:39) [MSC v.1929 64 bit (AMD64)]",
+        "python_executable": "D:\\miniconda_envs\\OT\\python.exe",
+        "numpy": "2.0.2",
+        "scipy": "1.13.1",
+        "os": "Windows-10-10.0.26200-SP0",
+        "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+        "git_commit": "0481d2f478c7302860cc6b42041ba244909d8152",
+        "git_dirty": true,
+        "seed": null,
+        "timestamp_utc": "2026-11-10T13:20:08.628259+00:00",
+        "blas_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: D:/miniconda_envs/OT/Library/include\n    lib directory: D:/miniconda_envs/OT/Library/lib\n    name: blas\n    openblas configuration: unknown\n    pc file directory: D:\\bld\\numpy_1732314314278\\_h_env\\Library\\lib\\pkgconfig\n    version: 3.9.0\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: D:/miniconda_envs/OT/Library/include\n    lib directory: D:/miniconda_envs/OT/Library/lib\n    name: lapack\n    openblas configuration: unknown\n    pc file directory: D:\\bld\\numpy_1732314314278\\_h_env\\Library\\lib\\pkgconfig\n    version: 3.9.0\nCompilers:\n  c:\n    commands: cl.exe\n    linker: link\n    name: msvc\n    version: 19.29.30157\n  c++:\n    commands: cl.exe\n    linker: link\n    name: msvc\n    version: 19.29.30157\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.0.11\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: windows\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: windows\nPython Information:\n  path: D:\\bld\\numpy_1732314314278\\_h_env\\python.exe\n  version: '3.9'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  not found:\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n\n",
+        "thread_environment": {
+          "OMP_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1"
+        },
+        "available_memory_at_start_bytes": 3058061312,
+        "memory_limit_bytes": 1834836787,
+        "psutil_version": "7.0.0",
+        "implementation_sha256": "96405a9bce27108a5e3e2d972ca752046a6866ac64e0bb46f2fa593bc0b42c2b"
+      },
+      "excluded_data_sec": 0.061762600000000445,
+      "excluded_io_sec": 0.5824959000000012,
+      "excluded_audit_sec": 0.004297100000000498,
+      "pending_count": 0
+    }
+  ],
+  "previous_revision": null,
+  "budget_ledger": "D:\\sinkhorn-lmflow\\results\\sr1_v1_smoke_budget.json",
+  "scale_alias": {
+    "N1024": "M3_N1024_s42_e0.003"
+  },
+  "budget_snapshot": {
+    "performance_budget_sec": 900.0,
+    "diagnostic_budget_sec": 120.0,
+    "performance_used_sec": 0.37907449999999954,
+    "diagnostic_used_sec": 0.0,
+    "active_run_dir": "D:\\sinkhorn-lmflow\\results\\20261110_132008_050000_sr1_v1_smoke_2141fe"
+  }
+}

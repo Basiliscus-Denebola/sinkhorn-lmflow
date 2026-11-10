@@ -92,6 +92,37 @@ failures remain on disk. New solver entry points require `record_every=1` and
 See the [task specification](docs/sr1_v0_task.md) and
 [Chinese implementation and experiment report](docs/sr1_v0_report.md).
 
+## SR1 v1 mainstream benchmarks
+
+The frozen SR1 update is compared against lightweight log Sinkhorn, cold-start
+scaling Sinkhorn where its kernel is representable, and reduced-coordinate
+L-BFGS. The plan covers 57 mainstream inputs, three timing repeats, limited
+ablations and separate diagnostic replay. MNIST uses ten fixed test-image pairs.
+
+```powershell
+.\scripts\run_ot.cmd scripts/run_sr1_mainstream.py --config configs/sr1_v1_smoke.yaml
+.\scripts\run_ot.cmd scripts/run_sr1_mainstream.py --config configs/sr1_v1_main.yaml
+.\scripts\run_ot.cmd scripts/report_sr1_mainstream.py --run-dir results/<actual-directory> --audit --report docs/sr1_v1_mainstream_report.md
+```
+
+The `mnist`, `scale`, `baselines` and `ablation` configurations share the main
+budget ledger (six performance hours, one diagnostic hour). Repeated commands
+resume the same run automatically; explicit `--resume <directory>` is supported.
+Valid terminal attempts are retained, including failures. Use `--retry-failures`
+only to retry them within the remaining cumulative budget. A changed solver or
+configuration requires `--new-revision`, which does not reset that budget.
+An explicit user pause is stored in `pause.json`; resume it with
+`--continue-paused`. See [the current v1 checkpoint](docs/sr1_v1_resume.md).
+
+Run serially from the repository root using the OT launcher, which fixes BLAS
+threads to one. `psutil` is required for memory checks and RSS sampling. The
+runner stores compact reconstruction inputs, every accepted-state history,
+actual work counters, independent endpoint audits and durable attempt metadata.
+The report regenerates CSV and PNG/PDF artifacts from disk; timeouts, underflow
+inapplicability and resource skips stay in coverage denominators. See the
+[v1 task](docs/sr1_v1_mainstream_task.md) and
+[Chinese v1 report](docs/sr1_v1_mainstream_report.md).
+
 ## Original MVP status and limits
 
 First MVP implemented and exercised; see [MVP report](docs/mvp_report.md) for

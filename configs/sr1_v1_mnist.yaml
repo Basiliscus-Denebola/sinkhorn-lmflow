@@ -1,0 +1,13 @@
+selection: mnist
+repeats: 3
+warmup_iters: 20
+max_iter: 50000
+performance_budget_sec: 21600
+diagnostic_budget_sec: 3600
+track_limit_sec: 300
+track_limit_large_sec: 1200
+memory_cap_gib: 8
+budget_ledger: results/sr1_v1_budget.json
+mnist_cache: data/mnist
+download_mnist: true
+n10000_enabled: false

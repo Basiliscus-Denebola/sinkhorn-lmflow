@@ -1,0 +1,9 @@
+{
+  "excluded_cases": {
+    "M6_N5000_s42_e0.003": {
+      "reason": "User requested no further N=5000 baselines when SR1 cannot run under the memory cap; preserve existing records as archival only",
+      "scope": "all remaining N=5000 jobs; exclude the case from paired performance conclusions",
+      "basis": "SR1 conservative workspace estimate exceeds startup memory limit"
+    }
+  }
+}

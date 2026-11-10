@@ -1,0 +1,97 @@
+{
+  "case": {
+    "case_id": "smoke_mnist",
+    "family": "M5",
+    "n": 784,
+    "m": 784,
+    "data_seed": 20261110,
+    "epsilon": 0.01,
+    "alpha": null,
+    "pair_name": "same_0",
+    "problem_sha256": "413c23f381b6644dc4a51935c8f43b9fb32a43993fcf9bf2e472ac47deed94ba",
+    "initial_sha256": "f2b3518a9cc20b9c13ec1f94b71e4e934e52df2b37cacfb73b4dd204710b51d9",
+    "actual_n": 267,
+    "actual_m": 173,
+    "input_arrays_sha256": "0d3474673642355968e8b7db9cfafb19db330458f168d8ec611332e3e530db0b",
+    "data_status": "ready"
+  },
+  "metadata": {
+    "case_id": "smoke_mnist",
+    "family": "M5",
+    "n": 267,
+    "m": 173,
+    "epsilon": 0.01,
+    "data_seed": 20261110,
+    "weight_seed_a": null,
+    "weight_seed_b": null,
+    "marginal_type": "image_gray",
+    "alpha": null,
+    "raw_cost_max": 2.0,
+    "normalization_policy": "full 28x28 grid diameter squared = 2",
+    "split": "test",
+    "indices": [
+      7846,
+      6444
+    ],
+    "labels": [
+      0,
+      0
+    ],
+    "pair_type": "same",
+    "pair_name": "same_0",
+    "original_pixels": 784,
+    "support_n": 267,
+    "support_m": 173,
+    "retained_mass_a": 1.0,
+    "retained_mass_b": 1.0,
+    "raw_gray_mass_a": 55486.0,
+    "raw_gray_mass_b": 29667.0,
+    "data_files": {
+      "t10k-images-idx3-ubyte.gz": {
+        "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-images-idx3-ubyte.gz",
+        "sha256": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+        "shape": [
+          10000,
+          28,
+          28
+        ]
+      },
+      "t10k-labels-idx1-ubyte.gz": {
+        "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-labels-idx1-ubyte.gz",
+        "sha256": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6",
+        "shape": [
+          10000
+        ]
+      }
+    },
+    "weight_stats_a": {
+      "min": 7.20902570017662e-05,
+      "max": 0.004595753883862596,
+      "quantiles": [
+        7.20902570017662e-05,
+        0.00018022564250441553,
+        0.0036856143892152974,
+        0.004541686191111271,
+        0.004541686191111271,
+        0.004595753883862596,
+        0.004595753883862596
+      ]
+    },
+    "weight_stats_b": {
+      "min": 3.370748643273671e-05,
+      "max": 0.00859540904034786,
+      "quantiles": [
+        3.370748643273671e-05,
+        0.00012539184952978057,
+        0.003168503724677251,
+        0.0070448646644419724,
+        0.008527994067482388,
+        0.008561701553915125,
+        0.00859540904034786
+      ]
+    },
+    "marginal_floor": null
+  },
+  "problem_sha256": "413c23f381b6644dc4a51935c8f43b9fb32a43993fcf9bf2e472ac47deed94ba",
+  "initial_sha256": "f2b3518a9cc20b9c13ec1f94b71e4e934e52df2b37cacfb73b4dd204710b51d9"
+}

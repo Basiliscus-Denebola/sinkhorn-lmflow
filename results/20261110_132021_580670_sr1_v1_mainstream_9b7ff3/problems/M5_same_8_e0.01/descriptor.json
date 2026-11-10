@@ -1,0 +1,97 @@
+{
+  "case": {
+    "case_id": "M5_same_8_e0.01",
+    "family": "M5",
+    "pair_name": "same_8",
+    "n": 784,
+    "m": 784,
+    "data_seed": 20261110,
+    "epsilon": 0.01,
+    "alpha": null,
+    "problem_sha256": "a63f2c6707ec0f8fce9187f286a0a0206dd47f7e4f7a34aa15f8b6737cc765a8",
+    "initial_sha256": "1c1266b996d11789160135833dda9ad4d692b87efe9da08179fdb6221ec8b973",
+    "actual_n": 139,
+    "actual_m": 155,
+    "input_arrays_sha256": "3d4785dabecff40b08309d126d4f2d824230180fd4e50e2b32743b1f00cf3499",
+    "data_status": "ready"
+  },
+  "metadata": {
+    "case_id": "M5_same_8_e0.01",
+    "family": "M5",
+    "n": 139,
+    "m": 155,
+    "epsilon": 0.01,
+    "data_seed": 20261110,
+    "weight_seed_a": null,
+    "weight_seed_b": null,
+    "marginal_type": "image_gray",
+    "alpha": null,
+    "raw_cost_max": 2.0,
+    "normalization_policy": "full 28x28 grid diameter squared = 2",
+    "split": "test",
+    "indices": [
+      5300,
+      7060
+    ],
+    "labels": [
+      8,
+      8
+    ],
+    "pair_type": "same",
+    "pair_name": "same_8",
+    "original_pixels": 784,
+    "support_n": 139,
+    "support_m": 155,
+    "retained_mass_a": 1.0,
+    "retained_mass_b": 0.9999999999999999,
+    "raw_gray_mass_a": 25042.0,
+    "raw_gray_mass_b": 25497.0,
+    "data_files": {
+      "t10k-images-idx3-ubyte.gz": {
+        "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-images-idx3-ubyte.gz",
+        "sha256": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+        "shape": [
+          10000,
+          28,
+          28
+        ]
+      },
+      "t10k-labels-idx1-ubyte.gz": {
+        "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-labels-idx1-ubyte.gz",
+        "sha256": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6",
+        "shape": [
+          10000
+        ]
+      }
+    },
+    "weight_stats_a": {
+      "min": 0.0002795303889465698,
+      "max": 0.01018289274019647,
+      "quantiles": [
+        0.0002795303889465698,
+        0.0003593962143598754,
+        0.004572318504911748,
+        0.008944972446290233,
+        0.010103026914783163,
+        0.010142959827489816,
+        0.01018289274019647
+      ]
+    },
+    "weight_stats_b": {
+      "min": 0.0001568812017100051,
+      "max": 0.010001176609012825,
+      "quantiles": [
+        0.0001568812017100051,
+        0.0002745421029925089,
+        0.003235674785268855,
+        0.0076871788837902496,
+        0.009883515707730321,
+        0.009922736008157823,
+        0.010001176609012825
+      ]
+    },
+    "marginal_floor": null
+  },
+  "problem_sha256": "a63f2c6707ec0f8fce9187f286a0a0206dd47f7e4f7a34aa15f8b6737cc765a8",
+  "initial_sha256": "1c1266b996d11789160135833dda9ad4d692b87efe9da08179fdb6221ec8b973"
+}

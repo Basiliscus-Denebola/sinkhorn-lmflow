@@ -12,3 +12,4 @@ results/**
 !results/**/*.pdf
 data/*.npz
 data/*.json
+data/mnist/

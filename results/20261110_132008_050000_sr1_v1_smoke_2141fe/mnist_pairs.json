@@ -1,0 +1,136 @@
+{
+  "seed": 20261110,
+  "selection_rule": "listed order, choose one index per side, globally without replacement",
+  "pairs": [
+    {
+      "name": "same_0",
+      "indices": [
+        7846,
+        6444
+      ],
+      "labels": [
+        0,
+        0
+      ],
+      "split": "test",
+      "pair_type": "same"
+    },
+    {
+      "name": "same_2",
+      "indices": [
+        8153,
+        1336
+      ],
+      "labels": [
+        2,
+        2
+      ],
+      "split": "test",
+      "pair_type": "same"
+    },
+    {
+      "name": "same_4",
+      "indices": [
+        2007,
+        6284
+      ],
+      "labels": [
+        4,
+        4
+      ],
+      "split": "test",
+      "pair_type": "same"
+    },
+    {
+      "name": "same_6",
+      "indices": [
+        729,
+        5411
+      ],
+      "labels": [
+        6,
+        6
+      ],
+      "split": "test",
+      "pair_type": "same"
+    },
+    {
+      "name": "same_8",
+      "indices": [
+        5300,
+        7060
+      ],
+      "labels": [
+        8,
+        8
+      ],
+      "split": "test",
+      "pair_type": "same"
+    },
+    {
+      "name": "cross_0_1",
+      "indices": [
+        8414,
+        6083
+      ],
+      "labels": [
+        0,
+        1
+      ],
+      "split": "test",
+      "pair_type": "cross"
+    },
+    {
+      "name": "cross_2_3",
+      "indices": [
+        3004,
+        8854
+      ],
+      "labels": [
+        2,
+        3
+      ],
+      "split": "test",
+      "pair_type": "cross"
+    },
+    {
+      "name": "cross_4_5",
+      "indices": [
+        9728,
+        2558
+      ],
+      "labels": [
+        4,
+        5
+      ],
+      "split": "test",
+      "pair_type": "cross"
+    },
+    {
+      "name": "cross_6_7",
+      "indices": [
+        4831,
+        6858
+      ],
+      "labels": [
+        6,
+        7
+      ],
+      "split": "test",
+      "pair_type": "cross"
+    },
+    {
+      "name": "cross_8_9",
+      "indices": [
+        527,
+        1714
+      ],
+      "labels": [
+        8,
+        9
+      ],
+      "split": "test",
+      "pair_type": "cross"
+    }
+  ]
+}

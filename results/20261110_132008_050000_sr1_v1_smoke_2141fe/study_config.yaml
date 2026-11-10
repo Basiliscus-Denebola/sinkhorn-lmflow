@@ -1,0 +1,51 @@
+selection: all
+smoke: true
+repeats: 1
+warmup_iters: 20
+max_iter: 50000
+performance_budget_sec: 900
+diagnostic_budget_sec: 120
+track_limit_sec: 60
+track_limit_large_sec: 60
+memory_cap_gib: 8
+budget_ledger: results/sr1_v1_smoke_budget.json
+mnist_cache: data/mnist
+download_mnist: true
+n10000_enabled: false
+cases:
+- case_id: smoke_random
+  family: M1
+  n: 32
+  m: 32
+  data_seed: 42
+  epsilon: 0.03
+  alpha: null
+- case_id: smoke_uniform
+  family: M2
+  n: 32
+  m: 32
+  data_seed: 42
+  epsilon: 0.03
+  alpha: null
+- case_id: smoke_nonuniform
+  family: M4
+  n: 32
+  m: 32
+  data_seed: 42
+  epsilon: 0.03
+  alpha: 0.1
+- case_id: smoke_rectangular
+  family: M7
+  n: 24
+  m: 40
+  data_seed: 42
+  epsilon: 0.03
+  alpha: null
+- case_id: smoke_mnist
+  family: M5
+  n: 784
+  m: 784
+  data_seed: 20261110
+  epsilon: 0.01
+  alpha: null
+  pair_name: same_0

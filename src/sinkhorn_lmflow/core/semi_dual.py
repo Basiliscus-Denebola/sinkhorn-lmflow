@@ -26,6 +26,10 @@ class ReducedWork:
     probability_normalization_count: int = 0
     probability_mass_error_max: float = 0.0
     probability_mean_error_max: float = 0.0
+    log_kernel_build_count: int = 0
+    kernel_build_count: int = 0
+    matrix_vector_count: int = 0
+    objective_gradient_count: int = 0
 
     def to_dict(self):
         return asdict(self)
@@ -51,14 +55,14 @@ def center(z):
     return z - z.mean()
 
 
-def evaluate_reduced(problem: OTProblem, z_col, work: ReducedWork | None = None):
+def evaluate_reduced(problem: OTProblem, z_col, work: ReducedWork | None = None, *, log_kernel=None):
     if work is not None:
         work.state_eval_count += 1
     z = center(z_col)
     if z.shape != problem.b.shape or not np.isfinite(z).all():
         raise FloatingPointError("invalid reduced coordinates")
     with np.errstate(over="raise", invalid="raise", divide="raise"):
-        logits = -problem.M/problem.epsilon + z[None, :]
+        logits = (-problem.M/problem.epsilon if log_kernel is None else log_kernel) + z[None, :]
         ell = logsumexp(logits, axis=1)
         logp = logits-ell[:, None]
         if work is not None:

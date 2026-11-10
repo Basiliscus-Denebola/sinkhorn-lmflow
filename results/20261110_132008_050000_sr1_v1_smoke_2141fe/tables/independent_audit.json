@@ -1,0 +1,588 @@
+{
+  "readback_recomputed": true,
+  "planned": 20,
+  "persisted_artifacts": 20,
+  "all_artifact_checks_passed": true,
+  "tracks": [
+    {
+      "job_id": "smoke_random__sk_log_fast__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "e4f13cdd3a9d9ca605ae284d61a2e1f303398de727dcec67974dc026a1da6c83",
+        "history.csv": "0ffb082f6647da071ce98756596f0f38cf5f06be810cad8d8244b0bb336d26cf",
+        "final_state.npz": "2a4013379a9b5954dedd75a4cc9f8080d8338ab64a956030775e346f18544625"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 8.433261398238523e-09,
+        "row_residual_l1": 2.8449465006019636e-16,
+        "claimed_residual_l1": 8.433261488444144e-09,
+        "elapsed_sec": 8.520000000000749e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 8.433261398238523e-09,
+        "row_residual_l1": 2.8449465006019636e-16,
+        "claimed_residual_l1": 8.433261488444144e-09,
+        "elapsed_sec": 4.4799999999955986e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_random__mirror_sr1__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "2f4860f6901d82b14e7cd63937e185b38933265bdc72a3b03a3040065ac87430",
+        "history.csv": "58a26894c15f0f024e4b08c015059f281f6a5eba957c1ee09e55c348aa4447b6",
+        "final_state.npz": "d0c84eb28ba025c74a130a979db07258a4b913206d8ab3e940c0745118ccbd2b"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 3.6275294122700696e-09,
+        "row_residual_l1": 2.7755575615628914e-16,
+        "claimed_residual_l1": 3.627529387983941e-09,
+        "elapsed_sec": 9.079999999994648e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 3.6275294122700696e-09,
+        "row_residual_l1": 2.7755575615628914e-16,
+        "claimed_residual_l1": 3.627529387983941e-09,
+        "elapsed_sec": 7.289999999970931e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_uniform__mirror_sr1__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "2a8f7fb82eee4ee1f6015c67150467c402b14131c56b2ce17907001ea970e15f",
+        "history.csv": "5bc7eb7a52a66f53e9ec30c36cb91a63f576529db94eb1d028e59c29bfdf605c",
+        "final_state.npz": "3736db9b58ec3b7186e11aa383f1a26768c5342b3ab3d70bf50651a9df018a10"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 6.530874521737395e-09,
+        "row_residual_l1": 3.920475055707584e-16,
+        "claimed_residual_l1": 6.530874632759698e-09,
+        "elapsed_sec": 0.000148000000000037,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 6.530874521737395e-09,
+        "row_residual_l1": 3.920475055707584e-16,
+        "claimed_residual_l1": 6.530874632759698e-09,
+        "elapsed_sec": 4.2000000000097515e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_uniform__sk_log_fast__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "2e59fdf8affe16eca3317020e6d8f1ae8385c9dead9d2fab0e17f38c68e96eef",
+        "history.csv": "ce658f0e52830413fdecf1feaad69f94f5d91237f9fa9ad18c90d95cb7e43e0d",
+        "final_state.npz": "b8bc20028316dc85d8d9e0c299356431d2d2465b00409902e993df174092d1e2"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.294015067967676e-09,
+        "row_residual_l1": 2.949029909160572e-16,
+        "claimed_residual_l1": 9.294014988170396e-09,
+        "elapsed_sec": 9.680000000011901e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.294015067967676e-09,
+        "row_residual_l1": 2.949029909160572e-16,
+        "claimed_residual_l1": 9.294014988170396e-09,
+        "elapsed_sec": 8.290000000021891e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_nonuniform__sk_log_fast__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "10499322969fdedef87fc6da4026ab7df930a944d90db1b33da35b6bacffb2ca",
+        "history.csv": "89714b970c89c1db0a9efb34b736206dc9ef8d64b363bc871a95e774a4a7a9a6",
+        "final_state.npz": "4c7b1b9866ca70c2d38552e25cc927eb34222c7aa7409d538c5e568d273a84fe"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.445295471521657e-09,
+        "row_residual_l1": 1.4568168786279173e-15,
+        "claimed_residual_l1": 9.445296274959898e-09,
+        "elapsed_sec": 5.999999999994898e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.445295471521657e-09,
+        "row_residual_l1": 1.4568168786279173e-15,
+        "claimed_residual_l1": 9.445296274959898e-09,
+        "elapsed_sec": 3.569999999974982e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_nonuniform__mirror_sr1__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "654790ac1c19f0dca79d73d64be1df4d4f4871926a6423414fab0528da41057c",
+        "history.csv": "1eaeab47d86bbddb140ab5ce02bcb901f26fd9e2a0ba661b68bfad48d6f5c652",
+        "final_state.npz": "ac28a813059edcb503b82623a8c0238545140b3878f7f1c00ccd51845aceb675"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.736524553435607e-09,
+        "row_residual_l1": 1.0336305866341412e-15,
+        "claimed_residual_l1": 9.736523721537987e-09,
+        "elapsed_sec": 7.909999999999862e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.736524553435607e-09,
+        "row_residual_l1": 1.0336305866341412e-15,
+        "claimed_residual_l1": 9.736523721537987e-09,
+        "elapsed_sec": 8.85999999997722e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_rectangular__mirror_sr1__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "1ec6e6d94a72cd5da174ef7232eed2bac276903735d79e917c9768725fb7ad7e",
+        "history.csv": "272c471e704504bc266fcc821eb1385a61023225c64dd9cb81d0eb7aa8ae8e57",
+        "final_state.npz": "020f8160399568147483659e06565a160765ad405d7a8f1020b80d2ac6938c2c"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.1652543610099e-09,
+        "row_residual_l1": 5.273559366969494e-16,
+        "claimed_residual_l1": 9.165253934267925e-09,
+        "elapsed_sec": 9.159999999996948e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.1652543610099e-09,
+        "row_residual_l1": 5.273559366969494e-16,
+        "claimed_residual_l1": 9.165253934267925e-09,
+        "elapsed_sec": 3.829999999993561e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_rectangular__sk_log_fast__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "8438d0b661428df7e2a9ad2ae97cac99eaf680e8b5017500f8cefaf0901e5a0b",
+        "history.csv": "597790b39cbb8197abccedc16b707ee185aea1b28608978acfd547a81c2d9ec9",
+        "final_state.npz": "887d65e1cc822b33c08d0509deea2ea0877d391856fd0d37dc6165424c4b4fed"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.558082658678302e-09,
+        "row_residual_l1": 7.563394355258879e-16,
+        "claimed_residual_l1": 9.558082828681203e-09,
+        "elapsed_sec": 9.220000000009776e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.558082658678302e-09,
+        "row_residual_l1": 7.563394355258879e-16,
+        "claimed_residual_l1": 9.558082828681203e-09,
+        "elapsed_sec": 8.769999999991285e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_mnist__sk_log_fast__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "5efca30a235ed8630b768c0fe59cbfd86532554db53c23318625079807677da3",
+        "history.csv": "11bc3094f241692e3a0eacf09dbb864fa31f35eb39e488a3faeb142731995056",
+        "final_state.npz": "07646d7d3cff8ad16a950db16526ec5a0232443e534d3c61f85185a444a7989d"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.570964908395404e-09,
+        "row_residual_l1": 6.508601166702044e-16,
+        "claimed_residual_l1": 9.570964968609282e-09,
+        "elapsed_sec": 0.0004702000000000872,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.570964908395404e-09,
+        "row_residual_l1": 6.508601166702044e-16,
+        "claimed_residual_l1": 9.570964968609282e-09,
+        "elapsed_sec": 0.00032869999999984856,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_mnist__mirror_sr1__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "20201bad24dce0703b5d4b710d9cefb57ef9408af267d13f3b43776a0680990b",
+        "history.csv": "b0379c06091984ba372b55bff7df8cc21046f89ea5f7849da9d2bcb0e38d641a",
+        "final_state.npz": "77ed24dabe6b12bf2e6b7c7c1c8bfd519e8da0057f7f48c1d06644adf8aa8fb4"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.987680317008116e-09,
+        "row_residual_l1": 6.48230926401927e-16,
+        "claimed_residual_l1": 9.987680294571907e-09,
+        "elapsed_sec": 0.0005101000000000688,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.987680317008116e-09,
+        "row_residual_l1": 6.48230926401927e-16,
+        "claimed_residual_l1": 9.987680294571907e-09,
+        "elapsed_sec": 0.00035359999999995395,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_mnist__sk_scaling_fast__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "399f668d5d91a2af7e412e585d31a42bbbc6bdee1a4b993436cf378d6cf654f1",
+        "history.csv": "c69041ee2871cde5212b88f542d6435f4264f95cf1e44fa55a06f2d511aced51",
+        "final_state.npz": "62125c402312c424ffc016bb5460bbe0e2f4fdd5bc76c22999f57eb182bc33fa"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.570964950570868e-09,
+        "row_residual_l1": 6.211936347255698e-16,
+        "claimed_residual_l1": 9.570964940182856e-09,
+        "elapsed_sec": 0.00044800000000000395,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.570964950570868e-09,
+        "row_residual_l1": 6.211936347255698e-16,
+        "claimed_residual_l1": 9.570964940182856e-09,
+        "elapsed_sec": 0.00038869999999979754,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_rectangular__sk_scaling_fast__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "0f47e8412803d9e56ecd0c97808b0fffc32c3b6c0ec314580fcd26030cd96a32",
+        "history.csv": "871d1e42e90591a7ddcf892219084eb86d8bb4cd8ae3bcb7378d7afaa96ba46b",
+        "final_state.npz": "db17909a56c8d652fb23a7dc8bed855a5b435a298a3fc4a4d1f296b1bf688ccb"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.558082568472681e-09,
+        "row_residual_l1": 6.106226635438361e-16,
+        "claimed_residual_l1": 9.558083012561891e-09,
+        "elapsed_sec": 0.0012142000000001651,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.558082568472681e-09,
+        "row_residual_l1": 6.106226635438361e-16,
+        "claimed_residual_l1": 9.558083012561891e-09,
+        "elapsed_sec": 3.66999999998896e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_random__sk_scaling_fast__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "88f9912b75154200e87db7ec3c1c79551f24ec2fa603a1bb498b8d8c5ceac855",
+        "history.csv": "18836cbbb7d168787ad4d0ae25f242715963d5baa13bda6f30c37e0d488757bb",
+        "final_state.npz": "7abd231249b80d91a6542aad65579d8880daca07f85856fc7fccbf1800d07c99"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 8.433261519669166e-09,
+        "row_residual_l1": 3.365363543395006e-16,
+        "claimed_residual_l1": 8.433261557833083e-09,
+        "elapsed_sec": 6.079999999997199e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 8.433261519669166e-09,
+        "row_residual_l1": 3.365363543395006e-16,
+        "claimed_residual_l1": 8.433261557833083e-09,
+        "elapsed_sec": 4.050000000033194e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_uniform__sk_scaling_fast__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "82fb0aaa35b4335716cdbde6d61f0fd3c999df7c4340f05a42b7ee8917dd8787",
+        "history.csv": "e56ec3a1ba2cfa1f49985bf1ecc3c054cdb7d1909d49c4d88522a454340a0809",
+        "final_state.npz": "a82c8830a986e1c88eb3054d6e4b4bfebf2302d23d34731e039e00c0bfba7173"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.294015026334312e-09,
+        "row_residual_l1": 2.42861286636753e-16,
+        "claimed_residual_l1": 9.294014932659245e-09,
+        "elapsed_sec": 7.800000000024454e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.294015026334312e-09,
+        "row_residual_l1": 2.42861286636753e-16,
+        "claimed_residual_l1": 9.294014932659245e-09,
+        "elapsed_sec": 3.840000000021604e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_nonuniform__sk_scaling_fast__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "d2555e76a763f392a55f03ce6e6fe9420bcbe7058a7490d134bc8542d32680d0",
+        "history.csv": "9b6eef9a460be59baf93d3d47922df20084bec08d902690e18ae9e476344c5f7",
+        "final_state.npz": "8d66b4f25253686a6650524cfd4b066e5ede7d8e312e331b3017eab6a1b570eb"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.445295821064877e-09,
+        "row_residual_l1": 1.8415221637747795e-15,
+        "claimed_residual_l1": 9.445296260279667e-09,
+        "elapsed_sec": 7.319999999966242e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 9.445295821064877e-09,
+        "row_residual_l1": 1.8415221637747795e-15,
+        "claimed_residual_l1": 9.445296260279667e-09,
+        "elapsed_sec": 3.4799999999890474e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_random__lbfgs_reduced__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "d20f09245c95d7d3da18a4d980ce7afd0008cbe4cab710fa1ea1a6688cd6a989",
+        "history.csv": "6645041152bbde657fc243cd03948d38536201c93b60a64b7b2b637e54a35d40",
+        "final_state.npz": "ee965cb2af23105daed63104e2a9b53284bdc4a62568b0a4175d0cef0407defc"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 3.1633630055705186e-09,
+        "row_residual_l1": 2.5673907444456745e-16,
+        "claimed_residual_l1": 3.1633629535288144e-09,
+        "elapsed_sec": 5.8499999999739316e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 3.1633630055705186e-09,
+        "row_residual_l1": 2.5673907444456745e-16,
+        "claimed_residual_l1": 3.1633629535288144e-09,
+        "elapsed_sec": 3.5399999999796705e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_uniform__lbfgs_reduced__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "ae4de4c7bd01fecdf909fe262a072e262397e80a5ead60e48b5b0c7efd9bd1fd",
+        "history.csv": "380fd48d07cad3f054b0f814093a467211c4b0ef1ad332c9553f04db29c8654a",
+        "final_state.npz": "e2204b9acc44c29b846d32eadf748dc063da32e255c7c94100c897773648742c"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 1.472446848477249e-09,
+        "row_residual_l1": 2.8449465006019636e-16,
+        "claimed_residual_l1": 1.4724468033744387e-09,
+        "elapsed_sec": 6.930000000027192e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 1.472446848477249e-09,
+        "row_residual_l1": 2.8449465006019636e-16,
+        "claimed_residual_l1": 1.4724468033744387e-09,
+        "elapsed_sec": 3.619999999981971e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_nonuniform__lbfgs_reduced__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "e3be3f542544171d80f31831485f9886a925dc5f80603cd45ce13eddc2a85972",
+        "history.csv": "edd22b8e5aef213a6a3c24d5633aedb6a8e118383e840cec549d46db63b76235",
+        "final_state.npz": "a7989e68ec5ae7272384bf9f77b9908acc25e3cc0e3e9dcbe4a8943327fe7ed8"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 1.9417222280372686e-08,
+        "row_residual_l1": 1.4950728885681854e-15,
+        "claimed_residual_l1": 1.941722200107992e-08,
+        "elapsed_sec": 6.539999999999324e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 1.9417222280372686e-08,
+        "row_residual_l1": 1.4950728885681854e-15,
+        "claimed_residual_l1": 1.941722200107992e-08,
+        "elapsed_sec": 3.8699999999725065e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_rectangular__lbfgs_reduced__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "1ece553a2ae2d169fa57c8bab681565eea2e08d9bcd452f9056a8fddf2ae2ce8",
+        "history.csv": "9ea5352a8ae880e06d0eb7fc77ec379e26870237e22facf0f5e2b579a9ec9455",
+        "final_state.npz": "2f04660446b32db2c823776aee158238b8e68a1ec3f865b234b2e79c6f3e94c5"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 1.6980274235300907e-09,
+        "row_residual_l1": 7.077671781985373e-16,
+        "claimed_residual_l1": 1.6980270557687138e-09,
+        "elapsed_sec": 8.289999999977482e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 1.6980274235300907e-09,
+        "row_residual_l1": 7.077671781985373e-16,
+        "claimed_residual_l1": 1.6980270557687138e-09,
+        "elapsed_sec": 3.719999999995949e-05,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    },
+    {
+      "job_id": "smoke_mnist__lbfgs_reduced__w20__r0",
+      "passed": true,
+      "issues": [],
+      "artifact_sha256": {
+        "summary.json": "e170d7a1aed163fc843d8d9c442741e3aac372143b019747440b8d0b84c1e801",
+        "history.csv": "2bcd740a4cb4d77c20e0af94085c61a70fb0b102e83b9da30ac325bffcbc052c",
+        "final_state.npz": "86b0859996f1dc4b6ca20f45c56cd70e8ff4e59dd4edbb22b017ed481ccdcd6c"
+      },
+      "saved_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 6.460044498670498e-09,
+        "row_residual_l1": 6.808518592665846e-16,
+        "claimed_residual_l1": 6.460044543813966e-09,
+        "elapsed_sec": 0.00042280000000038953,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "readback_endpoint_audit": {
+        "passed": true,
+        "residual_l1": 6.460044498670498e-09,
+        "row_residual_l1": 6.808518592665846e-16,
+        "claimed_residual_l1": 6.460044543813966e-09,
+        "elapsed_sec": 0.00032819999999977867,
+        "method": "independent full-potential row blocks",
+        "block_rows": 128
+      },
+      "diagnostic_replay": null
+    }
+  ]
+}

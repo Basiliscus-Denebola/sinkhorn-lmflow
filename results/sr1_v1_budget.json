@@ -1,0 +1,7 @@
+{
+  "performance_budget_sec": 21600.0,
+  "diagnostic_budget_sec": 3600.0,
+  "performance_used_sec": 6945.592136681385,
+  "diagnostic_used_sec": 75.18719379999902,
+  "active_run_dir": "D:\\sinkhorn-lmflow\\results\\20261110_132021_580670_sr1_v1_mainstream_9b7ff3"
+}
