@@ -1,0 +1,11 @@
+# Preserve the exact bytes used by the energy-distance study's saved hashes.
+results/20261111_121604_269934_energy_distance_v0_rev0/** -text
+results/20261111_125616_100831_energy_distance_v0_rev1/** -text
+results/20261111_125856_524318_energy_distance_v0_rev2/** -text
+results/energy_distance_v0_budget.json -text
+src/sinkhorn_lmflow/core/cost_profile_distance.py text eol=lf
+src/sinkhorn_lmflow/solvers/energy_distance.py text eol=lf
+src/sinkhorn_lmflow/experiments/energy_distance_study.py text eol=lf
+src/sinkhorn_lmflow/plotting/energy_distance.py text eol=lf
+scripts/run_energy_distance_study.py text eol=lf
+scripts/report_energy_distance.py text eol=lf

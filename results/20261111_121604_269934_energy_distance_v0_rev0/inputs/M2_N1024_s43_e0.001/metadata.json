@@ -1,0 +1,54 @@
+{
+  "case_id": "M2_N1024_s43_e0.001",
+  "family": "M2",
+  "n": 1024,
+  "m": 1024,
+  "epsilon": 0.001,
+  "data_seed": 43,
+  "weight_seed_a": [
+    43,
+    20
+  ],
+  "weight_seed_b": [
+    43,
+    21
+  ],
+  "marginal_type": "uniform",
+  "alpha": null,
+  "raw_cost_max": 1.8685759319576805,
+  "normalization_policy": "maximum element",
+  "geometry": "uniform",
+  "rng_rule": "SeedSequence([data_seed, stream]); streams 1=cost,10/11=geometry,20/21=weights",
+  "point_pool_id": "2e75ab9193889b84e5a3f62ffd9973e301c2234c644b592cb3de20b0f037d6d4",
+  "point_pool_size": 5000,
+  "prefix_n": 1024,
+  "prefix_m": 1024,
+  "weight_stats_a": {
+    "min": 0.0009765625,
+    "max": 0.0009765625,
+    "quantiles": [
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625
+    ]
+  },
+  "weight_stats_b": {
+    "min": 0.0009765625,
+    "max": 0.0009765625,
+    "quantiles": [
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625
+    ]
+  },
+  "marginal_floor": null,
+  "input_sha256": "98a56e6fd106a77723a6e1273591e9a4a713a22a178fcc9544f979f8543922b9"
+}

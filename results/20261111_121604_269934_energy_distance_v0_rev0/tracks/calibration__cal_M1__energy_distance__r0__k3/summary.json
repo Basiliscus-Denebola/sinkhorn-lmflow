@@ -1,0 +1,254 @@
+{
+  "residual_l1": 6.125596704355252e-09,
+  "residual_linf": 2.936720463163345e-10,
+  "grad_norm_l2": 4.517632238002051e-10,
+  "state_eval_count": 48,
+  "objective_diff_count": 71,
+  "bregman_count": 71,
+  "plan_build_count": 71,
+  "logsumexp_count": 96,
+  "reduction_count": 2272,
+  "dense_pass_proxy": 0,
+  "probability_normalization_count": 71,
+  "probability_mass_error_max": 5.551115123125783e-16,
+  "probability_mean_error_max": 1.2231155758352097e-18,
+  "log_kernel_build_count": 1,
+  "kernel_build_count": 0,
+  "matrix_vector_count": 0,
+  "objective_gradient_count": 0,
+  "setup_sec": 0.0057400999999988045,
+  "post_setup_sec": 0.012622699999999654,
+  "warmup_elapsed_sec": 0.14710649999999958,
+  "post_elapsed_sec": 0.772375199999999,
+  "warmup_sha256": "f2ca785a7a82b90d920701837ab36fa3a0df0cc3c7324d6e9c614354b9fd5c0a",
+  "initial_residual_l1": 0.43033888783719854,
+  "row_residual_policy": "analytically eliminated; independent floating-point endpoint audit",
+  "dense_pass_proxy_comparable": false,
+  "kappa": 3.0,
+  "gamma": 19.641588461120485,
+  "gamma_psi_norm": 0.0022652370194200387,
+  "gamma_u_norm": 0.0003459858183930428,
+  "gamma_unresolvable_threshold": 7.014348782524495e-15,
+  "geometry_degenerate": false,
+  "distance_backend": "generic_gram",
+  "distance_build_sec": 0.010215300000000482,
+  "distance_bytes": 2097152,
+  "energy_matvec_count": 27,
+  "energy_matvec_sec": 0.0029746000000052675,
+  "gamma_setup_sec": 0.000694400000000428,
+  "line_search_trials": 71,
+  "rejected_trials": 44,
+  "fallback_count": 0,
+  "conditional_block_matvec_count": 568,
+  "objective_diff_sec": 0.596552400000002,
+  "trial_state_sec": 0.15701440000000488,
+  "warmup_sec": 0.14710649999999958,
+  "warmup_converged": false,
+  "gamma_initialized": true,
+  "direction_diagnostics": [],
+  "accepted_energy_trace": [
+    {
+      "iteration": 21,
+      "energy_matvec_count": 1,
+      "energy_matvec_sec": 5.100000000091143e-05,
+      "conditional_block_matvec_count": 8
+    },
+    {
+      "iteration": 22,
+      "energy_matvec_count": 2,
+      "energy_matvec_sec": 0.00013610000000241484,
+      "conditional_block_matvec_count": 32
+    },
+    {
+      "iteration": 23,
+      "energy_matvec_count": 3,
+      "energy_matvec_sec": 0.00023570000000283642,
+      "conditional_block_matvec_count": 48
+    },
+    {
+      "iteration": 24,
+      "energy_matvec_count": 4,
+      "energy_matvec_sec": 0.00034810000000362606,
+      "conditional_block_matvec_count": 72
+    },
+    {
+      "iteration": 25,
+      "energy_matvec_count": 5,
+      "energy_matvec_sec": 0.00044680000000241193,
+      "conditional_block_matvec_count": 96
+    },
+    {
+      "iteration": 26,
+      "energy_matvec_count": 6,
+      "energy_matvec_sec": 0.0005407000000037243,
+      "conditional_block_matvec_count": 112
+    },
+    {
+      "iteration": 27,
+      "energy_matvec_count": 7,
+      "energy_matvec_sec": 0.0006517000000041406,
+      "conditional_block_matvec_count": 136
+    },
+    {
+      "iteration": 28,
+      "energy_matvec_count": 8,
+      "energy_matvec_sec": 0.0010140000000049554,
+      "conditional_block_matvec_count": 160
+    },
+    {
+      "iteration": 29,
+      "energy_matvec_count": 9,
+      "energy_matvec_sec": 0.0010977000000043091,
+      "conditional_block_matvec_count": 176
+    },
+    {
+      "iteration": 30,
+      "energy_matvec_count": 10,
+      "energy_matvec_sec": 0.0012029000000044476,
+      "conditional_block_matvec_count": 200
+    },
+    {
+      "iteration": 31,
+      "energy_matvec_count": 11,
+      "energy_matvec_sec": 0.0013016000000050099,
+      "conditional_block_matvec_count": 224
+    },
+    {
+      "iteration": 32,
+      "energy_matvec_count": 12,
+      "energy_matvec_sec": 0.0014033000000051032,
+      "conditional_block_matvec_count": 240
+    },
+    {
+      "iteration": 33,
+      "energy_matvec_count": 13,
+      "energy_matvec_sec": 0.0015090000000039794,
+      "conditional_block_matvec_count": 264
+    },
+    {
+      "iteration": 34,
+      "energy_matvec_count": 14,
+      "energy_matvec_sec": 0.001598800000003564,
+      "conditional_block_matvec_count": 288
+    },
+    {
+      "iteration": 35,
+      "energy_matvec_count": 15,
+      "energy_matvec_sec": 0.001697800000002303,
+      "conditional_block_matvec_count": 304
+    },
+    {
+      "iteration": 36,
+      "energy_matvec_count": 16,
+      "energy_matvec_sec": 0.0017971000000027715,
+      "conditional_block_matvec_count": 328
+    },
+    {
+      "iteration": 37,
+      "energy_matvec_count": 17,
+      "energy_matvec_sec": 0.0018897000000013264,
+      "conditional_block_matvec_count": 352
+    },
+    {
+      "iteration": 38,
+      "energy_matvec_count": 18,
+      "energy_matvec_sec": 0.00198350000000147,
+      "conditional_block_matvec_count": 368
+    },
+    {
+      "iteration": 39,
+      "energy_matvec_count": 19,
+      "energy_matvec_sec": 0.0021670000000018064,
+      "conditional_block_matvec_count": 392
+    },
+    {
+      "iteration": 40,
+      "energy_matvec_count": 20,
+      "energy_matvec_sec": 0.002277800000001662,
+      "conditional_block_matvec_count": 416
+    },
+    {
+      "iteration": 41,
+      "energy_matvec_count": 21,
+      "energy_matvec_sec": 0.002376200000002271,
+      "conditional_block_matvec_count": 432
+    },
+    {
+      "iteration": 42,
+      "energy_matvec_count": 22,
+      "energy_matvec_sec": 0.0024694000000025085,
+      "conditional_block_matvec_count": 456
+    },
+    {
+      "iteration": 43,
+      "energy_matvec_count": 23,
+      "energy_matvec_sec": 0.002565000000002371,
+      "conditional_block_matvec_count": 480
+    },
+    {
+      "iteration": 44,
+      "energy_matvec_count": 24,
+      "energy_matvec_sec": 0.0027024000000039905,
+      "conditional_block_matvec_count": 504
+    },
+    {
+      "iteration": 45,
+      "energy_matvec_count": 25,
+      "energy_matvec_sec": 0.0027856000000046066,
+      "conditional_block_matvec_count": 520
+    },
+    {
+      "iteration": 46,
+      "energy_matvec_count": 26,
+      "energy_matvec_sec": 0.0028828000000054033,
+      "conditional_block_matvec_count": 544
+    },
+    {
+      "iteration": 47,
+      "energy_matvec_count": 27,
+      "energy_matvec_sec": 0.0029746000000052675,
+      "conditional_block_matvec_count": 568
+    }
+  ],
+  "distance_fallback_reason": null,
+  "geometry_degenerate_reason": null,
+  "fallback_reasons": {},
+  "accepted_updates": 27,
+  "iteration_sec": 0.7597524999999994,
+  "bridge_setup_sec": 0.0017129999999987433,
+  "kernel_matrix_vector_count": 0,
+  "total_sec": 0.9194816999999986,
+  "last_residual": 6.125596704355252e-09,
+  "case_id": "cal_M1",
+  "family": "M1",
+  "n": 512,
+  "m": 512,
+  "epsilon": 0.003,
+  "alpha": null,
+  "data_seed": 41,
+  "repeat": 0,
+  "stage": "calibration",
+  "status": "success",
+  "endpoint_audit": {
+    "passed": true,
+    "residual_l1": 6.1255966982837196e-09,
+    "row_residual_l1": 4.378008372496467e-16,
+    "claimed_residual_l1": 6.125596704355252e-09,
+    "elapsed_sec": 0.002217100000001082,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "process_peak_rss": 79552512,
+  "estimated_workspace_bytes": 57933824,
+  "resource_cap_bytes": 2793543270.4,
+  "source_sha256": "3983cd0a5337589c26f93d4e624ef873d24d21d886f3b40b6316a9c7b9fb5d3e",
+  "config_sha256": "7ffaaff2ae918dcf9911acf65a63ce89fe2d81d40c10c213291312d74ace1aeb",
+  "input_sha256": "79105cafe0997a06a294761f065d2c089eae9c25c24b45d9ca2303567c054d87",
+  "deadline_overrun_sec": 0.0,
+  "timing_environment": "OT Python; serial; BLAS threads 1; shared fresh warmup per case/repeat",
+  "solver_name": "energy_distance",
+  "converged": true,
+  "stop_reason": "tolerance",
+  "n_iter": 47,
+  "elapsed_sec": 0.9194816999999986
+}

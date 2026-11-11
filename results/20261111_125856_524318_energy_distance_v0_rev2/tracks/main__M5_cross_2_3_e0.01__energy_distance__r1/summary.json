@@ -1,0 +1,224 @@
+{
+  "residual_l1": 6.902935587355563e-09,
+  "residual_linf": 1.8087759935669911e-10,
+  "grad_norm_l2": 7.524972629742394e-10,
+  "state_eval_count": 43,
+  "objective_diff_count": 22,
+  "bregman_count": 22,
+  "plan_build_count": 22,
+  "logsumexp_count": 86,
+  "reduction_count": 264,
+  "dense_pass_proxy": 0,
+  "probability_normalization_count": 22,
+  "probability_mass_error_max": 1.1102230246251565e-15,
+  "probability_mean_error_max": 4.7844656025659155e-18,
+  "log_kernel_build_count": 1,
+  "kernel_build_count": 0,
+  "matrix_vector_count": 0,
+  "objective_gradient_count": 0,
+  "setup_sec": 0.0011920000001737208,
+  "post_setup_sec": 0.0021827000000484986,
+  "warmup_elapsed_sec": 0.012444200000118144,
+  "post_elapsed_sec": 0.021644299999934447,
+  "warmup_sha256": "e247fda1bee18f9d925b69b17835a577c53e47ed6ac9fd59bd55d41429870816",
+  "initial_residual_l1": 0.5106747552162951,
+  "row_residual_policy": "analytically eliminated; independent floating-point endpoint audit",
+  "dense_pass_proxy_comparable": false,
+  "kappa": 3.0,
+  "gamma": 2.031773755155171,
+  "gamma_psi_norm": 0.0362279193251158,
+  "gamma_u_norm": 0.05349205722319559,
+  "gamma_unresolvable_threshold": 8.274255312890498e-15,
+  "geometry_degenerate": false,
+  "distance_backend": "exact_geometric",
+  "distance_build_sec": 0.0011995999998362095,
+  "distance_bytes": 259200,
+  "energy_matvec_count": 22,
+  "energy_matvec_sec": 0.00015350000057878788,
+  "gamma_setup_sec": 7.759999971312936e-05,
+  "line_search_trials": 22,
+  "rejected_trials": 0,
+  "fallback_count": 0,
+  "conditional_block_matvec_count": 66,
+  "objective_diff_sec": 0.010812500000156433,
+  "trial_state_sec": 0.007659900001272035,
+  "warmup_sec": 0.012444200000118144,
+  "warmup_converged": false,
+  "gamma_initialized": true,
+  "direction_diagnostics": [],
+  "accepted_energy_trace": [
+    {
+      "iteration": 21,
+      "energy_matvec_count": 1,
+      "energy_matvec_sec": 7.300000106624793e-06,
+      "conditional_block_matvec_count": 3
+    },
+    {
+      "iteration": 22,
+      "energy_matvec_count": 2,
+      "energy_matvec_sec": 1.5900000107649248e-05,
+      "conditional_block_matvec_count": 6
+    },
+    {
+      "iteration": 23,
+      "energy_matvec_count": 3,
+      "energy_matvec_sec": 2.3400000372930663e-05,
+      "conditional_block_matvec_count": 9
+    },
+    {
+      "iteration": 24,
+      "energy_matvec_count": 4,
+      "energy_matvec_sec": 3.0700000479555456e-05,
+      "conditional_block_matvec_count": 12
+    },
+    {
+      "iteration": 25,
+      "energy_matvec_count": 5,
+      "energy_matvec_sec": 3.790000027947826e-05,
+      "conditional_block_matvec_count": 15
+    },
+    {
+      "iteration": 26,
+      "energy_matvec_count": 6,
+      "energy_matvec_sec": 4.530000069280504e-05,
+      "conditional_block_matvec_count": 18
+    },
+    {
+      "iteration": 27,
+      "energy_matvec_count": 7,
+      "energy_matvec_sec": 5.210000063016196e-05,
+      "conditional_block_matvec_count": 21
+    },
+    {
+      "iteration": 28,
+      "energy_matvec_count": 8,
+      "energy_matvec_sec": 5.890000056751887e-05,
+      "conditional_block_matvec_count": 24
+    },
+    {
+      "iteration": 29,
+      "energy_matvec_count": 9,
+      "energy_matvec_sec": 6.580000035683042e-05,
+      "conditional_block_matvec_count": 27
+    },
+    {
+      "iteration": 30,
+      "energy_matvec_count": 10,
+      "energy_matvec_sec": 7.260000029418734e-05,
+      "conditional_block_matvec_count": 30
+    },
+    {
+      "iteration": 31,
+      "energy_matvec_count": 11,
+      "energy_matvec_sec": 7.950000008349889e-05,
+      "conditional_block_matvec_count": 33
+    },
+    {
+      "iteration": 32,
+      "energy_matvec_count": 12,
+      "energy_matvec_sec": 8.660000003146706e-05,
+      "conditional_block_matvec_count": 36
+    },
+    {
+      "iteration": 33,
+      "energy_matvec_count": 13,
+      "energy_matvec_sec": 9.350000027552596e-05,
+      "conditional_block_matvec_count": 39
+    },
+    {
+      "iteration": 34,
+      "energy_matvec_count": 14,
+      "energy_matvec_sec": 0.00010040000006483751,
+      "conditional_block_matvec_count": 42
+    },
+    {
+      "iteration": 35,
+      "energy_matvec_count": 15,
+      "energy_matvec_sec": 0.00010700000029828516,
+      "conditional_block_matvec_count": 45
+    },
+    {
+      "iteration": 36,
+      "energy_matvec_count": 16,
+      "energy_matvec_sec": 0.00011380000023564207,
+      "conditional_block_matvec_count": 48
+    },
+    {
+      "iteration": 37,
+      "energy_matvec_count": 17,
+      "energy_matvec_sec": 0.0001202000003104331,
+      "conditional_block_matvec_count": 51
+    },
+    {
+      "iteration": 38,
+      "energy_matvec_count": 18,
+      "energy_matvec_sec": 0.00012710000009974465,
+      "conditional_block_matvec_count": 54
+    },
+    {
+      "iteration": 39,
+      "energy_matvec_count": 19,
+      "energy_matvec_sec": 0.0001337000003331923,
+      "conditional_block_matvec_count": 57
+    },
+    {
+      "iteration": 40,
+      "energy_matvec_count": 20,
+      "energy_matvec_sec": 0.00014040000041859457,
+      "conditional_block_matvec_count": 60
+    },
+    {
+      "iteration": 41,
+      "energy_matvec_count": 21,
+      "energy_matvec_sec": 0.00014700000065204222,
+      "conditional_block_matvec_count": 63
+    },
+    {
+      "iteration": 42,
+      "energy_matvec_count": 22,
+      "energy_matvec_sec": 0.00015350000057878788,
+      "conditional_block_matvec_count": 66
+    }
+  ],
+  "distance_fallback_reason": null,
+  "geometry_degenerate_reason": null,
+  "fallback_reasons": {},
+  "accepted_updates": 22,
+  "iteration_sec": 0.019461599999885948,
+  "bridge_setup_sec": 0.0009055000004991598,
+  "kernel_matrix_vector_count": 0,
+  "total_sec": 0.03408850000005259,
+  "last_residual": 6.902935587355563e-09,
+  "case_id": "M5_cross_2_3_e0.01",
+  "family": "M5",
+  "n": 180,
+  "m": 180,
+  "epsilon": 0.01,
+  "alpha": null,
+  "data_seed": 20261110,
+  "repeat": 1,
+  "stage": "main",
+  "status": "success",
+  "endpoint_audit": {
+    "passed": true,
+    "residual_l1": 6.902935563665746e-09,
+    "row_residual_l1": 5.952676502760101e-16,
+    "claimed_residual_l1": 6.902935587355563e-09,
+    "elapsed_sec": 0.00043239999968136544,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "process_peak_rss": 49717248,
+  "estimated_workspace_bytes": 87945216,
+  "resource_cap_bytes": 3411021824.0,
+  "source_sha256": "3983cd0a5337589c26f93d4e624ef873d24d21d886f3b40b6316a9c7b9fb5d3e",
+  "config_sha256": "7ffaaff2ae918dcf9911acf65a63ce89fe2d81d40c10c213291312d74ace1aeb",
+  "input_sha256": "0958ad7d1247bec094598675ac40ad8c50415b95d48aca280e4e556477299628",
+  "deadline_overrun_sec": 0.0,
+  "timing_environment": "OT Python; serial; BLAS threads 1; shared fresh warmup per case/repeat",
+  "solver_name": "energy_distance",
+  "converged": true,
+  "stop_reason": "tolerance",
+  "n_iter": 42,
+  "elapsed_sec": 0.03408850000005259
+}

@@ -1,0 +1,23 @@
+study: energy_distance_v0
+repeats: 2
+warmup_iters: 20
+tol: 1.0e-8
+max_iter: 50000
+kappa_grid: [0.3, 1.0, 3.0]
+kappa_if_calibration_incomplete: 1.0
+armijo_sigma: 1.0e-4
+backtrack_factor: 0.5
+max_trial_steps: 12
+total_budget_sec: 3600
+calibration_budget_sec: 360
+main_budget_sec: 2640
+ablation_budget_sec: 360
+report_reserve_sec: 240
+track_limit_sec: 180
+track_limit_large_sec: 300
+max_dimension: 2048
+memory_cap_gib: 8
+memory_available_fraction: 0.6
+budget_ledger: results/energy_distance_v0_budget.json
+mnist_cache: data/mnist
+download_mnist: true

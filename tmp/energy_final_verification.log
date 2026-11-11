@@ -1,0 +1,51 @@
+{
+  "planned": 262,
+  "formal_cases": 39,
+  "status_counts": {
+    "success": 250,
+    "not_applicable_kernel_underflow": 12
+  },
+  "independent_audits_passed": 250,
+  "not_applicable_endpoints": 12,
+  "paired_comparisons": 144,
+  "threshold_rows": 786,
+  "identical_original_measurement_artifact_hashes": true,
+  "source_config_verified": true,
+  "shared_warmup_and_gamma_verified": true,
+  "exclusive_total_timing_verified": true,
+  "tests": "31 core/related regression tests passed; 18 core gate tests passed after report-only guard additions",
+  "excluded_revision": {
+    "reason": "Windows slash mismatch in reporting-only inheritance mistakenly started a fresh revision; stopped and excluded",
+    "excluded_revision": "D:\\sinkhorn-lmflow\\results\\20261111_125616_100831_energy_distance_v0_rev1",
+    "statuses_at_stop": {
+      "pending_budget": 252,
+      "success": 9,
+      "running": 1
+    },
+    "included_in_comparisons": false,
+    "budget_reset": false,
+    "completed_formal_measurements": "D:\\sinkhorn-lmflow\\results\\20261111_121604_269934_energy_distance_v0_rev0",
+    "final_report_revision": "D:\\sinkhorn-lmflow\\results\\20261111_125856_524318_energy_distance_v0_rev2"
+  }
+}
+sk_log_fast pairs 78 wins 64 median 1.4761265879621626
+sk_scaling_fast pairs 66 wins 0 median 0.20889446201135253
+                          median       min       max
+family baseline                                     
+M1     sk_log_fast      0.510280  0.273367  0.723854
+       sk_scaling_fast  0.031011  0.030447  0.036052
+M2     sk_log_fast      1.625068  1.346637  1.787229
+       sk_scaling_fast  0.038815  0.024608  0.041919
+M3     sk_log_fast      1.394056  1.258509  1.477105
+       sk_scaling_fast  0.028453  0.025994  0.030430
+M4     sk_log_fast      1.506051  1.257605  1.763150
+       sk_scaling_fast  0.028064  0.022303  0.032400
+M5     sk_log_fast      1.583892  0.631955  3.980776
+       sk_scaling_fast  0.319090  0.112009  0.772068
+M6     sk_log_fast      1.081673  0.758973  1.734405
+       sk_scaling_fast  0.036065  0.023060  0.052915
+M7     sk_log_fast      0.741596  0.724352  0.758840
+       sk_scaling_fast  0.018878  0.018547  0.019209
+support range        n    m
+min  132  115
+max  267  206

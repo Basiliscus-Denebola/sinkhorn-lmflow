@@ -1,0 +1,16 @@
+..................                                                       [100%]
+18 passed in 4.26s
+warning: could not open directory 'results/20260925_073951_550196_theta_balance_study_b8ea20/scratch/pytest/': Permission denied
+warning: could not open directory 'results/20260925_073951_550196_theta_balance_study_b8ea20/scratch/pytest_cache/': Permission denied
+warning: could not open directory 'results/20260925_073951_550196_theta_balance_study_b8ea20/scratch/pytest_resume/': Permission denied
+RUN_DIR=D:\sinkhorn-lmflow\results\20261111_125616_100831_energy_distance_v0_rev1
+FROZEN_KAPPA={'kappa': 1.0, 'reason': 'calibration_incomplete', 'source_sha256': '7476ff03364961b743b63984111575cd3ef00cc8e75ecf3a8f5106ca4c56acd1', 'config_sha256': '7ffaaff2ae918dcf9911acf65a63ce89fe2d81d40c10c213291312d74ace1aeb', 'frozen_at_machine_sec': 2272.2025627000003}
+main main__M1_N1024_s42_e0.003__sk_log_fast__r0: success rho=6.97e-09 total=0.579s machine=2272.9s
+main main__M1_N1024_s42_e0.003__sk_scaling_fast__r0: success rho=6.97e-09 total=0.043s machine=2273.1s
+main main__M1_N1024_s42_e0.003__energy_distance__r0: success rho=7.12e-09 total=0.685s machine=2273.3s
+main main__M2_N1024_s42_e0.003__sk_scaling_fast__r0: success rho=9.78e-09 total=0.300s machine=2273.8s
+main main__M2_N1024_s42_e0.003__energy_distance__r0: success rho=9.94e-09 total=16.920s machine=2290.8s
+main main__M2_N1024_s42_e0.003__sk_log_fast__r0: success rho=9.78e-09 total=14.935s machine=2305.3s
+main main__M3_N1024_s42_e0.003__energy_distance__r0: success rho=9.81e-09 total=26.225s machine=2331.7s
+main main__M3_N1024_s42_e0.003__sk_log_fast__r0: success rho=9.93e-09 total=19.002s machine=2350.4s
+main main__M3_N1024_s42_e0.003__sk_scaling_fast__r0: success rho=9.93e-09 total=0.392s machine=2350.9s

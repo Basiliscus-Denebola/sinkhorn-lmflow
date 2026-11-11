@@ -1,0 +1,54 @@
+{
+  "case_id": "M4_N1024_s42_a1_e0.003",
+  "family": "M4",
+  "n": 1024,
+  "m": 1024,
+  "epsilon": 0.003,
+  "data_seed": 42,
+  "weight_seed_a": [
+    42,
+    20
+  ],
+  "weight_seed_b": [
+    42,
+    21
+  ],
+  "marginal_type": "dirichlet",
+  "alpha": 1.0,
+  "raw_cost_max": 1.2069571056335409,
+  "normalization_policy": "maximum element",
+  "geometry": "mixture",
+  "rng_rule": "SeedSequence([data_seed, stream]); streams 1=cost,10/11=geometry,20/21=weights",
+  "point_pool_id": "5c632567404a74cf6605fda2f81c002f16add468be294f239c24b333c4e11d1d",
+  "point_pool_size": 5000,
+  "prefix_n": 1024,
+  "prefix_m": 1024,
+  "weight_stats_a": {
+    "min": 1.8440943359254628e-06,
+    "max": 0.007633023948093492,
+    "quantiles": [
+      1.8440943359254628e-06,
+      1.1977543823464917e-05,
+      0.00030096871887727415,
+      0.0006899739792737155,
+      0.0013642673369130827,
+      0.004445880308200049,
+      0.007633023948093492
+    ]
+  },
+  "weight_stats_b": {
+    "min": 1.3334148692618425e-06,
+    "max": 0.007300015832265648,
+    "quantiles": [
+      1.3334148692618425e-06,
+      1.1608779072590938e-05,
+      0.00028138592504278856,
+      0.0007054288990611651,
+      0.001330518525948128,
+      0.004452203942733115,
+      0.007300015832265648
+    ]
+  },
+  "marginal_floor": null,
+  "input_sha256": "be1cbfafd89f31dffc4ac8ef6df6e013c3d97f2626ffce338ef2a462d850bb9d"
+}

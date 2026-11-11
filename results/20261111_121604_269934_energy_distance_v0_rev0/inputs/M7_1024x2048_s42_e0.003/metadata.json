@@ -1,0 +1,54 @@
+{
+  "case_id": "M7_1024x2048_s42_e0.003",
+  "family": "M7",
+  "n": 1024,
+  "m": 2048,
+  "epsilon": 0.003,
+  "data_seed": 42,
+  "weight_seed_a": [
+    42,
+    20
+  ],
+  "weight_seed_b": [
+    42,
+    21
+  ],
+  "marginal_type": "uniform",
+  "alpha": null,
+  "raw_cost_max": 1.2069571056335409,
+  "normalization_policy": "maximum element",
+  "geometry": "mixture",
+  "rng_rule": "SeedSequence([data_seed, stream]); streams 1=cost,10/11=geometry,20/21=weights",
+  "point_pool_id": "5c632567404a74cf6605fda2f81c002f16add468be294f239c24b333c4e11d1d",
+  "point_pool_size": 5000,
+  "prefix_n": 1024,
+  "prefix_m": 2048,
+  "weight_stats_a": {
+    "min": 0.0009765625,
+    "max": 0.0009765625,
+    "quantiles": [
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625,
+      0.0009765625
+    ]
+  },
+  "weight_stats_b": {
+    "min": 0.00048828125,
+    "max": 0.00048828125,
+    "quantiles": [
+      0.00048828125,
+      0.00048828125,
+      0.00048828125,
+      0.00048828125,
+      0.00048828125,
+      0.00048828125,
+      0.00048828125
+    ]
+  },
+  "marginal_floor": null,
+  "input_sha256": "3049b895878d3261485c776e1968eae3e6a9df771ee0010a6dbafa2e0215b305"
+}

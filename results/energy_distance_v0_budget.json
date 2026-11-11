@@ -1,0 +1,54 @@
+{
+  "total_budget_sec": 3600.0,
+  "stage_boundaries": {
+    "calibration": 360.0,
+    "main": 3000.0,
+    "ablation": 3360.0,
+    "report": 3600.0
+  },
+  "used_sec": 2408.5358969999993,
+  "stage_used_sec": {
+    "calibration": 116.6212419,
+    "main": 2062.725305600001,
+    "ablation": 192.6051177,
+    "report": 36.584231800000055
+  },
+  "active_run_dir": "D:\\sinkhorn-lmflow\\results\\20261111_125856_524318_energy_distance_v0_rev2",
+  "revision": 2,
+  "sessions": [
+    {
+      "start_utc": "2026-11-11T12:16:04.240462+00:00",
+      "start_used_sec": 0.0,
+      "end_used_sec": 2271.0433739000005
+    },
+    {
+      "start_utc": "2026-11-11T12:56:16.069988+00:00",
+      "start_used_sec": 2271.0433739000005
+    },
+    {
+      "start_utc": "2026-11-11T12:58:56.498808+00:00",
+      "start_used_sec": 2364.9849569000007,
+      "end_used_sec": 2397.353961899999
+    },
+    {
+      "start_utc": "2026-11-11T13:01:30.007126+00:00",
+      "start_used_sec": 2397.353961899999,
+      "end_used_sec": 2408.443904399999
+    },
+    {
+      "start_utc": "2026-11-11T13:04:22.568633+00:00",
+      "start_used_sec": 2408.443904399999,
+      "end_used_sec": 2408.4850502999993
+    },
+    {
+      "start_utc": "2026-11-11T13:05:34.100581+00:00",
+      "start_used_sec": 2408.4850502999993,
+      "end_used_sec": 2408.5358969999993
+    }
+  ],
+  "active": false,
+  "stage": "report",
+  "pid": 33620,
+  "overrun_sec": 0.0,
+  "crash_reserve_sec": 1.0
+}

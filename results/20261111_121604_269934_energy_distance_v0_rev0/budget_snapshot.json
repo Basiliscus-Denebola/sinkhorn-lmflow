@@ -1,0 +1,28 @@
+{
+  "total_budget_sec": 3600.0,
+  "stage_boundaries": {
+    "calibration": 360.0,
+    "main": 3000.0,
+    "ablation": 3360.0,
+    "report": 3600.0
+  },
+  "used_sec": 2271.0402523000002,
+  "stage_used_sec": {
+    "calibration": 94.9963865,
+    "main": 1969.9325546000002,
+    "ablation": 192.59584519999999,
+    "report": 13.515465999999833
+  },
+  "active_run_dir": "D:\\sinkhorn-lmflow\\results\\20261111_121604_269934_energy_distance_v0_rev0",
+  "revision": 0,
+  "sessions": [
+    {
+      "start_utc": "2026-11-11T12:16:04.240462+00:00",
+      "start_used_sec": 0.0
+    }
+  ],
+  "active": true,
+  "stage": "report",
+  "pid": 35004,
+  "overrun_sec": 0.0
+}

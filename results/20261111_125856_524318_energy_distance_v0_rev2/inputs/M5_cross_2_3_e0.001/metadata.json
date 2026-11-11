@@ -1,0 +1,78 @@
+{
+  "case_id": "M5_cross_2_3_e0.001",
+  "family": "M5",
+  "n": 180,
+  "m": 180,
+  "epsilon": 0.001,
+  "data_seed": 20261110,
+  "weight_seed_a": null,
+  "weight_seed_b": null,
+  "marginal_type": "image_gray",
+  "alpha": null,
+  "raw_cost_max": 2.0,
+  "normalization_policy": "full 28x28 grid diameter squared = 2",
+  "split": "test",
+  "indices": [
+    3004,
+    8854
+  ],
+  "labels": [
+    2,
+    3
+  ],
+  "pair_type": "cross",
+  "pair_name": "cross_2_3",
+  "original_pixels": 784,
+  "support_n": 180,
+  "support_m": 180,
+  "retained_mass_a": 0.9999999999999999,
+  "retained_mass_b": 0.9999999999999998,
+  "raw_gray_mass_a": 33627.0,
+  "raw_gray_mass_b": 31702.0,
+  "data_files": {
+    "t10k-images-idx3-ubyte.gz": {
+      "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-images-idx3-ubyte.gz",
+      "sha256": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6",
+      "shape": [
+        10000,
+        28,
+        28
+      ]
+    },
+    "t10k-labels-idx1-ubyte.gz": {
+      "url": "https://storage.googleapis.com/cvdf-datasets/mnist/t10k-labels-idx1-ubyte.gz",
+      "sha256": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6",
+      "shape": [
+        10000
+      ]
+    }
+  },
+  "weight_stats_a": {
+    "min": 8.92140244446427e-05,
+    "max": 0.007583192077794629,
+    "quantiles": [
+      8.92140244446427e-05,
+      0.0002771582359413567,
+      0.0035462574716745472,
+      0.007211466975941951,
+      0.007523716061498201,
+      0.007553454069646415,
+      0.007583192077794629
+    ]
+  },
+  "weight_stats_b": {
+    "min": 3.154375118289067e-05,
+    "max": 0.008043656551637121,
+    "quantiles": [
+      3.154375118289067e-05,
+      8.800706580026496e-05,
+      0.0033594095009778563,
+      0.007002712762601729,
+      0.007980569049271339,
+      0.00801211280045423,
+      0.008043656551637121
+    ]
+  },
+  "marginal_floor": null,
+  "input_sha256": "a952926d9dd7c79f31f6003e98ee7ea7a648708cfc1a83fbc443abc65694b753"
+}

@@ -1,0 +1,7 @@
+..................                                                       [100%]
+18 passed in 7.10s
+warning: could not open directory 'results/20260925_073951_550196_theta_balance_study_b8ea20/scratch/pytest/': Permission denied
+warning: could not open directory 'results/20260925_073951_550196_theta_balance_study_b8ea20/scratch/pytest_cache/': Permission denied
+warning: could not open directory 'results/20260925_073951_550196_theta_balance_study_b8ea20/scratch/pytest_resume/': Permission denied
+RUN_DIR=D:\sinkhorn-lmflow\results\20261111_125856_524318_energy_distance_v0_rev2
+REPORT=D:\sinkhorn-lmflow\docs\energy_distance_v0_report.md report_sec=10.52

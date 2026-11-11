@@ -1,0 +1,54 @@
+{
+  "case_id": "cal_M1",
+  "family": "M1",
+  "n": 512,
+  "m": 512,
+  "epsilon": 0.003,
+  "data_seed": 41,
+  "weight_seed_a": [
+    41,
+    20
+  ],
+  "weight_seed_b": [
+    41,
+    21
+  ],
+  "marginal_type": "uniform",
+  "alpha": null,
+  "raw_cost_max": 0.9999949754928495,
+  "normalization_policy": "maximum element",
+  "geometry": "random",
+  "rng_rule": "SeedSequence([data_seed, stream]); streams 1=cost,10/11=geometry,20/21=weights",
+  "point_pool_id": null,
+  "point_pool_size": null,
+  "prefix_n": 512,
+  "prefix_m": 512,
+  "weight_stats_a": {
+    "min": 0.001953125,
+    "max": 0.001953125,
+    "quantiles": [
+      0.001953125,
+      0.001953125,
+      0.001953125,
+      0.001953125,
+      0.001953125,
+      0.001953125,
+      0.001953125
+    ]
+  },
+  "weight_stats_b": {
+    "min": 0.001953125,
+    "max": 0.001953125,
+    "quantiles": [
+      0.001953125,
+      0.001953125,
+      0.001953125,
+      0.001953125,
+      0.001953125,
+      0.001953125,
+      0.001953125
+    ]
+  },
+  "marginal_floor": null,
+  "input_sha256": "79105cafe0997a06a294761f065d2c089eae9c25c24b45d9ca2303567c054d87"
+}

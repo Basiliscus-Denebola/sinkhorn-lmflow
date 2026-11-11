@@ -1,0 +1,23 @@
+{
+  "kappa": 3.0,
+  "reason": "success_count_then_common_geomean_then_smaller",
+  "success_counts": {
+    "0.3": 4,
+    "1.0": 4,
+    "3.0": 4
+  },
+  "common_cases": [
+    "cal_M1",
+    "cal_M2",
+    "cal_M3",
+    "cal_M4"
+  ],
+  "time_ratio_scores": {
+    "0.3": 1.7314826650226935,
+    "1.0": 1.3041615844637902,
+    "3.0": 1.0641153138464994
+  },
+  "source_sha256": "3983cd0a5337589c26f93d4e624ef873d24d21d886f3b40b6316a9c7b9fb5d3e",
+  "config_sha256": "7ffaaff2ae918dcf9911acf65a63ce89fe2d81d40c10c213291312d74ace1aeb",
+  "frozen_at_machine_sec": 95.00826670000001
+}

@@ -1,0 +1,2312 @@
+{
+  "calibration__cal_M1__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 7.809908453022124e-09,
+    "row_residual_l1": 4.354155924701786e-16,
+    "claimed_residual_l1": 7.809908404449867e-09,
+    "elapsed_sec": 0.001753400000000127,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M1__energy_distance__r0__k0.3": {
+    "passed": true,
+    "residual_l1": 7.585128432036764e-09,
+    "row_residual_l1": 4.547143911404206e-16,
+    "claimed_residual_l1": 7.58512841967686e-09,
+    "elapsed_sec": 0.0018407999999996427,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M1__energy_distance__r0__k1": {
+    "passed": true,
+    "residual_l1": 6.904279743627853e-09,
+    "row_residual_l1": 4.568827954853916e-16,
+    "claimed_residual_l1": 6.90427970199449e-09,
+    "elapsed_sec": 0.001903800000000011,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M1__energy_distance__r0__k3": {
+    "passed": true,
+    "residual_l1": 6.1255966982837196e-09,
+    "row_residual_l1": 4.378008372496467e-16,
+    "claimed_residual_l1": 6.125596704355252e-09,
+    "elapsed_sec": 0.001888600000000018,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M2__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.967844212359356e-09,
+    "row_residual_l1": 5.698566618583811e-16,
+    "claimed_residual_l1": 9.967844161618694e-09,
+    "elapsed_sec": 0.001847800000000177,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M2__energy_distance__r0__k0.3": {
+    "passed": true,
+    "residual_l1": 9.912099865070148e-09,
+    "row_residual_l1": 5.611830444784971e-16,
+    "claimed_residual_l1": 9.912099932941204e-09,
+    "elapsed_sec": 0.0017985000000000362,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M2__energy_distance__r0__k1": {
+    "passed": true,
+    "residual_l1": 9.684573367210736e-09,
+    "row_residual_l1": 5.744103109828202e-16,
+    "claimed_residual_l1": 9.684573355501352e-09,
+    "elapsed_sec": 0.0019415999999998768,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M2__energy_distance__r0__k3": {
+    "passed": true,
+    "residual_l1": 9.227075004449373e-09,
+    "row_residual_l1": 5.906733435701028e-16,
+    "claimed_residual_l1": 9.227075041962768e-09,
+    "elapsed_sec": 0.002041399999999971,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M3__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.938130729166342e-09,
+    "row_residual_l1": 2.965726622616849e-15,
+    "claimed_residual_l1": 9.938132002453373e-09,
+    "elapsed_sec": 0.0020308999999998356,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M3__energy_distance__r0__k0.3": {
+    "passed": true,
+    "residual_l1": 9.959345351889803e-09,
+    "row_residual_l1": 3.1751944823410483e-15,
+    "claimed_residual_l1": 9.959346915526177e-09,
+    "elapsed_sec": 0.002499499999999877,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M3__energy_distance__r0__k1": {
+    "passed": true,
+    "residual_l1": 9.926319534565853e-09,
+    "row_residual_l1": 3.032513476441956e-15,
+    "claimed_residual_l1": 9.926321324366799e-09,
+    "elapsed_sec": 0.002261600000000197,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M3__energy_distance__r0__k3": {
+    "passed": true,
+    "residual_l1": 9.822720585051306e-09,
+    "row_residual_l1": 3.0923614363631557e-15,
+    "claimed_residual_l1": 9.822721880672902e-09,
+    "elapsed_sec": 0.002145399999999853,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M4__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.912584331925984e-09,
+    "row_residual_l1": 3.740391362493859e-15,
+    "claimed_residual_l1": 9.912585598222264e-09,
+    "elapsed_sec": 0.0024615999999997307,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M4__energy_distance__r0__k0.3": {
+    "passed": true,
+    "residual_l1": 9.995633762272643e-09,
+    "row_residual_l1": 3.9467090799343115e-15,
+    "claimed_residual_l1": 9.99563425707113e-09,
+    "elapsed_sec": 0.0017290000000000916,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M4__energy_distance__r0__k1": {
+    "passed": true,
+    "residual_l1": 9.849106956787415e-09,
+    "row_residual_l1": 3.593007900680385e-15,
+    "claimed_residual_l1": 9.84910824856886e-09,
+    "elapsed_sec": 0.0018498000000000125,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "calibration__cal_M4__energy_distance__r0__k3": {
+    "passed": true,
+    "residual_l1": 9.9947753127693e-09,
+    "row_residual_l1": 3.452871166774116e-15,
+    "claimed_residual_l1": 9.994776213629601e-09,
+    "elapsed_sec": 0.002520300000000031,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 6.96819532142786e-09,
+    "row_residual_l1": 4.85722573273506e-16,
+    "claimed_residual_l1": 6.96819531644053e-09,
+    "elapsed_sec": 0.014933000000000085,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 6.9681952892270554e-09,
+    "row_residual_l1": 4.886499191392168e-16,
+    "claimed_residual_l1": 6.968195318392094e-09,
+    "elapsed_sec": 0.017797199999999957,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 3.6545737995075447e-09,
+    "row_residual_l1": 4.996003610813204e-16,
+    "claimed_residual_l1": 3.6545737934360126e-09,
+    "elapsed_sec": 0.015691799999999922,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 6.9681952892270554e-09,
+    "row_residual_l1": 4.886499191392168e-16,
+    "claimed_residual_l1": 6.968195318392094e-09,
+    "elapsed_sec": 0.021386299999999636,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 3.6545737995075447e-09,
+    "row_residual_l1": 4.996003610813204e-16,
+    "claimed_residual_l1": 3.6545737934360126e-09,
+    "elapsed_sec": 0.023484700000000025,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 6.96819532142786e-09,
+    "row_residual_l1": 4.85722573273506e-16,
+    "claimed_residual_l1": 6.96819531644053e-09,
+    "elapsed_sec": 0.028893100000000338,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s42_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.776533707052913e-09,
+    "row_residual_l1": 5.518589057951218e-16,
+    "claimed_residual_l1": 9.776533766684033e-09,
+    "elapsed_sec": 0.016762900000000247,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s42_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.814844245388359e-09,
+    "row_residual_l1": 5.756029333725543e-16,
+    "claimed_residual_l1": 9.814844214054916e-09,
+    "elapsed_sec": 0.01980359999999992,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s42_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.776533722557004e-09,
+    "row_residual_l1": 5.865533753146579e-16,
+    "claimed_residual_l1": 9.77653374499999e-09,
+    "elapsed_sec": 0.033586899999999975,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s42_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.814844245388359e-09,
+    "row_residual_l1": 5.756029333725543e-16,
+    "claimed_residual_l1": 9.814844214054916e-09,
+    "elapsed_sec": 0.027006700000000272,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s42_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.776533722557004e-09,
+    "row_residual_l1": 5.865533753146579e-16,
+    "claimed_residual_l1": 9.77653374499999e-09,
+    "elapsed_sec": 0.030016500000000335,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s42_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.776533707052913e-09,
+    "row_residual_l1": 5.518589057951218e-16,
+    "claimed_residual_l1": 9.776533766684033e-09,
+    "elapsed_sec": 0.021732399999999874,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M2_N1024_s42_e0.003__energy_zero__r0": {
+    "passed": true,
+    "residual_l1": 9.776533733615866e-09,
+    "row_residual_l1": 6.006480035569695e-16,
+    "claimed_residual_l1": 9.776533731989563e-09,
+    "elapsed_sec": 0.028988299999999967,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M2_N1024_s42_e0.003__energy_amp__r0": {
+    "passed": true,
+    "residual_l1": 9.723934395969996e-09,
+    "row_residual_l1": 5.834091890144499e-16,
+    "claimed_residual_l1": 9.723934344578813e-09,
+    "elapsed_sec": 0.026272500000000143,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s42_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.967802110945854e-09,
+    "row_residual_l1": 3.216285744678249e-15,
+    "claimed_residual_l1": 9.967802314016921e-09,
+    "elapsed_sec": 0.01643680000000014,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s42_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.931933004866424e-09,
+    "row_residual_l1": 3.183217578417441e-15,
+    "claimed_residual_l1": 9.931932510687073e-09,
+    "elapsed_sec": 0.01937219999999984,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s42_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.931932950873155e-09,
+    "row_residual_l1": 3.1372474063040556e-15,
+    "claimed_residual_l1": 9.931932691640416e-09,
+    "elapsed_sec": 0.020181100000000285,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s42_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.931933004866424e-09,
+    "row_residual_l1": 3.183217578417441e-15,
+    "claimed_residual_l1": 9.931932510687073e-09,
+    "elapsed_sec": 0.01671789999999973,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s42_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.931932950873155e-09,
+    "row_residual_l1": 3.1372474063040556e-15,
+    "claimed_residual_l1": 9.931932691640416e-09,
+    "elapsed_sec": 0.0332391000000003,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s42_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.967802110945854e-09,
+    "row_residual_l1": 3.216285744678249e-15,
+    "claimed_residual_l1": 9.967802314016921e-09,
+    "elapsed_sec": 0.015609800000000007,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M3_N1024_s42_e0.003__energy_zero__r0": {
+    "passed": true,
+    "residual_l1": 9.931932924310202e-09,
+    "row_residual_l1": 3.2149847020712663e-15,
+    "claimed_residual_l1": 9.931932436961326e-09,
+    "elapsed_sec": 0.01476759999999988,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M3_N1024_s42_e0.003__energy_amp__r0": {
+    "passed": true,
+    "residual_l1": 9.881769544024636e-09,
+    "row_residual_l1": 3.3320785366997008e-15,
+    "claimed_residual_l1": 9.881769437772824e-09,
+    "elapsed_sec": 0.01643669999999986,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a1_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.87574552648826e-09,
+    "row_residual_l1": 2.949646972662647e-15,
+    "claimed_residual_l1": 9.875745728276496e-09,
+    "elapsed_sec": 0.014821699999999716,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a1_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.87574593876016e-09,
+    "row_residual_l1": 2.9196099138035884e-15,
+    "claimed_residual_l1": 9.8757458896782e-09,
+    "elapsed_sec": 0.013488200000000283,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a1_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.746989663820119e-09,
+    "row_residual_l1": 2.619792225969325e-15,
+    "claimed_residual_l1": 9.746989728018016e-09,
+    "elapsed_sec": 0.013060000000000294,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a1_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.87574593876016e-09,
+    "row_residual_l1": 2.9196099138035884e-15,
+    "claimed_residual_l1": 9.8757458896782e-09,
+    "elapsed_sec": 0.01603740000000009,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a1_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.746989663820119e-09,
+    "row_residual_l1": 2.619792225969325e-15,
+    "claimed_residual_l1": 9.746989728018016e-09,
+    "elapsed_sec": 0.014168999999999876,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a1_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.87574552648826e-09,
+    "row_residual_l1": 2.949646972662647e-15,
+    "claimed_residual_l1": 9.875745728276496e-09,
+    "elapsed_sec": 0.013069400000000009,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.01__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.570964950570868e-09,
+    "row_residual_l1": 6.211936347255698e-16,
+    "claimed_residual_l1": 9.570964940182856e-09,
+    "elapsed_sec": 0.0004917999999998202,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.01__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 7.0395841537124605e-09,
+    "row_residual_l1": 6.3714495918826275e-16,
+    "claimed_residual_l1": 7.039584175376175e-09,
+    "elapsed_sec": 0.00034370000000016887,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.01__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.570964908395404e-09,
+    "row_residual_l1": 6.508601166702044e-16,
+    "claimed_residual_l1": 9.570964968609282e-09,
+    "elapsed_sec": 0.0003584999999999283,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.01__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 7.0395841537124605e-09,
+    "row_residual_l1": 6.3714495918826275e-16,
+    "claimed_residual_l1": 7.039584175376175e-09,
+    "elapsed_sec": 0.00033159999999998746,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.01__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.570964908395404e-09,
+    "row_residual_l1": 6.508601166702044e-16,
+    "claimed_residual_l1": 9.570964968609282e-09,
+    "elapsed_sec": 0.0003520999999997443,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.01__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.570964950570868e-09,
+    "row_residual_l1": 6.211936347255698e-16,
+    "claimed_residual_l1": 9.570964940182856e-09,
+    "elapsed_sec": 0.0003559000000006307,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N512_s42_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.464056970401313e-09,
+    "row_residual_l1": 2.828249787145687e-15,
+    "claimed_residual_l1": 9.464056232710155e-09,
+    "elapsed_sec": 0.0016562000000002186,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N512_s42_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.910588078714325e-09,
+    "row_residual_l1": 2.7757744019973885e-15,
+    "claimed_residual_l1": 9.910588272352833e-09,
+    "elapsed_sec": 0.001746999999999943,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N512_s42_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.910588407010743e-09,
+    "row_residual_l1": 3.209238430557093e-15,
+    "claimed_residual_l1": 9.910588102566772e-09,
+    "elapsed_sec": 0.001779799999999554,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N512_s42_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.910588078714325e-09,
+    "row_residual_l1": 2.7757744019973885e-15,
+    "claimed_residual_l1": 9.910588272352833e-09,
+    "elapsed_sec": 0.0016685000000000727,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N512_s42_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.910588407010743e-09,
+    "row_residual_l1": 3.209238430557093e-15,
+    "claimed_residual_l1": 9.910588102566772e-09,
+    "elapsed_sec": 0.0019439999999999458,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N512_s42_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.464056970401313e-09,
+    "row_residual_l1": 2.828249787145687e-15,
+    "claimed_residual_l1": 9.464056232710155e-09,
+    "elapsed_sec": 0.001953900000000175,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M7_1024x2048_s42_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.919208655731308e-09,
+    "row_residual_l1": 3.078049967686347e-15,
+    "claimed_residual_l1": 9.919209266841863e-09,
+    "elapsed_sec": 0.0371687000000005,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M7_1024x2048_s42_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.919209683175497e-09,
+    "row_residual_l1": 2.9397057704771967e-15,
+    "claimed_residual_l1": 9.919209519081498e-09,
+    "elapsed_sec": 0.03213439999999945,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M7_1024x2048_s42_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.598344370394599e-09,
+    "row_residual_l1": 2.8515601338541252e-15,
+    "claimed_residual_l1": 9.598344613093255e-09,
+    "elapsed_sec": 0.04892339999999962,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M7_1024x2048_s42_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.919209683175497e-09,
+    "row_residual_l1": 2.9397057704771967e-15,
+    "claimed_residual_l1": 9.919209519081498e-09,
+    "elapsed_sec": 0.03610270000000071,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M7_1024x2048_s42_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.598344370394599e-09,
+    "row_residual_l1": 2.8515601338541252e-15,
+    "claimed_residual_l1": 9.598344613093255e-09,
+    "elapsed_sec": 0.03701359999999987,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M7_1024x2048_s42_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.919208655731308e-09,
+    "row_residual_l1": 3.078049967686347e-15,
+    "claimed_residual_l1": 9.919209266841863e-09,
+    "elapsed_sec": 0.03397420000000029,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.001__sk_scaling_fast__r0": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 3.9000000002786805e-06
+  },
+  "main__M1_N1024_s42_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.365468727905342e-09,
+    "row_residual_l1": 4.507028431022242e-16,
+    "claimed_residual_l1": 9.365468725194837e-09,
+    "elapsed_sec": 0.025101199999999935,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.91128852297421e-09,
+    "row_residual_l1": 4.369334755116583e-16,
+    "claimed_residual_l1": 9.911288494784953e-09,
+    "elapsed_sec": 0.019983300000000703,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.365468727905342e-09,
+    "row_residual_l1": 4.507028431022242e-16,
+    "claimed_residual_l1": 9.365468725194837e-09,
+    "elapsed_sec": 0.024369800000000552,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.91128852297421e-09,
+    "row_residual_l1": 4.369334755116583e-16,
+    "claimed_residual_l1": 9.911288494784953e-09,
+    "elapsed_sec": 0.024288399999999655,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s42_e0.001__sk_scaling_fast__r1": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 7.000000001866624e-07
+  },
+  "ablation__M1_N1024_s42_e0.001__energy_zero__r0": {
+    "passed": true,
+    "residual_l1": 9.911288521564747e-09,
+    "row_residual_l1": 4.616532850443278e-16,
+    "claimed_residual_l1": 9.911288492182868e-09,
+    "elapsed_sec": 0.019713699999999612,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M1_N1024_s42_e0.001__energy_amp__r0": {
+    "passed": true,
+    "residual_l1": 9.378403428524952e-09,
+    "row_residual_l1": 4.5232914636095245e-16,
+    "claimed_residual_l1": 9.37840341735767e-09,
+    "elapsed_sec": 0.02646589999999982,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s42_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.788250637321819e-09,
+    "row_residual_l1": 6.505213034913027e-16,
+    "claimed_residual_l1": 9.788250659547963e-09,
+    "elapsed_sec": 0.01570460000000029,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s42_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.978379051202649e-09,
+    "row_residual_l1": 6.551833728329903e-16,
+    "claimed_residual_l1": 9.978379041011148e-09,
+    "elapsed_sec": 0.01476949999999988,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s42_e0.001__sk_scaling_fast__r0": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 1.3000000000928935e-06
+  },
+  "main__M2_N1024_s42_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.978379051202649e-09,
+    "row_residual_l1": 6.551833728329903e-16,
+    "claimed_residual_l1": 9.978379041011148e-09,
+    "elapsed_sec": 0.026976500000000847,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s42_e0.001__sk_scaling_fast__r1": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 1.000000000139778e-06
+  },
+  "main__M2_N1024_s42_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.788250637321819e-09,
+    "row_residual_l1": 6.505213034913027e-16,
+    "claimed_residual_l1": 9.788250659547963e-09,
+    "elapsed_sec": 0.013552599999999693,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s42_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.9843337596087e-09,
+    "row_residual_l1": 1.0105523189085641e-14,
+    "claimed_residual_l1": 9.984328638379739e-09,
+    "elapsed_sec": 0.014709800000000328,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s42_e0.001__sk_scaling_fast__r0": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 1.3000000000928935e-06
+  },
+  "main__M3_N1024_s42_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.850485378011704e-09,
+    "row_residual_l1": 9.022296798555374e-15,
+    "claimed_residual_l1": 9.85048304979596e-09,
+    "elapsed_sec": 0.016377000000000308,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s42_e0.001__sk_scaling_fast__r1": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 9.999999992515995e-07
+  },
+  "main__M3_N1024_s42_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.850485378011704e-09,
+    "row_residual_l1": 9.022296798555374e-15,
+    "claimed_residual_l1": 9.85048304979596e-09,
+    "elapsed_sec": 0.01431540000000009,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s42_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.9843337596087e-09,
+    "row_residual_l1": 1.0105523189085641e-14,
+    "claimed_residual_l1": 9.984328638379739e-09,
+    "elapsed_sec": 0.015547100000000036,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a0.1_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.898034960567453e-09,
+    "row_residual_l1": 2.581216982729489e-15,
+    "claimed_residual_l1": 9.898034675200149e-09,
+    "elapsed_sec": 0.014899100000000054,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a0.1_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.843971538328361e-09,
+    "row_residual_l1": 2.832486164813492e-15,
+    "claimed_residual_l1": 9.843971186928974e-09,
+    "elapsed_sec": 0.01800550000000012,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a0.1_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.898034922159321e-09,
+    "row_residual_l1": 2.5421510082999585e-15,
+    "claimed_residual_l1": 9.898035067056837e-09,
+    "elapsed_sec": 0.015760700000000405,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a0.1_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.843971538328361e-09,
+    "row_residual_l1": 2.832486164813492e-15,
+    "claimed_residual_l1": 9.843971186928974e-09,
+    "elapsed_sec": 0.021574400000000438,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a0.1_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.898034922159321e-09,
+    "row_residual_l1": 2.5421510082999585e-15,
+    "claimed_residual_l1": 9.898035067056837e-09,
+    "elapsed_sec": 0.01679350000000035,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s42_a0.1_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.898034960567453e-09,
+    "row_residual_l1": 2.581216982729489e-15,
+    "claimed_residual_l1": 9.898034675200149e-09,
+    "elapsed_sec": 0.020646799999999743,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M4_N1024_s42_a0.1_e0.003__energy_zero__r0": {
+    "passed": true,
+    "residual_l1": 9.898034725754176e-09,
+    "row_residual_l1": 2.599499587829851e-15,
+    "claimed_residual_l1": 9.898034977840632e-09,
+    "elapsed_sec": 0.019225099999999884,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M4_N1024_s42_a0.1_e0.003__energy_amp__r0": {
+    "passed": true,
+    "residual_l1": 9.99682781644043e-09,
+    "row_residual_l1": 2.6530023587714946e-15,
+    "claimed_residual_l1": 9.996828024460177e-09,
+    "elapsed_sec": 0.0265790999999993,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.702677654485799e-09,
+    "row_residual_l1": 5.676747049862541e-16,
+    "claimed_residual_l1": 9.702677627184233e-09,
+    "elapsed_sec": 0.0003676000000005786,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.94947524763062e-09,
+    "row_residual_l1": 5.758333263342075e-16,
+    "claimed_residual_l1": 9.94947523964818e-09,
+    "elapsed_sec": 0.0015919000000002015,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.001__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.949475255857003e-09,
+    "row_residual_l1": 6.030603533907497e-16,
+    "claimed_residual_l1": 9.949475253891887e-09,
+    "elapsed_sec": 0.00039920000000037703,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.94947524763062e-09,
+    "row_residual_l1": 5.758333263342075e-16,
+    "claimed_residual_l1": 9.94947523964818e-09,
+    "elapsed_sec": 0.00044250000000012335,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.001__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.949475255857003e-09,
+    "row_residual_l1": 6.030603533907497e-16,
+    "claimed_residual_l1": 9.949475253891887e-09,
+    "elapsed_sec": 0.0005117999999999512,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_0_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.702677654485799e-09,
+    "row_residual_l1": 5.676747049862541e-16,
+    "claimed_residual_l1": 9.702677627184233e-09,
+    "elapsed_sec": 0.0003697000000002504,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M5_same_0_e0.001__energy_zero__r0": {
+    "passed": true,
+    "residual_l1": 9.949475291086798e-09,
+    "row_residual_l1": 6.122760718568765e-16,
+    "claimed_residual_l1": 9.949475269789001e-09,
+    "elapsed_sec": 0.0003565999999999292,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M5_same_0_e0.001__energy_amp__r0": {
+    "passed": true,
+    "residual_l1": 9.889731452175643e-09,
+    "row_residual_l1": 6.133873790836741e-16,
+    "claimed_residual_l1": 9.88973143041706e-09,
+    "elapsed_sec": 0.0005228999999999928,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N2048_s42_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.902898851041776e-09,
+    "row_residual_l1": 2.61336091655906e-15,
+    "claimed_residual_l1": 9.902897593421466e-09,
+    "elapsed_sec": 0.0547051999999999,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N2048_s42_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.902898727713778e-09,
+    "row_residual_l1": 2.6110840919968403e-15,
+    "claimed_residual_l1": 9.902897442663153e-09,
+    "elapsed_sec": 0.05320139999999984,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N2048_s42_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.964874573013729e-09,
+    "row_residual_l1": 2.781574883620186e-15,
+    "claimed_residual_l1": 9.964874242494696e-09,
+    "elapsed_sec": 0.05500419999999995,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N2048_s42_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.902898727713778e-09,
+    "row_residual_l1": 2.6110840919968403e-15,
+    "claimed_residual_l1": 9.902897442663153e-09,
+    "elapsed_sec": 0.059766100000000044,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N2048_s42_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.964874573013729e-09,
+    "row_residual_l1": 2.781574883620186e-15,
+    "claimed_residual_l1": 9.964874242494696e-09,
+    "elapsed_sec": 0.06342789999999976,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M6_N2048_s42_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.902898851041776e-09,
+    "row_residual_l1": 2.61336091655906e-15,
+    "claimed_residual_l1": 9.902897593421466e-09,
+    "elapsed_sec": 0.07089260000000053,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s43_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 5.540154586936193e-09,
+    "row_residual_l1": 4.879993978357255e-16,
+    "claimed_residual_l1": 5.540154564710048e-09,
+    "elapsed_sec": 0.02308380000000021,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s43_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 7.397217299202202e-09,
+    "row_residual_l1": 4.863730945769973e-16,
+    "claimed_residual_l1": 7.397217241631067e-09,
+    "elapsed_sec": 0.01853750000000076,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s43_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 5.540154586502512e-09,
+    "row_residual_l1": 4.858309934907545e-16,
+    "claimed_residual_l1": 5.540154557012213e-09,
+    "elapsed_sec": 0.019118499999999372,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s43_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 7.397217299202202e-09,
+    "row_residual_l1": 4.863730945769973e-16,
+    "claimed_residual_l1": 7.397217241631067e-09,
+    "elapsed_sec": 0.013900700000000654,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s43_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 5.540154586502512e-09,
+    "row_residual_l1": 4.858309934907545e-16,
+    "claimed_residual_l1": 5.540154557012213e-09,
+    "elapsed_sec": 0.015430999999999528,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s43_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 5.540154586936193e-09,
+    "row_residual_l1": 4.879993978357255e-16,
+    "claimed_residual_l1": 5.540154564710048e-09,
+    "elapsed_sec": 0.01462450000000004,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.60479810431774e-09,
+    "row_residual_l1": 6.069363761573854e-16,
+    "claimed_residual_l1": 9.604798072659036e-09,
+    "elapsed_sec": 0.039319400000000115,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.72461483680822e-09,
+    "row_residual_l1": 6.292709409105868e-16,
+    "claimed_residual_l1": 9.72461486185329e-09,
+    "elapsed_sec": 0.014844999999999331,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.72461480699266e-09,
+    "row_residual_l1": 6.359929943799969e-16,
+    "claimed_residual_l1": 9.724614851228108e-09,
+    "elapsed_sec": 0.013998900000000702,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.72461483680822e-09,
+    "row_residual_l1": 6.292709409105868e-16,
+    "claimed_residual_l1": 9.72461486185329e-09,
+    "elapsed_sec": 0.023871500000000268,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.72461480699266e-09,
+    "row_residual_l1": 6.359929943799969e-16,
+    "claimed_residual_l1": 9.724614851228108e-09,
+    "elapsed_sec": 0.016574300000000264,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.60479810431774e-09,
+    "row_residual_l1": 6.069363761573854e-16,
+    "claimed_residual_l1": 9.604798072659036e-09,
+    "elapsed_sec": 0.014787000000000106,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s43_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.996247134626095e-09,
+    "row_residual_l1": 3.1998058716564692e-15,
+    "claimed_residual_l1": 9.996247670438808e-09,
+    "elapsed_sec": 0.016091499999999925,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s43_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.996247122699871e-09,
+    "row_residual_l1": 3.2299466920515663e-15,
+    "claimed_residual_l1": 9.99624789042343e-09,
+    "elapsed_sec": 0.017009100000001,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s43_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.587684545700643e-09,
+    "row_residual_l1": 3.966553648038218e-15,
+    "claimed_residual_l1": 9.587685697231771e-09,
+    "elapsed_sec": 0.01682999999999879,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s43_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.996247122699871e-09,
+    "row_residual_l1": 3.2299466920515663e-15,
+    "claimed_residual_l1": 9.99624789042343e-09,
+    "elapsed_sec": 0.02191030000000005,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s43_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.587684545700643e-09,
+    "row_residual_l1": 3.966553648038218e-15,
+    "claimed_residual_l1": 9.587685697231771e-09,
+    "elapsed_sec": 0.014037899999999937,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s43_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.996247134626095e-09,
+    "row_residual_l1": 3.1998058716564692e-15,
+    "claimed_residual_l1": 9.996247670438808e-09,
+    "elapsed_sec": 0.013684499999998323,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a1_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.970043512299102e-09,
+    "row_residual_l1": 3.1225772191740848e-15,
+    "claimed_residual_l1": 9.97004348052902e-09,
+    "elapsed_sec": 0.02762449999999994,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a1_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.865012728159251e-09,
+    "row_residual_l1": 3.90515646485649e-15,
+    "claimed_residual_l1": 9.865012473162454e-09,
+    "elapsed_sec": 0.017618399999999923,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a1_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.97004385559606e-09,
+    "row_residual_l1": 3.1209191521798345e-15,
+    "claimed_residual_l1": 9.97004362643297e-09,
+    "elapsed_sec": 0.017496500000000026,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a1_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.865012728159251e-09,
+    "row_residual_l1": 3.90515646485649e-15,
+    "claimed_residual_l1": 9.865012473162454e-09,
+    "elapsed_sec": 0.01439210000000024,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a1_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.97004385559606e-09,
+    "row_residual_l1": 3.1209191521798345e-15,
+    "claimed_residual_l1": 9.97004362643297e-09,
+    "elapsed_sec": 0.014179999999999637,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a1_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.970043512299102e-09,
+    "row_residual_l1": 3.1225772191740848e-15,
+    "claimed_residual_l1": 9.97004348052902e-09,
+    "elapsed_sec": 0.014641700000000313,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.01__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.273742343103293e-09,
+    "row_residual_l1": 5.115807950872853e-16,
+    "claimed_residual_l1": 9.27374236561404e-09,
+    "elapsed_sec": 0.0002232000000006451,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.01__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.735279355081142e-09,
+    "row_residual_l1": 6.23795719939535e-16,
+    "claimed_residual_l1": 9.735279431402199e-09,
+    "elapsed_sec": 0.0002592999999997403,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.01__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.735279386990567e-09,
+    "row_residual_l1": 5.765787153277913e-16,
+    "claimed_residual_l1": 9.735279502593624e-09,
+    "elapsed_sec": 0.00025770000000058246,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.01__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.735279355081142e-09,
+    "row_residual_l1": 6.23795719939535e-16,
+    "claimed_residual_l1": 9.735279431402199e-09,
+    "elapsed_sec": 0.00022300000000008424,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.01__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.735279386990567e-09,
+    "row_residual_l1": 5.765787153277913e-16,
+    "claimed_residual_l1": 9.735279502593624e-09,
+    "elapsed_sec": 0.0002049999999993446,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.01__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.273742343103293e-09,
+    "row_residual_l1": 5.115807950872853e-16,
+    "claimed_residual_l1": 9.27374236561404e-09,
+    "elapsed_sec": 0.0002156000000006486,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s43_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.92098438427555e-09,
+    "row_residual_l1": 4.574248965716343e-16,
+    "claimed_residual_l1": 9.92098440433329e-09,
+    "elapsed_sec": 0.029061800000000915,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s43_e0.001__sk_scaling_fast__r0": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 6.99999999298484e-07
+  },
+  "main__M1_N1024_s43_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 8.506070122132198e-09,
+    "row_residual_l1": 4.670742959067553e-16,
+    "claimed_residual_l1": 8.506070105977585e-09,
+    "elapsed_sec": 0.01993610000000068,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s43_e0.001__sk_scaling_fast__r1": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 5.000000005139782e-07
+  },
+  "main__M1_N1024_s43_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 8.506070122132198e-09,
+    "row_residual_l1": 4.670742959067553e-16,
+    "claimed_residual_l1": 8.506070105977585e-09,
+    "elapsed_sec": 0.027810800000001024,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M1_N1024_s43_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.92098438427555e-09,
+    "row_residual_l1": 4.574248965716343e-16,
+    "claimed_residual_l1": 9.92098440433329e-09,
+    "elapsed_sec": 0.02255420000000008,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.001__sk_scaling_fast__r0": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 7.000000010748408e-07
+  },
+  "main__M2_N1024_s43_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.863493819015773e-09,
+    "row_residual_l1": 6.611464847816606e-16,
+    "claimed_residual_l1": 9.863493824870465e-09,
+    "elapsed_sec": 0.013690099999999816,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.975155265381022e-09,
+    "row_residual_l1": 6.774095173689432e-16,
+    "claimed_residual_l1": 9.975155238926489e-09,
+    "elapsed_sec": 0.014348999999999279,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.863493819015773e-09,
+    "row_residual_l1": 6.611464847816606e-16,
+    "claimed_residual_l1": 9.863493824870465e-09,
+    "elapsed_sec": 0.013764899999999969,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.975155265381022e-09,
+    "row_residual_l1": 6.774095173689432e-16,
+    "claimed_residual_l1": 9.975155238926489e-09,
+    "elapsed_sec": 0.01327430000000085,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M2_N1024_s43_e0.001__sk_scaling_fast__r1": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 9.999999992515995e-07
+  },
+  "main__M3_N1024_s43_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.955382237331056e-09,
+    "row_residual_l1": 1.0247662093898491e-14,
+    "claimed_residual_l1": 9.95537958916725e-09,
+    "elapsed_sec": 0.013733199999999002,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s43_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.952969277416714e-09,
+    "row_residual_l1": 1.0428290175834576e-14,
+    "claimed_residual_l1": 9.95296369583551e-09,
+    "elapsed_sec": 0.01634340000000023,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s43_e0.001__sk_scaling_fast__r0": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 1.1999999998124622e-06
+  },
+  "main__M3_N1024_s43_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.952969277416714e-09,
+    "row_residual_l1": 1.0428290175834576e-14,
+    "claimed_residual_l1": 9.95296369583551e-09,
+    "elapsed_sec": 0.017398699999999323,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M3_N1024_s43_e0.001__sk_scaling_fast__r1": {
+    "passed": null,
+    "reason": "no applicable endpoint",
+    "elapsed_sec": 8.999999998593466e-07
+  },
+  "main__M3_N1024_s43_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.955382237331056e-09,
+    "row_residual_l1": 1.0247662093898491e-14,
+    "claimed_residual_l1": 9.95537958916725e-09,
+    "elapsed_sec": 0.021740100000000595,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a0.1_e0.003__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.794633948375296e-09,
+    "row_residual_l1": 3.3370653265723056e-15,
+    "claimed_residual_l1": 9.794634138588034e-09,
+    "elapsed_sec": 0.012841700000000955,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a0.1_e0.003__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.794634976332803e-09,
+    "row_residual_l1": 3.3257284801046826e-15,
+    "claimed_residual_l1": 9.794634247442165e-09,
+    "elapsed_sec": 0.012895099999999715,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a0.1_e0.003__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.963231804996938e-09,
+    "row_residual_l1": 3.52586581747407e-15,
+    "claimed_residual_l1": 9.963231240718878e-09,
+    "elapsed_sec": 0.01604910000000004,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a0.1_e0.003__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.794634976332803e-09,
+    "row_residual_l1": 3.3257284801046826e-15,
+    "claimed_residual_l1": 9.794634247442165e-09,
+    "elapsed_sec": 0.013882499999999354,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a0.1_e0.003__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.963231804996938e-09,
+    "row_residual_l1": 3.52586581747407e-15,
+    "claimed_residual_l1": 9.963231240718878e-09,
+    "elapsed_sec": 0.024499500000001007,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M4_N1024_s43_a0.1_e0.003__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.794633948375296e-09,
+    "row_residual_l1": 3.3370653265723056e-15,
+    "claimed_residual_l1": 9.794634138588034e-09,
+    "elapsed_sec": 0.013501200000000324,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.001__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.98742035123281e-09,
+    "row_residual_l1": 1.3255455760807777e-15,
+    "claimed_residual_l1": 9.987420165962987e-09,
+    "elapsed_sec": 0.00024950000000067973,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.964417850117735e-09,
+    "row_residual_l1": 1.0129158796445825e-15,
+    "claimed_residual_l1": 9.96441802290568e-09,
+    "elapsed_sec": 0.00035210000000063246,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.987420131912263e-09,
+    "row_residual_l1": 1.1135840513598616e-15,
+    "claimed_residual_l1": 9.987420119172887e-09,
+    "elapsed_sec": 0.00022200000000083264,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.964417850117735e-09,
+    "row_residual_l1": 1.0129158796445825e-15,
+    "claimed_residual_l1": 9.96441802290568e-09,
+    "elapsed_sec": 0.00023509999999937747,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.987420131912263e-09,
+    "row_residual_l1": 1.1135840513598616e-15,
+    "claimed_residual_l1": 9.987420119172887e-09,
+    "elapsed_sec": 0.0002903000000014089,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_2_e0.001__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.98742035123281e-09,
+    "row_residual_l1": 1.3255455760807777e-15,
+    "claimed_residual_l1": 9.987420165962987e-09,
+    "elapsed_sec": 0.0002420000000000755,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.01__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.517523719360316e-09,
+    "row_residual_l1": 4.787565743152866e-16,
+    "claimed_residual_l1": 9.51752379338422e-09,
+    "elapsed_sec": 0.00023310000000087427,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.01__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.359716923111171e-09,
+    "row_residual_l1": 5.0724398639734325e-16,
+    "claimed_residual_l1": 9.359716852095929e-09,
+    "elapsed_sec": 0.00022689999999947474,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.01__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.359716898743728e-09,
+    "row_residual_l1": 5.506933884596998e-16,
+    "claimed_residual_l1": 9.359716903731058e-09,
+    "elapsed_sec": 0.00029369999999850904,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.01__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.359716923111171e-09,
+    "row_residual_l1": 5.0724398639734325e-16,
+    "claimed_residual_l1": 9.359716852095929e-09,
+    "elapsed_sec": 0.00020519999999990546,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.01__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.359716898743728e-09,
+    "row_residual_l1": 5.506933884596998e-16,
+    "claimed_residual_l1": 9.359716903731058e-09,
+    "elapsed_sec": 0.0001889999999988845,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.01__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.517523719360316e-09,
+    "row_residual_l1": 4.787565743152866e-16,
+    "claimed_residual_l1": 9.51752379338422e-09,
+    "elapsed_sec": 0.00020940000000102543,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.883636747329587e-09,
+    "row_residual_l1": 6.920462466974975e-16,
+    "claimed_residual_l1": 9.883636731066554e-09,
+    "elapsed_sec": 0.0002023999999991588,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.001__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.883636528076802e-09,
+    "row_residual_l1": 6.5109050963185755e-16,
+    "claimed_residual_l1": 9.883636732394702e-09,
+    "elapsed_sec": 0.00019679999999944187,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.771833278692573e-09,
+    "row_residual_l1": 6.209767942910727e-16,
+    "claimed_residual_l1": 9.771833256574849e-09,
+    "elapsed_sec": 0.0002031999999996259,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.001__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.883636528076802e-09,
+    "row_residual_l1": 6.5109050963185755e-16,
+    "claimed_residual_l1": 9.883636732394702e-09,
+    "elapsed_sec": 0.00020009999999892614,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.771833278692573e-09,
+    "row_residual_l1": 6.209767942910727e-16,
+    "claimed_residual_l1": 9.771833256574849e-09,
+    "elapsed_sec": 0.00020159999999869171,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_4_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.883636747329587e-09,
+    "row_residual_l1": 6.920462466974975e-16,
+    "claimed_residual_l1": 9.883636731066554e-09,
+    "elapsed_sec": 0.00019920000000084315,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.01__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.02942602810461e-09,
+    "row_residual_l1": 6.646701418422385e-16,
+    "claimed_residual_l1": 9.029426235336303e-09,
+    "elapsed_sec": 0.0002872000000007091,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.01__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 7.388322753051164e-09,
+    "row_residual_l1": 5.692061405548898e-16,
+    "claimed_residual_l1": 7.388322736340898e-09,
+    "elapsed_sec": 0.00024189999999890688,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.01__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.029426242275197e-09,
+    "row_residual_l1": 6.331740687315346e-16,
+    "claimed_residual_l1": 9.02942630507422e-09,
+    "elapsed_sec": 0.0003068000000006066,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.01__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 7.388322753051164e-09,
+    "row_residual_l1": 5.692061405548898e-16,
+    "claimed_residual_l1": 7.388322736340898e-09,
+    "elapsed_sec": 0.0002709000000002959,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.01__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.029426242275197e-09,
+    "row_residual_l1": 6.331740687315346e-16,
+    "claimed_residual_l1": 9.02942630507422e-09,
+    "elapsed_sec": 0.000280000000000058,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.01__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.02942602810461e-09,
+    "row_residual_l1": 6.646701418422385e-16,
+    "claimed_residual_l1": 9.029426235336303e-09,
+    "elapsed_sec": 0.00027599999999949887,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.712314104144053e-09,
+    "row_residual_l1": 8.573328678929126e-16,
+    "claimed_residual_l1": 9.712314156968416e-09,
+    "elapsed_sec": 0.0003032000000011692,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.774244852739041e-09,
+    "row_residual_l1": 7.49075280970235e-16,
+    "claimed_residual_l1": 9.774245052127209e-09,
+    "elapsed_sec": 0.0003151999999992938,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.001__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.774244875490346e-09,
+    "row_residual_l1": 7.799208327774476e-16,
+    "claimed_residual_l1": 9.774245094560172e-09,
+    "elapsed_sec": 0.0002718999999995475,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.774244852739041e-09,
+    "row_residual_l1": 7.49075280970235e-16,
+    "claimed_residual_l1": 9.774245052127209e-09,
+    "elapsed_sec": 0.0002928999999998183,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.001__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.774244875490346e-09,
+    "row_residual_l1": 7.799208327774476e-16,
+    "claimed_residual_l1": 9.774245094560172e-09,
+    "elapsed_sec": 0.00031159999999985644,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_6_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.712314104144053e-09,
+    "row_residual_l1": 8.573328678929126e-16,
+    "claimed_residual_l1": 9.712314156968416e-09,
+    "elapsed_sec": 0.0002753000000002004,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.01__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.585675851437204e-09,
+    "row_residual_l1": 6.204346932048299e-16,
+    "claimed_residual_l1": 9.585675826636079e-09,
+    "elapsed_sec": 0.00024189999999890688,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.01__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.585675735210731e-09,
+    "row_residual_l1": 6.615259555420305e-16,
+    "claimed_residual_l1": 9.585675760391326e-09,
+    "elapsed_sec": 0.00021300000000046282,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.01__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.030621080086381e-09,
+    "row_residual_l1": 6.511176146861697e-16,
+    "claimed_residual_l1": 9.03062104189536e-09,
+    "elapsed_sec": 0.00020949999999864133,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.01__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.585675735210731e-09,
+    "row_residual_l1": 6.615259555420305e-16,
+    "claimed_residual_l1": 9.585675760391326e-09,
+    "elapsed_sec": 0.00023220000000101493,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.01__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.030621080086381e-09,
+    "row_residual_l1": 6.511176146861697e-16,
+    "claimed_residual_l1": 9.03062104189536e-09,
+    "elapsed_sec": 0.0002334000000008274,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.01__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.585675851437204e-09,
+    "row_residual_l1": 6.204346932048299e-16,
+    "claimed_residual_l1": 9.585675826636079e-09,
+    "elapsed_sec": 0.0003105999999988285,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.001__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.959637019946697e-09,
+    "row_residual_l1": 5.047503214006266e-16,
+    "claimed_residual_l1": 9.959636974762572e-09,
+    "elapsed_sec": 0.0002540999999993687,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.140140057632088e-09,
+    "row_residual_l1": 4.877825574012284e-16,
+    "claimed_residual_l1": 9.14013999355574e-09,
+    "elapsed_sec": 0.00021809999999966578,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.95963707347918e-09,
+    "row_residual_l1": 4.947214513051357e-16,
+    "claimed_residual_l1": 9.959637044856242e-09,
+    "elapsed_sec": 0.00024610000000002685,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.140140057632088e-09,
+    "row_residual_l1": 4.877825574012284e-16,
+    "claimed_residual_l1": 9.14013999355574e-09,
+    "elapsed_sec": 0.00025740000000062935,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.95963707347918e-09,
+    "row_residual_l1": 4.947214513051357e-16,
+    "claimed_residual_l1": 9.959637044856242e-09,
+    "elapsed_sec": 0.000244500000000869,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_same_8_e0.001__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.959637019946697e-09,
+    "row_residual_l1": 5.047503214006266e-16,
+    "claimed_residual_l1": 9.959636974762572e-09,
+    "elapsed_sec": 0.00040149999999883335,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.01__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 5.838388700989995e-09,
+    "row_residual_l1": 5.77120816414034e-16,
+    "claimed_residual_l1": 5.838388604224951e-09,
+    "elapsed_sec": 0.0002982000000013585,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.01__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.44287800952676e-09,
+    "row_residual_l1": 4.69174937615946e-16,
+    "claimed_residual_l1": 9.442877866303653e-09,
+    "elapsed_sec": 0.00023909999999993659,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.01__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.442877937373105e-09,
+    "row_residual_l1": 4.808436634973212e-16,
+    "claimed_residual_l1": 9.442877962309755e-09,
+    "elapsed_sec": 0.00024170000000012237,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.01__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.44287800952676e-09,
+    "row_residual_l1": 4.69174937615946e-16,
+    "claimed_residual_l1": 9.442877866303653e-09,
+    "elapsed_sec": 0.0002288999999997543,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.01__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.442877937373105e-09,
+    "row_residual_l1": 4.808436634973212e-16,
+    "claimed_residual_l1": 9.442877962309755e-09,
+    "elapsed_sec": 0.00024499999999960664,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.01__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 5.838388700989995e-09,
+    "row_residual_l1": 5.77120816414034e-16,
+    "claimed_residual_l1": 5.838388604224951e-09,
+    "elapsed_sec": 0.00023220000000101493,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.990905931668743e-09,
+    "row_residual_l1": 1.4787975531616038e-15,
+    "claimed_residual_l1": 9.990905773375226e-09,
+    "elapsed_sec": 0.00024709999999927845,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.001__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.99090590976786e-09,
+    "row_residual_l1": 1.45205841708268e-15,
+    "claimed_residual_l1": 9.99090565053512e-09,
+    "elapsed_sec": 0.00023369999999900415,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.975081891511108e-09,
+    "row_residual_l1": 1.231640115416377e-15,
+    "claimed_residual_l1": 9.97508223661266e-09,
+    "elapsed_sec": 0.0002393999999998897,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.001__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.99090590976786e-09,
+    "row_residual_l1": 1.45205841708268e-15,
+    "claimed_residual_l1": 9.99090565053512e-09,
+    "elapsed_sec": 0.0002602999999989919,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.975081891511108e-09,
+    "row_residual_l1": 1.231640115416377e-15,
+    "claimed_residual_l1": 9.97508223661266e-09,
+    "elapsed_sec": 0.00024560000000128923,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_0_1_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.990905931668743e-09,
+    "row_residual_l1": 1.4787975531616038e-15,
+    "claimed_residual_l1": 9.990905773375226e-09,
+    "elapsed_sec": 0.0002347000000000321,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M5_cross_0_1_e0.001__energy_zero__r0": {
+    "passed": true,
+    "residual_l1": 9.990905991841964e-09,
+    "row_residual_l1": 1.5253911415241683e-15,
+    "claimed_residual_l1": 9.990905616436962e-09,
+    "elapsed_sec": 0.00030689999999999884,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "ablation__M5_cross_0_1_e0.001__energy_amp__r0": {
+    "passed": true,
+    "residual_l1": 9.948692648777818e-09,
+    "row_residual_l1": 1.2065679401776497e-15,
+    "claimed_residual_l1": 9.948692702716876e-09,
+    "elapsed_sec": 0.00022300000000008424,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.01__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.21932342879577e-09,
+    "row_residual_l1": 5.698024517497569e-16,
+    "claimed_residual_l1": 9.219323270170216e-09,
+    "elapsed_sec": 0.00031120000000051107,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.01__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 6.902935563665746e-09,
+    "row_residual_l1": 5.952676502760101e-16,
+    "claimed_residual_l1": 6.902935587355563e-09,
+    "elapsed_sec": 0.0002652000000011867,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.01__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.219323380094764e-09,
+    "row_residual_l1": 5.518453532679657e-16,
+    "claimed_residual_l1": 9.219323381036665e-09,
+    "elapsed_sec": 0.0004096000000011202,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.01__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 6.902935563665746e-09,
+    "row_residual_l1": 5.952676502760101e-16,
+    "claimed_residual_l1": 6.902935587355563e-09,
+    "elapsed_sec": 0.0002803000000000111,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.01__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.219323380094764e-09,
+    "row_residual_l1": 5.518453532679657e-16,
+    "claimed_residual_l1": 9.219323381036665e-09,
+    "elapsed_sec": 0.00030389999999869133,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.01__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.21932342879577e-09,
+    "row_residual_l1": 5.698024517497569e-16,
+    "claimed_residual_l1": 9.219323270170216e-09,
+    "elapsed_sec": 0.0003032000000011692,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.333195490085098e-09,
+    "row_residual_l1": 7.290853034150335e-16,
+    "claimed_residual_l1": 9.333195265350317e-09,
+    "elapsed_sec": 0.0003621000000002539,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.962174058220931e-09,
+    "row_residual_l1": 7.098407148534158e-16,
+    "claimed_residual_l1": 9.962174128368812e-09,
+    "elapsed_sec": 0.00031939999999863744,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.001__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.962174106508586e-09,
+    "row_residual_l1": 6.411836122807713e-16,
+    "claimed_residual_l1": 9.962174096439058e-09,
+    "elapsed_sec": 0.00033770000000110656,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.962174058220931e-09,
+    "row_residual_l1": 7.098407148534158e-16,
+    "claimed_residual_l1": 9.962174128368812e-09,
+    "elapsed_sec": 0.0002951000000006587,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.001__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.962174106508586e-09,
+    "row_residual_l1": 6.411836122807713e-16,
+    "claimed_residual_l1": 9.962174096439058e-09,
+    "elapsed_sec": 0.0006539999999990442,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_2_3_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.333195490085098e-09,
+    "row_residual_l1": 7.290853034150335e-16,
+    "claimed_residual_l1": 9.333195265350317e-09,
+    "elapsed_sec": 0.00029100000000070736,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.01__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.106521592754384e-09,
+    "row_residual_l1": 5.628364527915375e-16,
+    "claimed_residual_l1": 9.106521625009399e-09,
+    "elapsed_sec": 0.0002880999999987921,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.01__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.10652143715782e-09,
+    "row_residual_l1": 5.94251210739305e-16,
+    "claimed_residual_l1": 9.106521539431966e-09,
+    "elapsed_sec": 0.0002305000000006885,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.01__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.246912980824106e-09,
+    "row_residual_l1": 5.828670879282072e-16,
+    "claimed_residual_l1": 9.246913070765452e-09,
+    "elapsed_sec": 0.0002841999999994016,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.01__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.10652143715782e-09,
+    "row_residual_l1": 5.94251210739305e-16,
+    "claimed_residual_l1": 9.106521539431966e-09,
+    "elapsed_sec": 0.00024360000000100968,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.01__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.246912980824106e-09,
+    "row_residual_l1": 5.828670879282072e-16,
+    "claimed_residual_l1": 9.246913070765452e-09,
+    "elapsed_sec": 0.00027950000000132036,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.01__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.106521592754384e-09,
+    "row_residual_l1": 5.628364527915375e-16,
+    "claimed_residual_l1": 9.106521625009399e-09,
+    "elapsed_sec": 0.00022929999999909967,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.001__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.902204193114675e-09,
+    "row_residual_l1": 7.39425881635114e-16,
+    "claimed_residual_l1": 9.90220411446936e-09,
+    "elapsed_sec": 0.00029239999999930433,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.478407428309616e-09,
+    "row_residual_l1": 8.242104915234805e-16,
+    "claimed_residual_l1": 9.478407573843429e-09,
+    "elapsed_sec": 0.0002469999999998862,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.90220397696542e-09,
+    "row_residual_l1": 7.91819951620476e-16,
+    "claimed_residual_l1": 9.902204131592978e-09,
+    "elapsed_sec": 0.0002670000000009054,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.478407428309616e-09,
+    "row_residual_l1": 8.242104915234805e-16,
+    "claimed_residual_l1": 9.478407573843429e-09,
+    "elapsed_sec": 0.00024049999999853355,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.90220397696542e-09,
+    "row_residual_l1": 7.91819951620476e-16,
+    "claimed_residual_l1": 9.902204131592978e-09,
+    "elapsed_sec": 0.0002655999999987557,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_4_5_e0.001__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.902204193114675e-09,
+    "row_residual_l1": 7.39425881635114e-16,
+    "claimed_residual_l1": 9.90220411446936e-09,
+    "elapsed_sec": 0.0002519999999996969,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.01__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 4.488005476369766e-09,
+    "row_residual_l1": 5.141422227197823e-16,
+    "claimed_residual_l1": 4.4880053891185965e-09,
+    "elapsed_sec": 0.00027230000000066923,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.01__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.167284788526016e-09,
+    "row_residual_l1": 5.600446321973873e-16,
+    "claimed_residual_l1": 9.167284779120562e-09,
+    "elapsed_sec": 0.00025270000000077175,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.01__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.167284753994176e-09,
+    "row_residual_l1": 5.854623968785944e-16,
+    "claimed_residual_l1": 9.167284820469322e-09,
+    "elapsed_sec": 0.00030109999999972104,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.01__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.167284788526016e-09,
+    "row_residual_l1": 5.600446321973873e-16,
+    "claimed_residual_l1": 9.167284779120562e-09,
+    "elapsed_sec": 0.0002551000000003967,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.01__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.167284753994176e-09,
+    "row_residual_l1": 5.854623968785944e-16,
+    "claimed_residual_l1": 9.167284820469322e-09,
+    "elapsed_sec": 0.0010823000000002025,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.01__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 4.488005476369766e-09,
+    "row_residual_l1": 5.141422227197823e-16,
+    "claimed_residual_l1": 4.4880053891185965e-09,
+    "elapsed_sec": 0.00025300000000072487,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.886846494874379e-09,
+    "row_residual_l1": 7.454194867698855e-16,
+    "claimed_residual_l1": 9.886846626415207e-09,
+    "elapsed_sec": 0.0002618999999999261,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.001__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.88684646935497e-09,
+    "row_residual_l1": 6.729744528571197e-16,
+    "claimed_residual_l1": 9.886846574536133e-09,
+    "elapsed_sec": 0.00026680000000034454,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.718739156305096e-09,
+    "row_residual_l1": 8.102649410798857e-16,
+    "claimed_residual_l1": 9.718739048860661e-09,
+    "elapsed_sec": 0.00022670000000069024,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.001__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.88684646935497e-09,
+    "row_residual_l1": 6.729744528571197e-16,
+    "claimed_residual_l1": 9.886846574536133e-09,
+    "elapsed_sec": 0.00026199999999931833,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.718739156305096e-09,
+    "row_residual_l1": 8.102649410798857e-16,
+    "claimed_residual_l1": 9.718739048860661e-09,
+    "elapsed_sec": 0.00022139999999915005,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_6_7_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.886846494874379e-09,
+    "row_residual_l1": 7.454194867698855e-16,
+    "claimed_residual_l1": 9.886846626415207e-09,
+    "elapsed_sec": 0.00025869999999983406,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.01__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 8.795913914003313e-09,
+    "row_residual_l1": 5.580727394961793e-16,
+    "claimed_residual_l1": 8.795913700523905e-09,
+    "elapsed_sec": 0.0003589999999995541,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.01__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 5.0193895995425016e-09,
+    "row_residual_l1": 5.337188481967237e-16,
+    "claimed_residual_l1": 5.0193897282915095e-09,
+    "elapsed_sec": 0.00027790000000038617,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.01__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 8.795913915521196e-09,
+    "row_residual_l1": 5.653809397650894e-16,
+    "claimed_residual_l1": 8.7959137927353e-09,
+    "elapsed_sec": 0.00032560000000003697,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.01__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 5.0193895995425016e-09,
+    "row_residual_l1": 5.337188481967237e-16,
+    "claimed_residual_l1": 5.0193897282915095e-09,
+    "elapsed_sec": 0.0003101999999994831,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.01__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 8.795913915521196e-09,
+    "row_residual_l1": 5.653809397650894e-16,
+    "claimed_residual_l1": 8.7959137927353e-09,
+    "elapsed_sec": 0.0003163999999991063,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.01__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 8.795913914003313e-09,
+    "row_residual_l1": 5.580727394961793e-16,
+    "claimed_residual_l1": 8.795913700523905e-09,
+    "elapsed_sec": 0.0003378000000004988,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.001__energy_distance__r0": {
+    "passed": true,
+    "residual_l1": 9.18912948061042e-09,
+    "row_residual_l1": 6.992561911445261e-16,
+    "claimed_residual_l1": 9.189129660859031e-09,
+    "elapsed_sec": 0.0003083999999997644,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.001__sk_log_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.850722402062265e-09,
+    "row_residual_l1": 6.195131213582172e-16,
+    "claimed_residual_l1": 9.850722284263699e-09,
+    "elapsed_sec": 0.0019948999999996886,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.001__sk_scaling_fast__r0": {
+    "passed": true,
+    "residual_l1": 9.850722393713908e-09,
+    "row_residual_l1": 6.472585325784791e-16,
+    "claimed_residual_l1": 9.850722308549827e-09,
+    "elapsed_sec": 0.00031560000000041555,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.001__sk_log_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.850722402062265e-09,
+    "row_residual_l1": 6.195131213582172e-16,
+    "claimed_residual_l1": 9.850722284263699e-09,
+    "elapsed_sec": 0.00031740000000013424,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.001__sk_scaling_fast__r1": {
+    "passed": true,
+    "residual_l1": 9.850722393713908e-09,
+    "row_residual_l1": 6.472585325784791e-16,
+    "claimed_residual_l1": 9.850722308549827e-09,
+    "elapsed_sec": 0.00036399999999936483,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  },
+  "main__M5_cross_8_9_e0.001__energy_distance__r1": {
+    "passed": true,
+    "residual_l1": 9.18912948061042e-09,
+    "row_residual_l1": 6.992561911445261e-16,
+    "claimed_residual_l1": 9.189129660859031e-09,
+    "elapsed_sec": 0.00031979999999975917,
+    "method": "independent full-potential row blocks",
+    "block_rows": 128
+  }
+}

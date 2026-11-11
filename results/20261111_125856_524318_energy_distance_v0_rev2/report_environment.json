@@ -1,0 +1,18 @@
+{
+  "python": "3.9.24 (main, Oct 14 2025, 16:10:39) [MSC v.1929 64 bit (AMD64)]",
+  "python_executable": "D:\\miniconda_envs\\OT\\python.exe",
+  "numpy": "2.0.2",
+  "scipy": "1.13.1",
+  "os": "Windows-10-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "git_commit": "61af801ed0b89a0c2b6c23ac1a29382f02a3e886",
+  "git_dirty": true,
+  "seed": null,
+  "timestamp_utc": "2026-11-11T12:59:07.567421+00:00",
+  "blas_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: D:/miniconda_envs/OT/Library/include\n    lib directory: D:/miniconda_envs/OT/Library/lib\n    name: blas\n    openblas configuration: unknown\n    pc file directory: D:\\bld\\numpy_1732314314278\\_h_env\\Library\\lib\\pkgconfig\n    version: 3.9.0\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: D:/miniconda_envs/OT/Library/include\n    lib directory: D:/miniconda_envs/OT/Library/lib\n    name: lapack\n    openblas configuration: unknown\n    pc file directory: D:\\bld\\numpy_1732314314278\\_h_env\\Library\\lib\\pkgconfig\n    version: 3.9.0\nCompilers:\n  c:\n    commands: cl.exe\n    linker: link\n    name: msvc\n    version: 19.29.30157\n  c++:\n    commands: cl.exe\n    linker: link\n    name: msvc\n    version: 19.29.30157\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.0.11\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: windows\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: windows\nPython Information:\n  path: D:\\bld\\numpy_1732314314278\\_h_env\\python.exe\n  version: '3.9'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  not found:\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n\n",
+  "thread_environment": {
+    "OMP_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1"
+  }
+}

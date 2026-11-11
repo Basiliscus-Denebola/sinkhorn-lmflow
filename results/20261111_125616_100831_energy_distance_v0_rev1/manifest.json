@@ -1,0 +1,2846 @@
+{
+  "source_sha256": "7476ff03364961b743b63984111575cd3ef00cc8e75ecf3a8f5106ca4c56acd1",
+  "config_sha256": "7ffaaff2ae918dcf9911acf65a63ce89fe2d81d40c10c213291312d74ace1aeb",
+  "cases": [
+    {
+      "case_id": "cal_M1",
+      "family": "M1",
+      "n": 512,
+      "m": 512,
+      "data_seed": 41,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "cal_M2",
+      "family": "M2",
+      "n": 512,
+      "m": 512,
+      "data_seed": 41,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "cal_M3",
+      "family": "M3",
+      "n": 512,
+      "m": 512,
+      "data_seed": 41,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "cal_M4",
+      "family": "M4",
+      "n": 512,
+      "m": 512,
+      "data_seed": 41,
+      "epsilon": 0.003,
+      "alpha": 0.1
+    },
+    {
+      "case_id": "M1_N1024_s42_e0.003",
+      "family": "M1",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 42,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "M1_N1024_s42_e0.001",
+      "family": "M1",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 42,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M1_N1024_s43_e0.003",
+      "family": "M1",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 43,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "M1_N1024_s43_e0.001",
+      "family": "M1",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 43,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M2_N1024_s42_e0.003",
+      "family": "M2",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 42,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "M2_N1024_s42_e0.001",
+      "family": "M2",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 42,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M2_N1024_s43_e0.003",
+      "family": "M2",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 43,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "M2_N1024_s43_e0.001",
+      "family": "M2",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 43,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M3_N1024_s42_e0.003",
+      "family": "M3",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 42,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "M3_N1024_s42_e0.001",
+      "family": "M3",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 42,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M3_N1024_s43_e0.003",
+      "family": "M3",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 43,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "M3_N1024_s43_e0.001",
+      "family": "M3",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 43,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M4_N1024_s42_a1_e0.003",
+      "family": "M4",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 42,
+      "epsilon": 0.003,
+      "alpha": 1.0
+    },
+    {
+      "case_id": "M4_N1024_s42_a0.1_e0.003",
+      "family": "M4",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 42,
+      "epsilon": 0.003,
+      "alpha": 0.1
+    },
+    {
+      "case_id": "M4_N1024_s43_a1_e0.003",
+      "family": "M4",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 43,
+      "epsilon": 0.003,
+      "alpha": 1.0
+    },
+    {
+      "case_id": "M4_N1024_s43_a0.1_e0.003",
+      "family": "M4",
+      "n": 1024,
+      "m": 1024,
+      "data_seed": 43,
+      "epsilon": 0.003,
+      "alpha": 0.1
+    },
+    {
+      "case_id": "M5_same_0_e0.01",
+      "family": "M5",
+      "pair_name": "same_0",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_same_0_e0.001",
+      "family": "M5",
+      "pair_name": "same_0",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_same_2_e0.01",
+      "family": "M5",
+      "pair_name": "same_2",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_same_2_e0.001",
+      "family": "M5",
+      "pair_name": "same_2",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_same_4_e0.01",
+      "family": "M5",
+      "pair_name": "same_4",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_same_4_e0.001",
+      "family": "M5",
+      "pair_name": "same_4",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_same_6_e0.01",
+      "family": "M5",
+      "pair_name": "same_6",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_same_6_e0.001",
+      "family": "M5",
+      "pair_name": "same_6",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_same_8_e0.01",
+      "family": "M5",
+      "pair_name": "same_8",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_same_8_e0.001",
+      "family": "M5",
+      "pair_name": "same_8",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_cross_0_1_e0.01",
+      "family": "M5",
+      "pair_name": "cross_0_1",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_cross_0_1_e0.001",
+      "family": "M5",
+      "pair_name": "cross_0_1",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_cross_2_3_e0.01",
+      "family": "M5",
+      "pair_name": "cross_2_3",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_cross_2_3_e0.001",
+      "family": "M5",
+      "pair_name": "cross_2_3",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_cross_4_5_e0.01",
+      "family": "M5",
+      "pair_name": "cross_4_5",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_cross_4_5_e0.001",
+      "family": "M5",
+      "pair_name": "cross_4_5",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_cross_6_7_e0.01",
+      "family": "M5",
+      "pair_name": "cross_6_7",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_cross_6_7_e0.001",
+      "family": "M5",
+      "pair_name": "cross_6_7",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_cross_8_9_e0.01",
+      "family": "M5",
+      "pair_name": "cross_8_9",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.01,
+      "alpha": null
+    },
+    {
+      "case_id": "M5_cross_8_9_e0.001",
+      "family": "M5",
+      "pair_name": "cross_8_9",
+      "n": 784,
+      "m": 784,
+      "data_seed": 20261110,
+      "epsilon": 0.001,
+      "alpha": null
+    },
+    {
+      "case_id": "M6_N512_s42_e0.003",
+      "family": "M6",
+      "n": 512,
+      "m": 512,
+      "data_seed": 42,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "M6_N2048_s42_e0.003",
+      "family": "M6",
+      "n": 2048,
+      "m": 2048,
+      "data_seed": 42,
+      "epsilon": 0.003,
+      "alpha": null
+    },
+    {
+      "case_id": "M7_1024x2048_s42_e0.003",
+      "family": "M7",
+      "n": 1024,
+      "m": 2048,
+      "data_seed": 42,
+      "epsilon": 0.003,
+      "alpha": null
+    }
+  ],
+  "jobs": [
+    {
+      "job_id": "calibration__cal_M1__sk_log_fast__r0",
+      "case_id": "cal_M1",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M1__energy_distance__r0__k0.3",
+      "case_id": "cal_M1",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 0.3,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M1__energy_distance__r0__k1",
+      "case_id": "cal_M1",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 1.0,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M1__energy_distance__r0__k3",
+      "case_id": "cal_M1",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 3.0,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M2__sk_log_fast__r0",
+      "case_id": "cal_M2",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M2__energy_distance__r0__k0.3",
+      "case_id": "cal_M2",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 0.3,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M2__energy_distance__r0__k1",
+      "case_id": "cal_M2",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 1.0,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M2__energy_distance__r0__k3",
+      "case_id": "cal_M2",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 3.0,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M3__sk_log_fast__r0",
+      "case_id": "cal_M3",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M3__energy_distance__r0__k0.3",
+      "case_id": "cal_M3",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 0.3,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M3__energy_distance__r0__k1",
+      "case_id": "cal_M3",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 1.0,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M3__energy_distance__r0__k3",
+      "case_id": "cal_M3",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 3.0,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M4__sk_log_fast__r0",
+      "case_id": "cal_M4",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M4__energy_distance__r0__k0.3",
+      "case_id": "cal_M4",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 0.3,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M4__energy_distance__r0__k1",
+      "case_id": "cal_M4",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 1.0,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "calibration__cal_M4__energy_distance__r0__k3",
+      "case_id": "cal_M4",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "calibration",
+      "kappa": 3.0,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.003__sk_log_fast__r0",
+      "case_id": "M1_N1024_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "success",
+      "run_path": "tracks\\main__M1_N1024_s42_e0.003__sk_log_fast__r0",
+      "artifact_sha256": {
+        "summary.json": "849cdb7121a8e0a2c3f648c8a3b0c6e01fe2c164a43c2e4ab5d7514f40ac6ef2",
+        "history.csv": "76a16f06aac61e5cc68fca1b0104069aaeef622b6c5336bf04f2809e911cccc4",
+        "final_state.npz": "5ef861dea3dae89404bb8ae66bd4e864272180b1e0782b0bbf88f04ee0d31df6"
+      },
+      "input_sha256": "beffc061861834bff3af1039310f285c1809ab5aa6616823b9734fecd042e5fd",
+      "machine_elapsed_sec": 0.7203657000000003
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.003__sk_scaling_fast__r0",
+      "case_id": "M1_N1024_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "success",
+      "run_path": "tracks\\main__M1_N1024_s42_e0.003__sk_scaling_fast__r0",
+      "artifact_sha256": {
+        "summary.json": "8a077aef018086aca38e86a1c5240df05eb0b5f0c281152aa72cbf1715b28cf6",
+        "history.csv": "b9701665e17416ba81d2c0c3a47bbba0b74383dfe136def4f19c3ad5c1f90758",
+        "final_state.npz": "c25f938bb88e4a8232200f1a5357115f13e2440a59946dc9851142bb9fa80e6e"
+      },
+      "input_sha256": "beffc061861834bff3af1039310f285c1809ab5aa6616823b9734fecd042e5fd",
+      "machine_elapsed_sec": 0.11670729999999985
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.003__energy_distance__r0",
+      "case_id": "M1_N1024_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "success",
+      "run_path": "tracks\\main__M1_N1024_s42_e0.003__energy_distance__r0",
+      "artifact_sha256": {
+        "summary.json": "b02aba8af9376da6880b87c243757deb729e2c2ac16d292f9069fa3d8bd05956",
+        "history.csv": "eabaaf1d3941e519ff5614fdeadefec9616ab797114d93e79056bf1e0ee2dd41",
+        "final_state.npz": "729828c4ef60e660554660f57e40787ba4d1a0bbad3ef887f68156aebc5f0800"
+      },
+      "input_sha256": "beffc061861834bff3af1039310f285c1809ab5aa6616823b9734fecd042e5fd",
+      "machine_elapsed_sec": 0.2249099000000001
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.003__sk_scaling_fast__r0",
+      "case_id": "M2_N1024_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "success",
+      "run_path": "tracks\\main__M2_N1024_s42_e0.003__sk_scaling_fast__r0",
+      "artifact_sha256": {
+        "summary.json": "60843128ffb430439a3ce993779741ee4b004f6234b448fe66b5dc6bb7388df7",
+        "history.csv": "9fbaf383c0b5019c9274670f227cb0c619b68fedca4ca6b564f382dc60a22451",
+        "final_state.npz": "822726a3d1d8b2ff273ef49dbc514cdf9cc6f0794cb89589759946d9219a393a"
+      },
+      "input_sha256": "8fbb425109a9632cd58f4ee58db19a924fc4bab1e5f43d0443ca514af1c1e893",
+      "machine_elapsed_sec": 0.4509445000000003
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.003__energy_distance__r0",
+      "case_id": "M2_N1024_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "success",
+      "run_path": "tracks\\main__M2_N1024_s42_e0.003__energy_distance__r0",
+      "artifact_sha256": {
+        "summary.json": "7687d51ef98b20327cabd752feb2a12232ec2a8c84fc1c820468a0001747ce7e",
+        "history.csv": "41955239eb5afcaa18f994d62c6915dc638caf7b90f463e8038968ce0febb6a8",
+        "final_state.npz": "80dd358db5f60b21c0f6ac5200754ce662dd776f752fe1d9885182b0347fd12d"
+      },
+      "input_sha256": "8fbb425109a9632cd58f4ee58db19a924fc4bab1e5f43d0443ca514af1c1e893",
+      "machine_elapsed_sec": 17.0562908
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.003__sk_log_fast__r0",
+      "case_id": "M2_N1024_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "success",
+      "run_path": "tracks\\main__M2_N1024_s42_e0.003__sk_log_fast__r0",
+      "artifact_sha256": {
+        "summary.json": "481d85317769d63e86cadd608aa685bc327fbb98fbff184a045e0cd1d919872f",
+        "history.csv": "01942cc9df09cbb6d258349f781088bb144534ccb5c0a29003307b7229baf05a",
+        "final_state.npz": "003876b4a08eb7c5b22acece2c38b59579e62d1a896d811134dfa8e3fa23856a"
+      },
+      "input_sha256": "8fbb425109a9632cd58f4ee58db19a924fc4bab1e5f43d0443ca514af1c1e893",
+      "machine_elapsed_sec": 14.4857896
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.003__energy_distance__r0",
+      "case_id": "M3_N1024_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "success",
+      "run_path": "tracks\\main__M3_N1024_s42_e0.003__energy_distance__r0",
+      "artifact_sha256": {
+        "summary.json": "4eb1ea13a54b05f2b769f93a025e7e64092bb418ece6b25d40f62f2d9d0a2615",
+        "history.csv": "5b9a3bea479c7ab8712141874d01f54ab819e819da9ffb07e5c9edea784dafbd",
+        "final_state.npz": "4e310f5b740632faa94aed815d31b52166855a86c0f0a073b66d0ed844fa0ec2"
+      },
+      "input_sha256": "278bce9d22147c3d58c2be10c0a57b9ae41e7394ba68b7dbc828aba6e137d008",
+      "machine_elapsed_sec": 26.400356799999997
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.003__sk_log_fast__r0",
+      "case_id": "M3_N1024_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "success",
+      "run_path": "tracks\\main__M3_N1024_s42_e0.003__sk_log_fast__r0",
+      "artifact_sha256": {
+        "summary.json": "5d7d9e8b76faf0789de66319a97d12dea80672f8a18570a507a67cb1339840b0",
+        "history.csv": "ac33361842c1c3afb1c019d8dac12769f3122297526510d8b864062512d75d02",
+        "final_state.npz": "b8399a3adf6d6eb33fb449d47c4438213df4d5314023851ac414bfb0e8d21002"
+      },
+      "input_sha256": "278bce9d22147c3d58c2be10c0a57b9ae41e7394ba68b7dbc828aba6e137d008",
+      "machine_elapsed_sec": 18.6670644
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.003__sk_scaling_fast__r0",
+      "case_id": "M3_N1024_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "success",
+      "run_path": "tracks\\main__M3_N1024_s42_e0.003__sk_scaling_fast__r0",
+      "artifact_sha256": {
+        "summary.json": "fd4d0c70a724b9b1255ff02ba5927647890a00e960915f6e50699882013ffe77",
+        "history.csv": "45742673f1c98d9691475897aca460da01ce2056fd3ab1a338451506d1a4c248",
+        "final_state.npz": "248d36bd24f5c133c2003a854054f6e8185d4ab4851ee54e1e2dc2c6b8434816"
+      },
+      "input_sha256": "278bce9d22147c3d58c2be10c0a57b9ae41e7394ba68b7dbc828aba6e137d008",
+      "machine_elapsed_sec": 0.5274418999999995
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a1_e0.003__sk_log_fast__r0",
+      "case_id": "M4_N1024_s42_a1_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "running"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a1_e0.003__sk_scaling_fast__r0",
+      "case_id": "M4_N1024_s42_a1_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a1_e0.003__energy_distance__r0",
+      "case_id": "M4_N1024_s42_a1_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.01__sk_scaling_fast__r0",
+      "case_id": "M5_same_0_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.01__energy_distance__r0",
+      "case_id": "M5_same_0_e0.01",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.01__sk_log_fast__r0",
+      "case_id": "M5_same_0_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N512_s42_e0.003__energy_distance__r0",
+      "case_id": "M6_N512_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N512_s42_e0.003__sk_log_fast__r0",
+      "case_id": "M6_N512_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N512_s42_e0.003__sk_scaling_fast__r0",
+      "case_id": "M6_N512_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M7_1024x2048_s42_e0.003__sk_log_fast__r0",
+      "case_id": "M7_1024x2048_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M7_1024x2048_s42_e0.003__sk_scaling_fast__r0",
+      "case_id": "M7_1024x2048_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M7_1024x2048_s42_e0.003__energy_distance__r0",
+      "case_id": "M7_1024x2048_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.001__sk_scaling_fast__r0",
+      "case_id": "M1_N1024_s42_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.001__energy_distance__r0",
+      "case_id": "M1_N1024_s42_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.001__sk_log_fast__r0",
+      "case_id": "M1_N1024_s42_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.001__energy_distance__r0",
+      "case_id": "M2_N1024_s42_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.001__sk_log_fast__r0",
+      "case_id": "M2_N1024_s42_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.001__sk_scaling_fast__r0",
+      "case_id": "M2_N1024_s42_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.001__sk_log_fast__r0",
+      "case_id": "M3_N1024_s42_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.001__sk_scaling_fast__r0",
+      "case_id": "M3_N1024_s42_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.001__energy_distance__r0",
+      "case_id": "M3_N1024_s42_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a0.1_e0.003__sk_scaling_fast__r0",
+      "case_id": "M4_N1024_s42_a0.1_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a0.1_e0.003__energy_distance__r0",
+      "case_id": "M4_N1024_s42_a0.1_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a0.1_e0.003__sk_log_fast__r0",
+      "case_id": "M4_N1024_s42_a0.1_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.001__energy_distance__r0",
+      "case_id": "M5_same_0_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.001__sk_log_fast__r0",
+      "case_id": "M5_same_0_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.001__sk_scaling_fast__r0",
+      "case_id": "M5_same_0_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N2048_s42_e0.003__sk_log_fast__r0",
+      "case_id": "M6_N2048_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N2048_s42_e0.003__sk_scaling_fast__r0",
+      "case_id": "M6_N2048_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N2048_s42_e0.003__energy_distance__r0",
+      "case_id": "M6_N2048_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.003__sk_scaling_fast__r0",
+      "case_id": "M1_N1024_s43_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.003__energy_distance__r0",
+      "case_id": "M1_N1024_s43_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.003__sk_log_fast__r0",
+      "case_id": "M1_N1024_s43_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.003__energy_distance__r0",
+      "case_id": "M2_N1024_s43_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.003__sk_log_fast__r0",
+      "case_id": "M2_N1024_s43_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.003__sk_scaling_fast__r0",
+      "case_id": "M2_N1024_s43_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.003__sk_log_fast__r0",
+      "case_id": "M3_N1024_s43_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.003__sk_scaling_fast__r0",
+      "case_id": "M3_N1024_s43_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.003__energy_distance__r0",
+      "case_id": "M3_N1024_s43_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a1_e0.003__sk_scaling_fast__r0",
+      "case_id": "M4_N1024_s43_a1_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a1_e0.003__energy_distance__r0",
+      "case_id": "M4_N1024_s43_a1_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a1_e0.003__sk_log_fast__r0",
+      "case_id": "M4_N1024_s43_a1_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.01__energy_distance__r0",
+      "case_id": "M5_same_2_e0.01",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.01__sk_log_fast__r0",
+      "case_id": "M5_same_2_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.01__sk_scaling_fast__r0",
+      "case_id": "M5_same_2_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.001__sk_log_fast__r0",
+      "case_id": "M1_N1024_s43_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.001__sk_scaling_fast__r0",
+      "case_id": "M1_N1024_s43_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.001__energy_distance__r0",
+      "case_id": "M1_N1024_s43_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.001__sk_scaling_fast__r0",
+      "case_id": "M2_N1024_s43_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.001__energy_distance__r0",
+      "case_id": "M2_N1024_s43_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.001__sk_log_fast__r0",
+      "case_id": "M2_N1024_s43_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.001__energy_distance__r0",
+      "case_id": "M3_N1024_s43_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.001__sk_log_fast__r0",
+      "case_id": "M3_N1024_s43_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.001__sk_scaling_fast__r0",
+      "case_id": "M3_N1024_s43_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a0.1_e0.003__sk_log_fast__r0",
+      "case_id": "M4_N1024_s43_a0.1_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a0.1_e0.003__sk_scaling_fast__r0",
+      "case_id": "M4_N1024_s43_a0.1_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a0.1_e0.003__energy_distance__r0",
+      "case_id": "M4_N1024_s43_a0.1_e0.003",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.001__sk_scaling_fast__r0",
+      "case_id": "M5_same_2_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.001__energy_distance__r0",
+      "case_id": "M5_same_2_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.001__sk_log_fast__r0",
+      "case_id": "M5_same_2_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.01__energy_distance__r0",
+      "case_id": "M5_same_4_e0.01",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.01__sk_log_fast__r0",
+      "case_id": "M5_same_4_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.01__sk_scaling_fast__r0",
+      "case_id": "M5_same_4_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.001__sk_log_fast__r0",
+      "case_id": "M5_same_4_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.001__sk_scaling_fast__r0",
+      "case_id": "M5_same_4_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.001__energy_distance__r0",
+      "case_id": "M5_same_4_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.01__sk_scaling_fast__r0",
+      "case_id": "M5_same_6_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.01__energy_distance__r0",
+      "case_id": "M5_same_6_e0.01",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.01__sk_log_fast__r0",
+      "case_id": "M5_same_6_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.001__energy_distance__r0",
+      "case_id": "M5_same_6_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.001__sk_log_fast__r0",
+      "case_id": "M5_same_6_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.001__sk_scaling_fast__r0",
+      "case_id": "M5_same_6_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.01__sk_log_fast__r0",
+      "case_id": "M5_same_8_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.01__sk_scaling_fast__r0",
+      "case_id": "M5_same_8_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.01__energy_distance__r0",
+      "case_id": "M5_same_8_e0.01",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.001__sk_scaling_fast__r0",
+      "case_id": "M5_same_8_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.001__energy_distance__r0",
+      "case_id": "M5_same_8_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.001__sk_log_fast__r0",
+      "case_id": "M5_same_8_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.01__energy_distance__r0",
+      "case_id": "M5_cross_0_1_e0.01",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.01__sk_log_fast__r0",
+      "case_id": "M5_cross_0_1_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.01__sk_scaling_fast__r0",
+      "case_id": "M5_cross_0_1_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.001__sk_log_fast__r0",
+      "case_id": "M5_cross_0_1_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.001__sk_scaling_fast__r0",
+      "case_id": "M5_cross_0_1_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.001__energy_distance__r0",
+      "case_id": "M5_cross_0_1_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.01__sk_scaling_fast__r0",
+      "case_id": "M5_cross_2_3_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.01__energy_distance__r0",
+      "case_id": "M5_cross_2_3_e0.01",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.01__sk_log_fast__r0",
+      "case_id": "M5_cross_2_3_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.001__energy_distance__r0",
+      "case_id": "M5_cross_2_3_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.001__sk_log_fast__r0",
+      "case_id": "M5_cross_2_3_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.001__sk_scaling_fast__r0",
+      "case_id": "M5_cross_2_3_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.01__sk_log_fast__r0",
+      "case_id": "M5_cross_4_5_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.01__sk_scaling_fast__r0",
+      "case_id": "M5_cross_4_5_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.01__energy_distance__r0",
+      "case_id": "M5_cross_4_5_e0.01",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.001__sk_scaling_fast__r0",
+      "case_id": "M5_cross_4_5_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.001__energy_distance__r0",
+      "case_id": "M5_cross_4_5_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.001__sk_log_fast__r0",
+      "case_id": "M5_cross_4_5_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.01__energy_distance__r0",
+      "case_id": "M5_cross_6_7_e0.01",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.01__sk_log_fast__r0",
+      "case_id": "M5_cross_6_7_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.01__sk_scaling_fast__r0",
+      "case_id": "M5_cross_6_7_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.001__sk_log_fast__r0",
+      "case_id": "M5_cross_6_7_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.001__sk_scaling_fast__r0",
+      "case_id": "M5_cross_6_7_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.001__energy_distance__r0",
+      "case_id": "M5_cross_6_7_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.01__sk_scaling_fast__r0",
+      "case_id": "M5_cross_8_9_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.01__energy_distance__r0",
+      "case_id": "M5_cross_8_9_e0.01",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.01__sk_log_fast__r0",
+      "case_id": "M5_cross_8_9_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.001__energy_distance__r0",
+      "case_id": "M5_cross_8_9_e0.001",
+      "method": "energy_distance",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.001__sk_log_fast__r0",
+      "case_id": "M5_cross_8_9_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.001__sk_scaling_fast__r0",
+      "case_id": "M5_cross_8_9_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 0,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.003__sk_scaling_fast__r1",
+      "case_id": "M1_N1024_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.003__energy_distance__r1",
+      "case_id": "M1_N1024_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.003__sk_log_fast__r1",
+      "case_id": "M1_N1024_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.003__energy_distance__r1",
+      "case_id": "M2_N1024_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.003__sk_log_fast__r1",
+      "case_id": "M2_N1024_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.003__sk_scaling_fast__r1",
+      "case_id": "M2_N1024_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.003__sk_log_fast__r1",
+      "case_id": "M3_N1024_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.003__sk_scaling_fast__r1",
+      "case_id": "M3_N1024_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.003__energy_distance__r1",
+      "case_id": "M3_N1024_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a1_e0.003__sk_scaling_fast__r1",
+      "case_id": "M4_N1024_s42_a1_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a1_e0.003__energy_distance__r1",
+      "case_id": "M4_N1024_s42_a1_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a1_e0.003__sk_log_fast__r1",
+      "case_id": "M4_N1024_s42_a1_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.01__energy_distance__r1",
+      "case_id": "M5_same_0_e0.01",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.01__sk_log_fast__r1",
+      "case_id": "M5_same_0_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.01__sk_scaling_fast__r1",
+      "case_id": "M5_same_0_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N512_s42_e0.003__sk_log_fast__r1",
+      "case_id": "M6_N512_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N512_s42_e0.003__sk_scaling_fast__r1",
+      "case_id": "M6_N512_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N512_s42_e0.003__energy_distance__r1",
+      "case_id": "M6_N512_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M7_1024x2048_s42_e0.003__sk_scaling_fast__r1",
+      "case_id": "M7_1024x2048_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M7_1024x2048_s42_e0.003__energy_distance__r1",
+      "case_id": "M7_1024x2048_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M7_1024x2048_s42_e0.003__sk_log_fast__r1",
+      "case_id": "M7_1024x2048_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.001__energy_distance__r1",
+      "case_id": "M1_N1024_s42_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.001__sk_log_fast__r1",
+      "case_id": "M1_N1024_s42_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s42_e0.001__sk_scaling_fast__r1",
+      "case_id": "M1_N1024_s42_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.001__sk_log_fast__r1",
+      "case_id": "M2_N1024_s42_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.001__sk_scaling_fast__r1",
+      "case_id": "M2_N1024_s42_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s42_e0.001__energy_distance__r1",
+      "case_id": "M2_N1024_s42_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.001__sk_scaling_fast__r1",
+      "case_id": "M3_N1024_s42_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.001__energy_distance__r1",
+      "case_id": "M3_N1024_s42_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s42_e0.001__sk_log_fast__r1",
+      "case_id": "M3_N1024_s42_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a0.1_e0.003__energy_distance__r1",
+      "case_id": "M4_N1024_s42_a0.1_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a0.1_e0.003__sk_log_fast__r1",
+      "case_id": "M4_N1024_s42_a0.1_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s42_a0.1_e0.003__sk_scaling_fast__r1",
+      "case_id": "M4_N1024_s42_a0.1_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.001__sk_log_fast__r1",
+      "case_id": "M5_same_0_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.001__sk_scaling_fast__r1",
+      "case_id": "M5_same_0_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_0_e0.001__energy_distance__r1",
+      "case_id": "M5_same_0_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N2048_s42_e0.003__sk_scaling_fast__r1",
+      "case_id": "M6_N2048_s42_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N2048_s42_e0.003__energy_distance__r1",
+      "case_id": "M6_N2048_s42_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M6_N2048_s42_e0.003__sk_log_fast__r1",
+      "case_id": "M6_N2048_s42_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.003__energy_distance__r1",
+      "case_id": "M1_N1024_s43_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.003__sk_log_fast__r1",
+      "case_id": "M1_N1024_s43_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.003__sk_scaling_fast__r1",
+      "case_id": "M1_N1024_s43_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.003__sk_log_fast__r1",
+      "case_id": "M2_N1024_s43_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.003__sk_scaling_fast__r1",
+      "case_id": "M2_N1024_s43_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.003__energy_distance__r1",
+      "case_id": "M2_N1024_s43_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.003__sk_scaling_fast__r1",
+      "case_id": "M3_N1024_s43_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.003__energy_distance__r1",
+      "case_id": "M3_N1024_s43_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.003__sk_log_fast__r1",
+      "case_id": "M3_N1024_s43_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a1_e0.003__energy_distance__r1",
+      "case_id": "M4_N1024_s43_a1_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a1_e0.003__sk_log_fast__r1",
+      "case_id": "M4_N1024_s43_a1_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a1_e0.003__sk_scaling_fast__r1",
+      "case_id": "M4_N1024_s43_a1_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.01__sk_log_fast__r1",
+      "case_id": "M5_same_2_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.01__sk_scaling_fast__r1",
+      "case_id": "M5_same_2_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.01__energy_distance__r1",
+      "case_id": "M5_same_2_e0.01",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.001__sk_scaling_fast__r1",
+      "case_id": "M1_N1024_s43_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.001__energy_distance__r1",
+      "case_id": "M1_N1024_s43_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M1_N1024_s43_e0.001__sk_log_fast__r1",
+      "case_id": "M1_N1024_s43_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.001__energy_distance__r1",
+      "case_id": "M2_N1024_s43_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.001__sk_log_fast__r1",
+      "case_id": "M2_N1024_s43_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M2_N1024_s43_e0.001__sk_scaling_fast__r1",
+      "case_id": "M2_N1024_s43_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.001__sk_log_fast__r1",
+      "case_id": "M3_N1024_s43_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.001__sk_scaling_fast__r1",
+      "case_id": "M3_N1024_s43_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M3_N1024_s43_e0.001__energy_distance__r1",
+      "case_id": "M3_N1024_s43_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a0.1_e0.003__sk_scaling_fast__r1",
+      "case_id": "M4_N1024_s43_a0.1_e0.003",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a0.1_e0.003__energy_distance__r1",
+      "case_id": "M4_N1024_s43_a0.1_e0.003",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M4_N1024_s43_a0.1_e0.003__sk_log_fast__r1",
+      "case_id": "M4_N1024_s43_a0.1_e0.003",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.001__energy_distance__r1",
+      "case_id": "M5_same_2_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.001__sk_log_fast__r1",
+      "case_id": "M5_same_2_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_2_e0.001__sk_scaling_fast__r1",
+      "case_id": "M5_same_2_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.01__sk_log_fast__r1",
+      "case_id": "M5_same_4_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.01__sk_scaling_fast__r1",
+      "case_id": "M5_same_4_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.01__energy_distance__r1",
+      "case_id": "M5_same_4_e0.01",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.001__sk_scaling_fast__r1",
+      "case_id": "M5_same_4_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.001__energy_distance__r1",
+      "case_id": "M5_same_4_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_4_e0.001__sk_log_fast__r1",
+      "case_id": "M5_same_4_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.01__energy_distance__r1",
+      "case_id": "M5_same_6_e0.01",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.01__sk_log_fast__r1",
+      "case_id": "M5_same_6_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.01__sk_scaling_fast__r1",
+      "case_id": "M5_same_6_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.001__sk_log_fast__r1",
+      "case_id": "M5_same_6_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.001__sk_scaling_fast__r1",
+      "case_id": "M5_same_6_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_6_e0.001__energy_distance__r1",
+      "case_id": "M5_same_6_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.01__sk_scaling_fast__r1",
+      "case_id": "M5_same_8_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.01__energy_distance__r1",
+      "case_id": "M5_same_8_e0.01",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.01__sk_log_fast__r1",
+      "case_id": "M5_same_8_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.001__energy_distance__r1",
+      "case_id": "M5_same_8_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.001__sk_log_fast__r1",
+      "case_id": "M5_same_8_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_same_8_e0.001__sk_scaling_fast__r1",
+      "case_id": "M5_same_8_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.01__sk_log_fast__r1",
+      "case_id": "M5_cross_0_1_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.01__sk_scaling_fast__r1",
+      "case_id": "M5_cross_0_1_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.01__energy_distance__r1",
+      "case_id": "M5_cross_0_1_e0.01",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.001__sk_scaling_fast__r1",
+      "case_id": "M5_cross_0_1_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.001__energy_distance__r1",
+      "case_id": "M5_cross_0_1_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_0_1_e0.001__sk_log_fast__r1",
+      "case_id": "M5_cross_0_1_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.01__energy_distance__r1",
+      "case_id": "M5_cross_2_3_e0.01",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.01__sk_log_fast__r1",
+      "case_id": "M5_cross_2_3_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.01__sk_scaling_fast__r1",
+      "case_id": "M5_cross_2_3_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.001__sk_log_fast__r1",
+      "case_id": "M5_cross_2_3_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.001__sk_scaling_fast__r1",
+      "case_id": "M5_cross_2_3_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_2_3_e0.001__energy_distance__r1",
+      "case_id": "M5_cross_2_3_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.01__sk_scaling_fast__r1",
+      "case_id": "M5_cross_4_5_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.01__energy_distance__r1",
+      "case_id": "M5_cross_4_5_e0.01",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.01__sk_log_fast__r1",
+      "case_id": "M5_cross_4_5_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.001__energy_distance__r1",
+      "case_id": "M5_cross_4_5_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.001__sk_log_fast__r1",
+      "case_id": "M5_cross_4_5_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_4_5_e0.001__sk_scaling_fast__r1",
+      "case_id": "M5_cross_4_5_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.01__sk_log_fast__r1",
+      "case_id": "M5_cross_6_7_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.01__sk_scaling_fast__r1",
+      "case_id": "M5_cross_6_7_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.01__energy_distance__r1",
+      "case_id": "M5_cross_6_7_e0.01",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.001__sk_scaling_fast__r1",
+      "case_id": "M5_cross_6_7_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.001__energy_distance__r1",
+      "case_id": "M5_cross_6_7_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_6_7_e0.001__sk_log_fast__r1",
+      "case_id": "M5_cross_6_7_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.01__energy_distance__r1",
+      "case_id": "M5_cross_8_9_e0.01",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.01__sk_log_fast__r1",
+      "case_id": "M5_cross_8_9_e0.01",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.01__sk_scaling_fast__r1",
+      "case_id": "M5_cross_8_9_e0.01",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.001__sk_log_fast__r1",
+      "case_id": "M5_cross_8_9_e0.001",
+      "method": "sk_log_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.001__sk_scaling_fast__r1",
+      "case_id": "M5_cross_8_9_e0.001",
+      "method": "sk_scaling_fast",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "main__M5_cross_8_9_e0.001__energy_distance__r1",
+      "case_id": "M5_cross_8_9_e0.001",
+      "method": "energy_distance",
+      "repeat": 1,
+      "stage": "main",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M1_N1024_s42_e0.001__energy_zero__r0",
+      "case_id": "M1_N1024_s42_e0.001",
+      "method": "energy_zero",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M1_N1024_s42_e0.001__energy_amp__r0",
+      "case_id": "M1_N1024_s42_e0.001",
+      "method": "energy_amp",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M2_N1024_s42_e0.003__energy_zero__r0",
+      "case_id": "M2_N1024_s42_e0.003",
+      "method": "energy_zero",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M2_N1024_s42_e0.003__energy_amp__r0",
+      "case_id": "M2_N1024_s42_e0.003",
+      "method": "energy_amp",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M3_N1024_s42_e0.003__energy_zero__r0",
+      "case_id": "M3_N1024_s42_e0.003",
+      "method": "energy_zero",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M3_N1024_s42_e0.003__energy_amp__r0",
+      "case_id": "M3_N1024_s42_e0.003",
+      "method": "energy_amp",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M4_N1024_s42_a0.1_e0.003__energy_zero__r0",
+      "case_id": "M4_N1024_s42_a0.1_e0.003",
+      "method": "energy_zero",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M4_N1024_s42_a0.1_e0.003__energy_amp__r0",
+      "case_id": "M4_N1024_s42_a0.1_e0.003",
+      "method": "energy_amp",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M5_same_0_e0.001__energy_zero__r0",
+      "case_id": "M5_same_0_e0.001",
+      "method": "energy_zero",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M5_same_0_e0.001__energy_amp__r0",
+      "case_id": "M5_same_0_e0.001",
+      "method": "energy_amp",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M5_cross_0_1_e0.001__energy_zero__r0",
+      "case_id": "M5_cross_0_1_e0.001",
+      "method": "energy_zero",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    },
+    {
+      "job_id": "ablation__M5_cross_0_1_e0.001__energy_amp__r0",
+      "case_id": "M5_cross_0_1_e0.001",
+      "method": "energy_amp",
+      "repeat": 0,
+      "stage": "ablation",
+      "kappa": null,
+      "status": "pending_budget"
+    }
+  ],
+  "revision": 1
+}

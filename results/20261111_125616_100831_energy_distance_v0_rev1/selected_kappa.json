@@ -1,0 +1,7 @@
+{
+  "kappa": 1.0,
+  "reason": "calibration_incomplete",
+  "source_sha256": "7476ff03364961b743b63984111575cd3ef00cc8e75ecf3a8f5106ca4c56acd1",
+  "config_sha256": "7ffaaff2ae918dcf9911acf65a63ce89fe2d81d40c10c213291312d74ace1aeb",
+  "frozen_at_machine_sec": 2272.2025627000003
+}

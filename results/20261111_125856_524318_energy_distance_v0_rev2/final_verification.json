@@ -1,0 +1,30 @@
+{
+  "planned": 262,
+  "formal_cases": 39,
+  "status_counts": {
+    "success": 250,
+    "not_applicable_kernel_underflow": 12
+  },
+  "independent_audits_passed": 250,
+  "not_applicable_endpoints": 12,
+  "paired_comparisons": 144,
+  "threshold_rows": 786,
+  "identical_original_measurement_artifact_hashes": true,
+  "source_config_verified": true,
+  "shared_warmup_and_gamma_verified": true,
+  "exclusive_total_timing_verified": true,
+  "tests": "31 core/related regression tests passed; 18 core gate tests passed after report-only guard additions",
+  "excluded_revision": {
+    "reason": "Windows slash mismatch in reporting-only inheritance mistakenly started a fresh revision; stopped and excluded",
+    "excluded_revision": "D:\\sinkhorn-lmflow\\results\\20261111_125616_100831_energy_distance_v0_rev1",
+    "statuses_at_stop": {
+      "pending_budget": 252,
+      "success": 9,
+      "running": 1
+    },
+    "included_in_comparisons": false,
+    "budget_reset": false,
+    "completed_formal_measurements": "D:\\sinkhorn-lmflow\\results\\20261111_121604_269934_energy_distance_v0_rev0",
+    "final_report_revision": "D:\\sinkhorn-lmflow\\results\\20261111_125856_524318_energy_distance_v0_rev2"
+  }
+}
